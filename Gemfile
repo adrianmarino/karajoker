@@ -9,7 +9,7 @@ group :development,:test do
   gem 'rspec-rails', '~> 3.1'
   gem 'capybara', '~> 2.3.0'
   gem 'rubocop', '~> 0.28.0'
-  gem 'factory_girl', '4.5.0'
+  gem "factory_girl_rails", "~> 4.0"
   gem 'selenium-webdriver', '~> 2.44.0'
   gem 'nokogiri', '1.6.5'
 

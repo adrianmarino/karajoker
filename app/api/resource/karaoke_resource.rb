@@ -15,6 +15,15 @@ module Resource
 			get do
 				Karaoke.all
 			end
+
+			desc 'Remove a Karaoke'
+			params do
+				requires :id, type: Integer, desc: 'A karaoke identifier'
+			end
+			delete ':id' do
+				Karaoke.destroy params[:id]
+			end
+			
 		end
 	end
 end

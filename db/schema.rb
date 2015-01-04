@@ -13,27 +13,20 @@
 
 ActiveRecord::Schema.define(version: 20150103155841) do
 
-  create_table "karaoke_tags", force: :cascade do |t|
-    t.integer "karaoke_id", limit: 4, null: false
-    t.integer "tag_id",     limit: 4, null: false
-  end
-
-  add_index "karaoke_tags", ["karaoke_id", "tag_id"], name: "index_karaoke_tags_on_karaoke_id_and_tag_id", using: :btree
-
-  create_table "karaokes", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.string   "youtube_id", limit: 255
+  create_table "karaokes", force: true do |t|
+    t.string   "title"
+    t.string   "youtube_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "karaokes_tags", id: false, force: :cascade do |t|
-    t.integer "karaoke_id", limit: 4
-    t.integer "tag_id",     limit: 4
+  create_table "karaokes_tags", id: false, force: true do |t|
+    t.integer "karaoke_id"
+    t.integer "tag_id"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string   "name",       limit: 255
+  create_table "tags", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
