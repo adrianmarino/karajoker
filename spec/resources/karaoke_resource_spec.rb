@@ -1,31 +1,33 @@
 require 'rails_helper'
 
 describe Resource::KaraokeResource do
-    include FactoryGirl
+    include ResourceTest
 
     # -------------------------------------------------------------------------
     # Test Methods
     # -------------------------------------------------------------------------
 
-    it "add a hello karaoke" do
+    it "add a hello karaoke tag as pop" do
         # Prepare
-        karaoke = { title: 'hello', youtube_id: '1234' }.to_json
+        karaoke = { title: 'hello', youtube_id: '1234', tags: [:pop] }
+        tag = FactoryGirl.create(:tag, :pop)
 
         # Perform
-        karaokes_post karaoke
+        http_post karaoke
 
         # Asserts
         expect(response.status).to eq 201
-        expect(Karaoke.first.title).to eq "hello"
-        expect(Karaoke.first.youtube_id).to eq "1234"
+        expect(Karaoke.first.title).to eq karaoke[:title]
+        expect(Karaoke.first.youtube_id).to eq karaoke[:youtube_id]
+        expect(Karaoke.first.tags.first.name).to eq tag.name
     end
 
     it "list all karaokes" do
         # Prepare
-        videos = [create(:karaoke, :hello_1), create(:karaoke, :hello_2)]
+        videos = [FactoryGirl.create(:karaoke, :hello_1), FactoryGirl.create(:karaoke, :hello_2)]
 
         # Perform
-        get URL
+        http_get
 
         # Asserts
         results = response_boby
@@ -39,31 +41,19 @@ describe Resource::KaraokeResource do
         video = create :karaoke, :hello_1
 
         # Perform
-        delete "#{URL}/#{video.id}"
+        http_delete video.id
 
         # Asserts
         expect(response.status).to eq 200
         expect(Karaoke.all.empty?).to eq true        
     end
 
-
     # -------------------------------------------------------------------------
-    # Private Methods
+    # Protected Methods
     # -------------------------------------------------------------------------
-    private
-    def karaokes_post(a_body)
-        post URL, a_body, JSON_HEADERS
+    protected
+    def url
+        :karaokes
     end
 
-    def response_boby
-        JSON.parse(response.body).collect {|an_item| OpenStruct.new an_item}
-    end
-
-    # -------------------------------------------------------------------------
-    # Constants
-    # -------------------------------------------------------------------------
-
-    URL = 'api/karaokes'
-
-    JSON_HEADERS = { "Accept" => "application/json", "Content-Type" => "application/json" }
 end

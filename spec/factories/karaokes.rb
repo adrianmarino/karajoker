@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :karaoke do
   	trait :hello_1 do
     	title 'hello_1'
-    	youtube_id '1234'
+    	youtube_id '12345'
   	end
   	trait :hello_2 do
     	title 'hello_2'
