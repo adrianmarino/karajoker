@@ -2,13 +2,14 @@ module Resource
 	class KaraokeResource < Grape::API
 		desc 'Karaoke CRUD'
 		resource :karaokes do
+
 			desc 'Add new Karaoke'
 			params do
 				requires :title, type: String, desc: 'A karaoke title'
 				requires :youtube_id, type: String, desc: 'A karaoke youtube identifier'
 			end
 			post do
-				Karaoke.create(title:params[:title], youtube_id: params[:youtube_id])
+				Karaoke.create_from params
 			end
 
 			desc 'Get all Karaokes'
@@ -23,7 +24,6 @@ module Resource
 			delete ':id' do
 				Karaoke.destroy params[:id]
 			end
-			
 		end
 	end
 end

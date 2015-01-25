@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.8'
 gem 'grape', '0.10.1'
 gem 'mysql2'
+gem 'coffee-rails'
+gem 'bower-rails'
+gem 'angular-rails-templates'
 
 group :development,:test do
   gem 'rspec', '~> 3.1'

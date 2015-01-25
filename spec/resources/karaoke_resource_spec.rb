@@ -1,7 +1,7 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe Resource::KaraokeResource do
-    include ResourceTest
+    include RestTestUtils
 
     # -------------------------------------------------------------------------
     # Test Methods

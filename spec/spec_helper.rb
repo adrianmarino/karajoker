@@ -18,4 +18,4 @@ end
 
 require 'capybara/rspec'
 
-require 'resource_test'
+require 'rest_test_utils'

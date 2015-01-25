@@ -1,7 +1,7 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe Resource::TagResource do
-    include ResourceTest
+    include RestTestUtils
 
     # -------------------------------------------------------------------------
     # Test Methods

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150103155841) do
+ActiveRecord::Schema.define(version: 20150106001945) do
 
   create_table "karaokes", force: true do |t|
     t.string   "title"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 20150103155841) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "karaokes", ["youtube_id"], name: "index_karaokes_on_youtube_id", unique: true, using: :btree
 
   create_table "karaokes_tags", id: false, force: true do |t|
     t.integer "karaoke_id"
@@ -30,5 +32,7 @@ ActiveRecord::Schema.define(version: 20150103155841) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
 end

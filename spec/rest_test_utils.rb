@@ -1,4 +1,4 @@
-module ResourceTest
+module RestTestUtils
 
     # -------------------------------------------------------------------------
     # Private Methods
@@ -31,4 +31,5 @@ module ResourceTest
     JSON_HEADERS = { "Accept" => "application/json", "Content-Type" => "application/json" }
 
     BASE_URL = 'api/'
+
 end
