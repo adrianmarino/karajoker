@@ -1,11 +1,9 @@
 <header>
   <h1>Kara<strong>Joker</strong></h1>
-
   <form id="search" data-ng-submit="search()">
     <input id="query" name="q" type="text" placeholder="Search for a karaoke video" data-ng-model="query">
     <input id="submit" type="image" src="/images/search.png" alt="Search">
   </form>
-
   <nav>
     <a id="play">{{ youtube.state }}</a>
     <a id="pause">Pause</a>
@@ -13,10 +11,10 @@
 </header>
 
 <div id="results">
-  <div class="video" data-ng-repeat="thing in things">
-    <p class="video-title">{{ thing }}</p>
-    <p class="video-author">{{ thing }}</p>
-    <p class="video-description">{{ thing }}</p>
+  <div class="video" data-ng-repeat="result in results">
+    <p class="video-title">{{ result.title }}</p>
+    <p class="video-author">{{ result.author }}</p>
+    <p class="video-description">{{ result.tags }}</p>
   </div>
 </div>
 

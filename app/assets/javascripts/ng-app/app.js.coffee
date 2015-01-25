@@ -1,5 +1,3 @@
-console.log "APP"
-
 App = angular.module('karajoker', [ 'ngRoute', 'templates' ])
 
 App.config(
