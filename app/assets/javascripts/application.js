@@ -1,8 +1,12 @@
+//= require_self
 //= require angular
 //= require angular-route
 //= require angular-rails-templates
 
-//= require_tree ./ng-app/controllers
-//= require ng-app/app
+//= require front/app
+//= require_tree ./front/services
+//= require_tree ./front/controllers
+//= require front/routes
+
 //= require_tree ../templates
 

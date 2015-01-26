@@ -1,6 +1,6 @@
-App = angular.module('karajoker', [ 'ngRoute', 'templates' ])
+angular.module('karajoker', [ 'ngRoute', 'templates' ])
 
-App.config(
+angular.module('karajoker').config(
 	($routeProvider, $locationProvider) ->
     	$locationProvider.html5Mode({ enable: true, requireBase: false } )
 
