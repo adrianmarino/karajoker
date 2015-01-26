@@ -4,6 +4,10 @@ class Karaoke < ActiveRecord::Base
 	# Class Methods
 	# -------------------------------------------------------------------------
 
+	def self.search(a_query)
+ 		self.where("title LIKE ? ", "%#{a_query}%")
+	end
+
 	def self.create_from(params)
 		self.create(title:params[:title], youtube_id: params[:youtube_id], tags: Tag.find_by_names(params[:tags]))
 	end

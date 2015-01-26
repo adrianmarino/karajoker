@@ -3,7 +3,7 @@ module Resource
 		desc 'Karaoke CRUD'
 		resource :karaokes do
 
-			desc 'Add new Karaoke'
+			desc 'Add new karaoke'
 			params do
 				requires :title, type: String, desc: 'A karaoke title'
 				requires :youtube_id, type: String, desc: 'A karaoke youtube identifier'
@@ -12,12 +12,20 @@ module Resource
 				Karaoke.create_from params
 			end
 
-			desc 'Get all Karaokes'
+			desc 'Get all karaokes'
 			get do
 				Karaoke.all
 			end
 
-			desc 'Remove a Karaoke'
+			desc 'Find karaokes'
+			params do
+				requires :query, type: String, desc: 'A query'
+			end			
+			get '/search/:query' do
+				Karaoke.search params[:query]
+			end
+			
+			desc 'Remove a karaoke'
 			params do
 				requires :id, type: Integer, desc: 'A karaoke identifier'
 			end

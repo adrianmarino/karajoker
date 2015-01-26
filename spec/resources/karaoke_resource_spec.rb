@@ -36,6 +36,19 @@ describe Resource::KaraokeResource do
         expect(results.second.title).to eq videos.second.title
     end
 
+    it "find karaoke hello_1" do
+        # Prepare
+        videos = [FactoryGirl.create(:karaoke, :hello_1), FactoryGirl.create(:karaoke, :hello_2)]
+
+        # Perform
+        http_get "/search/#{videos.first.title}"
+
+        # Asserts
+        results = response_boby
+        expect(response.status).to eq 200
+        expect(results.first.title).to eq videos.first.title
+    end
+
     it "remove karaoke hello_1" do
         # Prepare
         video = create :karaoke, :hello_1

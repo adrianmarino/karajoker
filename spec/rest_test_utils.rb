@@ -4,8 +4,8 @@ module RestTestUtils
     # Private Methods
     # -------------------------------------------------------------------------
     private
-    def http_get()
-        get build_url
+    def http_get(an_url = '')
+        get build_url(an_url)
     end
 
     def http_delete(an_id)
@@ -20,8 +20,8 @@ module RestTestUtils
         JSON.parse(response.body).collect {|an_item| OpenStruct.new an_item}
     end
 
-    def build_url
-        BASE_URL + url.to_s
+    def build_url(an_url = '')
+       "#{BASE_URL}#{url.to_s}#{an_url}" 
     end
 
     # -------------------------------------------------------------------------
