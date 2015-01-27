@@ -1,5 +1,5 @@
 @HomeController = ($scope, karaokeService) ->
+	$scope.state = 'Pause'
 	$scope.search = ->
-		console.log "Search:" + this.query
-		karaokeService.search this.query, (response) -> $scope.results = response
-		
+		karaokeService.search $scope.query, (response) ->
+			$scope.results = response

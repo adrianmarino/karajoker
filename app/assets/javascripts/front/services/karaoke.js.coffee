@@ -1,5 +1,9 @@
-angular.module('karajoker').factory('karaokeService', ['$http', ($http) ->
+app.factory 'karaokeService', ($http) ->
   service = {}
-  service.search = (a_query, results) -> $http.get('api/karaokes/search/' + a_query).success(results).error( -> console.error 'Failed to search karaoke!')
+  service.search = (a_query, a_callback) ->
+  	$http.get('api/karaokes/search/' + a_query).success(
+  		(a_response)->
+  			console.log "Search:" + a_query
+  			a_callback a_response
+  	).error( -> console.error 'Failed to search karaoke!') if a_query
   service
-])

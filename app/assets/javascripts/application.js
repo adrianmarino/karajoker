@@ -1,4 +1,3 @@
-//= require_self
 //= require angular
 //= require angular-route
 //= require angular-rails-templates
@@ -9,4 +8,4 @@
 //= require front/routes
 
 //= require_tree ../templates
-
+//= require_self

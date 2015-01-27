@@ -1,9 +1,3 @@
-angular.module('karajoker', [ 'ngRoute', 'templates' ])
-
-angular.module('karajoker').config(
-	($routeProvider, $locationProvider) ->
-    	$locationProvider.html5Mode({ enable: true, requireBase: false } )
-
-    	# Routes...
-    	$routeProvider.when('/', { templateUrl: 'home.html', controller: @HomeController} )
-)
+app = (a_value)-> window.app = a_value
+app -> window.app
+app angular.module 'karajoker', [ 'ngRoute', 'templates' ]

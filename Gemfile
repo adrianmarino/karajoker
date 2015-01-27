@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.1.8'
 gem 'grape', '0.10.1'
+gem 'grape-entity'
 gem 'mysql2'
 gem 'coffee-rails'
 gem 'bower-rails'

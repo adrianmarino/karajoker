@@ -22,7 +22,8 @@ module Resource
 				requires :query, type: String, desc: 'A query'
 			end			
 			get '/search/:query' do
-				Karaoke.search params[:query]
+				@results = Karaoke.search params[:query]
+				present @results, with: Entities::KaraokeDetail
 			end
 			
 			desc 'Remove a karaoke'
@@ -35,3 +36,4 @@ module Resource
 		end
 	end
 end
+

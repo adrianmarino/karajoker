@@ -5,7 +5,7 @@ class Karaoke < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 
 	def self.search(a_query)
- 		self.where("title LIKE ? ", "%#{a_query}%")
+ 		self.includes(:tags).where("title LIKE ? ", "%#{a_query}%")
 	end
 
 	def self.create_from(params)

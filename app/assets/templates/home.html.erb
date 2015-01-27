@@ -5,7 +5,7 @@
     <input id="submit" type="image" src="/images/search.png" alt="Search">
   </form>
   <nav>
-    <a id="play">{{ youtube.state }}</a>
+    <a id="play">{{ state }}</a>
     <a id="pause">Pause</a>
   </nav>
 </header>
@@ -14,7 +14,7 @@
   <div class="video" data-ng-repeat="result in results">
     <p class="video-title">{{ result.title }}</p>
     <p class="video-author">{{ result.author }}</p>
-    <p class="video-description">{{ result.tags }}</p>
+    <b class="video-description" data-ng-repeat="tag in result.tags">{{tag.name}}{{$last ? '' : ', '}}</b>
   </div>
 </div>
 
