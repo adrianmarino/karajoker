@@ -7,6 +7,8 @@ gem 'mysql2'
 gem 'coffee-rails'
 gem 'bower-rails'
 gem 'angular-rails-templates'
+gem 'nokogiri', '1.6.5'
+gem 'youtube_it'
 
 group :development,:test do
   gem 'rspec', '~> 3.1'
@@ -23,6 +25,8 @@ group :development,:test do
   gem 'pry-doc'
   gem 'pry-docmore'
   gem 'pry-rescue'
+  gem 'pry-stack_explorer'
+  gem 'pry-clipboard'
   gem 'bond'
-  gem 'unicorn-rails'
+
 end

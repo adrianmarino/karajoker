@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe Resource::KaraokeResource do
     include RestTestUtils
@@ -15,7 +15,7 @@ describe Resource::KaraokeResource do
         # Perform
         http_post karaoke
 
-        # Asserts
+        # Assert
         expect(response.status).to eq 201
         expect(Karaoke.first.title).to eq karaoke[:title]
         expect(Karaoke.first.youtube_id).to eq karaoke[:youtube_id]

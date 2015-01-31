@@ -20,12 +20,12 @@ module Resource
 			desc 'Find karaokes'
 			params do
 				requires :query, type: String, desc: 'A query'
-			end			
+			end
 			get '/search/:query' do
 				@results = Karaoke.search params[:query]
 				present @results, with: Entities::KaraokeDetail
 			end
-			
+
 			desc 'Remove a karaoke'
 			params do
 				requires :id, type: Integer, desc: 'A karaoke identifier'

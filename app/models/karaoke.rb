@@ -5,6 +5,7 @@ class Karaoke < ActiveRecord::Base
 	# -------------------------------------------------------------------------
 
 	def self.search(a_query)
+                # raise 'Aan example error!'
  		self.includes(:tags).where("title LIKE ? ", "%#{a_query}%")
 	end
 
