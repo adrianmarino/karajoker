@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe 'YoutubeSearcher' do
 
@@ -11,7 +11,6 @@ describe 'YoutubeSearcher' do
         # searcher = YoutubeSearcher.new
 
         # Perform
-        
     end
 
 end

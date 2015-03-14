@@ -1,9 +1,6 @@
 module RestTestUtils
-
-    # -------------------------------------------------------------------------
-    # Private Methods
-    # -------------------------------------------------------------------------
     private
+
     def http_get(an_url = '')
         get build_url(an_url)
     end
@@ -21,15 +18,17 @@ module RestTestUtils
     end
 
     def build_url(an_url = '')
-       "#{BASE_URL}#{url.to_s}#{an_url}" 
+        "#{BASE_URL}#{url.to_s}#{an_url}"
     end
 
     # -------------------------------------------------------------------------
     # Constants
     # -------------------------------------------------------------------------
 
-    JSON_HEADERS = { "Accept" => "application/json", "Content-Type" => "application/json" }
+    JSON_HEADERS = { 
+        "Accept"        => "application/json", 
+        "Content-Type"  => "application/json"
+    }
 
     BASE_URL = 'api/'
-
 end

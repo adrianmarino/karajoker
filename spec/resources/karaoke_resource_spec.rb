@@ -1,6 +1,6 @@
-require 'rails_helper'
+require 'spec_helper'
 
-describe Resource::KaraokeResource do
+describe  Karajoker::Rest::KaraokeResource do
     include RestTestUtils
 
     # -------------------------------------------------------------------------
@@ -58,13 +58,14 @@ describe Resource::KaraokeResource do
 
         # Asserts
         expect(response.status).to eq 200
-        expect(Karaoke.all.empty?).to eq true        
+        expect(Karaoke.all.empty?).to eq true
     end
 
     # -------------------------------------------------------------------------
     # Protected Methods
     # -------------------------------------------------------------------------
     protected
+
     def url
         :karaokes
     end

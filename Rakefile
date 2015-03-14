@@ -3,20 +3,18 @@ require File.expand_path('../config/application', __FILE__)
 Rails.application.load_tasks
 
 if Rails.env.test? || Rails.env.development?
+  require 'rubocop/rake_task'
   require 'rspec/core/rake_task'
-  RSpec::Core::RakeTask.new(:test) do |spec|
-    spec.pattern = FileList['spec/model/*_spec.rb','spec/resources/*_spec.rb']
-  end
 
   Rake::Task[:default].prerequisites.clear
+  RuboCop::RakeTask.new(:rubocop)
+  RSpec::Core::RakeTask.new(:test) do |spec|
+    spec.pattern = FileList['spec/models/*_spec.rb','spec/resources/*_spec.rb']
+  end
 
-  # require 'rubocop/rake_task'
-  # RuboCop::RakeTask.new(:rubocop)
-
-  # task default: [:rubocop, :test]
+  task default: [:rubocop, :test]
   task default: [:test]
 end
-
 
 namespace :karajoker do
   desc "Create a new schema on MySQL DB"

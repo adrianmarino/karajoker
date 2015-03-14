@@ -1,0 +1,5 @@
+#!/bin/zsh
+OUTPUT_FILE="rubocop.html"
+
+rubocop --format html -o $OUTPUT_FILE
+chromium $OUTPUT_FILE

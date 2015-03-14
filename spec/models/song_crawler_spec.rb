@@ -1,4 +1,4 @@
-require 'rails_helper'
+require 'spec_helper'
 
 describe SongCrawler do
 
@@ -21,8 +21,8 @@ describe SongCrawler do
     # -------------------------------------------------------------------------
     # Private Methods
     # -------------------------------------------------------------------------
-
     private
+
     def expect_song(results, order,title, author)
         expect(results[order][:title]).to eq title
         expect(results[order][:author]).to eq author

@@ -18,3 +18,9 @@ Run:
 $ rake karajoker:setup_mysql
 ```
 This tash create dev, test and prd schemas on local MySQL DB.
+
+=== Run tests
+
+```
+$ rake test
+```

@@ -1,6 +1,6 @@
-require 'rails_helper'
+require 'spec_helper'
 
-describe Resource::TagResource do
+describe Karajoker::Rest::TagResource do
     include RestTestUtils
 
     # -------------------------------------------------------------------------
@@ -37,6 +37,7 @@ describe Resource::TagResource do
     # Protected Methods
     # -------------------------------------------------------------------------
     protected
+
     def url
         :tags
     end
