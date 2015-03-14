@@ -9,7 +9,7 @@ if Rails.env.test? || Rails.env.development?
   Rake::Task[:default].prerequisites.clear
   RuboCop::RakeTask.new(:rubocop)
   RSpec::Core::RakeTask.new(:test) do |spec|
-    spec.pattern = FileList['spec/models/*_spec.rb','spec/resources/*_spec.rb']
+    spec.pattern = FileList['spec/**/*_spec.rb']
   end
 
   task default: [:rubocop, :test]
