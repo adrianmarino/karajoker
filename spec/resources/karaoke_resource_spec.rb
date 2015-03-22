@@ -4,19 +4,16 @@ describe  Karajoker::Rest::KaraokeResource do
   include RestTestUtils
 
   describe "'POST'" do
+    let(:karaoke_params) { { title: 'hello', youtube_id: '1234', tags: [:pop] } }
+    before { FactoryGirl.create(:tag, :pop) }
     it "add a hello karaoke tag as pop" do
-      # Prepare
-      karaoke = { title: 'hello', youtube_id: '1234', tags: [:pop] }
-      tag = FactoryGirl.create(:tag, :pop)
-
-      # Perform
-      http_post karaoke
+      http_post karaoke_params
 
       # Assert
       expect(response.status).to eq 201
-      expect(Karaoke.first.title).to eq karaoke[:title]
-      expect(Karaoke.first.youtube_id).to eq karaoke[:youtube_id]
-      expect(Karaoke.first.tags.first.name).to eq tag.name
+      expect(Karaoke.first.title).to eq karaoke_params[:title]
+      expect(Karaoke.first.youtube_id).to eq karaoke_params[:youtube_id]
+      expect(Karaoke.first.tags.first.name).to eq karaoke_params[:youtube_id].first
     end
   end
 
