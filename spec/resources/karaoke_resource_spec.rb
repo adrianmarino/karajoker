@@ -13,7 +13,7 @@ describe  Karajoker::Rest::KaraokeResource do
       expect(response.status).to eq 201
       expect(Karaoke.first.title).to eq karaoke_params[:title]
       expect(Karaoke.first.youtube_id).to eq karaoke_params[:youtube_id]
-      expect(Karaoke.first.tags.first.name).to eq karaoke_params[:youtube_id].first
+      expect(Karaoke.first.tags.first.name.downcase).to eq karaoke_params[:tags].first.to_s
     end
   end
 
