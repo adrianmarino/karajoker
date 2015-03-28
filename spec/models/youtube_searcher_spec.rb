@@ -2,13 +2,11 @@ require 'spec_helper'
 
 describe Youtube::KaraokeSearcher do
   describe "#search" do
-    let(:song) { { title: "Through Her Eyes", author: "dream theater" } }
-    let(:song_result) do
-      Youtube::KaraokeResult.new "Dream Theater - Through Her Eyes (Karaoke Version)"
-    end
+    let(:song) { { query: "Through Her Eyes dream theater" } }
 
     it "found song" do
-      expect(subject.search(song)).include(song_result)
+      results = subject.search(song)
+      expect(results.first.title).to include("Through Her Eyes")
     end
   end
 end
