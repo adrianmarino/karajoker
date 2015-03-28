@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Youtube::KaraokeSearcher do
+describe Karajoker::Youtube::KaraokeSearcher do
   describe "#search" do
     let(:song) { { query: "Through Her Eyes dream theater" } }
 

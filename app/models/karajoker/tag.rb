@@ -1,11 +1,12 @@
-class Tag < ActiveRecord::Base
+module Karajoker
+  class Tag < ActiveRecord::Base
 
     # -------------------------------------------------------------------------
     # Class Methods
     # -------------------------------------------------------------------------
 
     def self.find_by_names(names)
-        names.to_a.collect {|a_tag_name| find_by name: a_tag_name }
+      names.to_a.collect {|a_tag_name| find_by name: a_tag_name }
     end
 
     # -------------------------------------------------------------------------
@@ -14,4 +15,5 @@ class Tag < ActiveRecord::Base
 
     has_and_belongs_to_many :karaokes
 
+  end
 end

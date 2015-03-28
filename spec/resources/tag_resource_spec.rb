@@ -16,7 +16,7 @@ describe Karajoker::Rest::TagResource do
 
         # Asserts
         expect(response.status).to eq 201
-        expect(Tag.first.name).to eq tag[:name]
+        expect(Karajoker::Tag.first.name).to eq tag[:name]
     end
 
     it "list all tags" do

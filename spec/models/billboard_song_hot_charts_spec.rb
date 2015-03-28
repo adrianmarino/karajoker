@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Crawler::BillboardSongHotCharts do
+describe Karajoker::Crawler::BillboardSongHotCharts do
   context "#songs" do
     it "found 2015 top 2 songs" do
       subject.songs(top: 2).each do |song|

@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :tag do
+  factory :tag, class: Karajoker::Tag do
     trait :pop do
       name 'Pop'
     end

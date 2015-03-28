@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe  Karajoker::Rest::KaraokeResource do
+describe Karajoker::Rest::KaraokeResource do
   include RestTestUtils
 
   describe "'POST'" do
@@ -11,9 +11,9 @@ describe  Karajoker::Rest::KaraokeResource do
 
       # Assert
       expect(response.status).to eq 201
-      expect(Karaoke.first.title).to eq karaoke_params[:title]
-      expect(Karaoke.first.youtube_id).to eq karaoke_params[:youtube_id]
-      expect(Karaoke.first.tags.first.name.downcase).to eq karaoke_params[:tags].first.to_s
+      expect(Karajoker::Karaoke.first.title).to eq karaoke_params[:title]
+      expect(Karajoker::Karaoke.first.youtube_id).to eq karaoke_params[:youtube_id]
+      expect(Karajoker::Karaoke.first.tags.first.name.downcase).to eq karaoke_params[:tags].first.to_s
     end
   end
 
@@ -56,12 +56,14 @@ describe  Karajoker::Rest::KaraokeResource do
 
       # Asserts
       expect(response.status).to eq 200
-      expect(Karaoke.all.empty?).to eq true
+      expect(Karajoker::Karaoke.all.empty?).to eq true
     end
   end
 
   protected
 
-  def url() :karaokes end
+  def url
+    :karaokes
+  end
 
 end

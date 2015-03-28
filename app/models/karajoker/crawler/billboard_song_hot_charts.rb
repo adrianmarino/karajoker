@@ -1,6 +1,6 @@
 require'nokogiri'
 
-module Crawler
+module Karajoker::Crawler
   class BillboardSongHotCharts
 
     def songs(filters)

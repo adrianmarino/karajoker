@@ -1,4 +1,4 @@
-module Youtube
+module Karajoker::Youtube
   class KaraokeResult
     attr_reader :video
 

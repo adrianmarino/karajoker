@@ -1,4 +1,4 @@
-module Youtube
+module Karajoker::Youtube
   class KaraokeSearcher
     def search(options)
       options[:query] = "#{options[:query]} karaoke"
