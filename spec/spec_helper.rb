@@ -4,7 +4,7 @@ require 'rubygems'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
 require 'capybara/rspec'
-require 'rest_test_utils'
+require 'lib/rest_test_utils'
 
 ActiveRecord::Migration.maintain_test_schema!
 
