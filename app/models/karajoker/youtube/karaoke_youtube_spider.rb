@@ -3,10 +3,17 @@ module Karajoker
     class KaraokeYoutubeSpider
 
       def start(songs)
-         karaokes_from(songs).each {|karaoke| create karaoke }
+       filter_news(karaokes_from(songs)).each {|karaoke| create karaoke }
       end
 
       private
+      def filter_news(karaokes)
+        karaokes.reject { |karaoke| already_exist?(karaoke) }
+      end
+
+      def already_exist?(karaoke)
+        Karaoke.exists? youtube_id: karaoke.id
+      end
 
       def karaokes_from(songs)
         songs.map { |song| search(song).first }
