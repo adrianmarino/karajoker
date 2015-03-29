@@ -7,11 +7,9 @@ module Karajoker
 
       describe "'POST'" do
         describe "when add a hello karaoke tag as pop" do
-
-          let(:karaoke_params) { { title: 'hello', youtube_id: '1234', tags: [:pop] } }
-          let(:send_karaoke) { http_post karaoke_params }
-
-          before { create(:tag, :pop) }
+          let(:karaoke_params)  { { title: 'hello', youtube_id: '1234', tags: [:pop] } }
+          let(:send_karaoke)    { http_post karaoke_params }
+          before                { create(:tag, :pop) }
 
           it "respond http 201" do
             send_karaoke
@@ -33,7 +31,7 @@ module Karajoker
 
       describe "'GET'" do
         let!(:videos) { [create(:karaoke, :hello_1), create(:karaoke, :hello_2)] }
-        before { videos }
+        before        { videos }
 
         describe "when list all karaokes" do
           it "respond http 200" do
