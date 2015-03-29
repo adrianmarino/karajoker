@@ -2,10 +2,6 @@ module Karajoker::Youtube
   class KaraokeResult
     attr_reader :video
 
-    def equal?(obj)
-      id.equal? obj.id
-    end
-
     def to_s
       "#{title} / #{author}"
     end
