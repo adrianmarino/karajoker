@@ -3,7 +3,7 @@ module Karajoker::Youtube
     attr_reader :video
 
     def equal?(obj)
-      title.equal?(obj.title) & author.equal?(obj.author)
+      id.equal? obj.id
     end
 
     def to_s
@@ -16,6 +16,10 @@ module Karajoker::Youtube
 
     def author
       @video.author.name
+    end
+
+    def id
+      @video.unique_id
     end
 
     def initialize(video)

@@ -1,4 +1,4 @@
-module Karajoker::Crawler
+module Karajoker
   class Song
     attr_reader :title, :author
 
