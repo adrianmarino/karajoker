@@ -6,59 +6,75 @@ module Karajoker
       include RestTestUtils
 
       describe "'POST'" do
-        let(:karaoke_params) { { title: 'hello', youtube_id: '1234', tags: [:pop] } }
-        before { create(:tag, :pop) }
-        it "add a hello karaoke tag as pop" do
-          http_post karaoke_params
+        describe "when add a hello karaoke tag as pop" do
 
-          # Assert
-          expect(response.status).to eq 201
-          expect(Karaoke.first.title).to eq karaoke_params[:title]
-          expect(Karaoke.first.youtube_id).to eq karaoke_params[:youtube_id]
-          expect(Karaoke.first.tags.first.name.downcase).to eq karaoke_params[:tags].first.to_s
+          let(:karaoke_params) { { title: 'hello', youtube_id: '1234', tags: [:pop] } }
+          let(:send_karaoke) { http_post karaoke_params }
+
+          before { create(:tag, :pop) }
+
+          it "respond http 201" do
+            send_karaoke
+            expect_201_http
+          end
+
+          it "has same title" do
+            http_post karaoke_params
+            expect(Karaoke.first.title).to eq karaoke_params[:title]
+          end
+
+          it "has same youtube_id" do
+            http_post karaoke_params
+            expect(Karaoke.first.youtube_id).to eq karaoke_params[:youtube_id]
+            expect(Karaoke.first.tags.first.name.downcase).to eq karaoke_params[:tags].first.to_s
+          end
         end
       end
 
       describe "'GET'" do
-        it "list all karaokes" do
-          # Prepare
-          videos = [create(:karaoke, :hello_1), create(:karaoke, :hello_2)]
+        let!(:videos) { [create(:karaoke, :hello_1), create(:karaoke, :hello_2)] }
+        before { videos }
 
-          # Perform
-          http_get
+        describe "when list all karaokes" do
+          it "respond http 200" do
+            http_get
+            expect_200_http
+          end
 
-          # Asserts
-          results = response_boby
-          expect(response.status).to eq 200
-          expect(results.first.title).to eq videos.first.title
-          expect(results.second.title).to eq videos.second.title
+          it "get karaokes" do
+            http_get
+            results = response_boby
+            expect(results.first.title).to eq videos.first.title
+            expect(results.second.title).to eq videos.second.title
+          end
         end
 
-        it "find karaoke hello_1" do
-          # Prepare
-          videos = [create(:karaoke, :hello_1), create(:karaoke, :hello_2)]
+        describe "when find karaoke hello_1" do
+          it "respond http 200" do
+            http_get "/search/#{videos.first.title}"
+            expect_200_http
+          end
 
-          # Perform
-          http_get "/search/#{videos.first.title}"
-
-          # Asserts
-          results = response_boby
-          expect(response.status).to eq 200
-          expect(results.first.title).to eq videos.first.title
+          it "karaoke found" do
+            http_get "/search/#{videos.first.title}"
+            expect(response_boby.first.title).to eq videos.first.title
+          end
         end
       end
 
       describe "'DELETE'" do
-        it "remove karaoke hello_1" do
-          # Prepare
-          video = create :karaoke, :hello_1
+        describe "remove karaoke hello_1" do
+          let(:video) { create :karaoke, :hello_1 }
 
-          # Perform
-          http_delete video.id
+          it "respond http 200" do
+            http_delete video.id
+            expect_200_http
+          end
 
-          # Asserts
-          expect(response.status).to eq 200
-          expect(Karaoke.all.empty?).to eq true
+          it "karaoke was removed from db" do
+            http_delete video.id
+            expect(Karaoke.all.empty?).to eq true
+          end
         end
       end
 

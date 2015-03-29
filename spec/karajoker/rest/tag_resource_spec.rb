@@ -9,30 +9,38 @@ module Karajoker
       # Test Methods
       # -------------------------------------------------------------------------
 
-      it "add a pop tag" do
-        # Prepare
-        tag = { name: 'Pop'}
+      describe "'POST'" do
+        describe "add a pop tag" do
+          let(:tag) { { name: 'Pop'} }
 
-        # Perform
-        http_post tag
+          it "respond http 201" do
+            http_post tag
+            expect_201_http
+          end
 
-        # Asserts
-        expect(response.status).to eq 201
-        expect(Tag.first.name).to eq tag[:name]
+          it "was saved" do
+            http_post tag
+            expect(Tag.first.name).to eq tag[:name]
+          end
+        end
       end
 
-      it "list all tags" do
-        # Prepare
-        tags = [create(:tag, :pop), create(:tag, :rock)]
+      describe "'GET'" do
+        describe "list all tags" do
+          let(:tags) { [create(:tag, :pop), create(:tag, :rock)] }
 
-        # Perform
-        http_get
+          it "response http 200" do
+            http_get
+            expect_200_http
+          end
 
-        # Asserts
-        results = response_boby
-        expect(response.status).to eq 200
-        expect(results.first.name).to eq tags.first.name
-        expect(results.second.name).to eq tags.second.name
+          it "get tags" do
+            http_get
+            response_boby.each_with_index do |result, index|
+              expect(result.name).to eq tag[index].name
+            end
+          end
+        end
       end
 
       # -------------------------------------------------------------------------
