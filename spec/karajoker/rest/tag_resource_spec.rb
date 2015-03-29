@@ -23,7 +23,7 @@ module Karajoker
 
       it "list all tags" do
         # Prepare
-        tags = [FactoryGirl.create(:tag, :pop), FactoryGirl.create(:tag, :rock)]
+        tags = [create(:tag, :pop), create(:tag, :rock)]
 
         # Perform
         http_get

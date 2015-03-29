@@ -7,7 +7,7 @@ module Karajoker
 
       describe "'POST'" do
         let(:karaoke_params) { { title: 'hello', youtube_id: '1234', tags: [:pop] } }
-        before { FactoryGirl.create(:tag, :pop) }
+        before { create(:tag, :pop) }
         it "add a hello karaoke tag as pop" do
           http_post karaoke_params
 
@@ -22,7 +22,7 @@ module Karajoker
       describe "'GET'" do
         it "list all karaokes" do
           # Prepare
-          videos = [FactoryGirl.create(:karaoke, :hello_1), FactoryGirl.create(:karaoke, :hello_2)]
+          videos = [create(:karaoke, :hello_1), create(:karaoke, :hello_2)]
 
           # Perform
           http_get
@@ -36,7 +36,7 @@ module Karajoker
 
         it "find karaoke hello_1" do
           # Prepare
-          videos = [FactoryGirl.create(:karaoke, :hello_1), FactoryGirl.create(:karaoke, :hello_2)]
+          videos = [create(:karaoke, :hello_1), create(:karaoke, :hello_2)]
 
           # Perform
           http_get "/search/#{videos.first.title}"
@@ -51,7 +51,7 @@ module Karajoker
       describe "'DELETE'" do
         it "remove karaoke hello_1" do
           # Prepare
-          video = FactoryGirl.create :karaoke, :hello_1
+          video = create :karaoke, :hello_1
 
           # Perform
           http_delete video.id
