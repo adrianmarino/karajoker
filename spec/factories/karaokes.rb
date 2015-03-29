@@ -1,12 +1,14 @@
-FactoryGirl.define do
-  factory :karaoke, class: Karajoker::Karaoke do
-    trait :hello_1 do
-      title 'hello_1'
-      youtube_id '12345'
-    end
-    trait :hello_2 do
-      title 'hello_2'
-      youtube_id '1234'
+module Karajoker
+  FactoryGirl.define do
+    factory :karaoke, class: Karaoke do
+      trait :hello_1 do
+        title 'hello_1'
+        youtube_id '12345'
+      end
+      trait :hello_2 do
+        title 'hello_2'
+        youtube_id '1234'
+      end
     end
   end
 end
