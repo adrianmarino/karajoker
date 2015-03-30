@@ -3,12 +3,21 @@ module Karajoker
     class KaraokeYoutubeSpider
 
       def start(songs)
-       filter_news(karaokes_from(songs)).each {|karaoke| create karaoke }
+       karaokes = filter_news(karaokes_from(songs))
+       karaokes.each {|karaoke| create karaoke }
+       karaokes.size
       end
 
       private
       def filter_news(karaokes)
-        karaokes.reject { |karaoke| already_exist?(karaoke) }
+        karaokes.reject do |karaoke| 
+          if already_exist?(karaoke)
+            Rails.logger.info "Karaoke Already Exist! (#{karaoke})"
+            true
+          else
+            false
+          end
+        end
       end
 
       def already_exist?(karaoke)
@@ -16,7 +25,11 @@ module Karajoker
       end
 
       def karaokes_from(songs)
-        songs.map { |song| search(song).first }
+        songs.map do |song|
+          karaoke = search(song).first
+          Rails.logger.info "Founded Karaoke: '#{karaoke}'" unless karaoke.nil?
+          karaoke
+        end
       end
 
       def search(song)
@@ -28,6 +41,7 @@ module Karajoker
       end
 
       def create(karaoke)
+        Rails.logger.info "Index: '#{karaoke}'"
         Karaoke.create_from title: karaoke.title, youtube_id: karaoke.id
       end
     end

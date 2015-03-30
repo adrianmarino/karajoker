@@ -3,7 +3,7 @@ module Karajoker::Youtube
     attr_reader :video
 
     def to_s
-      "#{title} / #{author}"
+      "Title: #{title}, Author: #{author}"
     end
 
     def title

@@ -6,5 +6,9 @@ module Karajoker
       @title = title
       @author = author
     end
+
+    def to_s
+      "Title: #{title}, Author: #{author}"
+    end
   end
 end
