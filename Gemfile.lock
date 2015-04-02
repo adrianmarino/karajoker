@@ -55,6 +55,7 @@ GEM
       xpath (~> 2.0)
     childprocess (0.5.5)
       ffi (~> 1.0, >= 1.0.11)
+    chronic (0.10.2)
     clipboard (1.0.6)
     coderay (1.1.0)
     coercible (1.0.0)
@@ -230,6 +231,8 @@ GEM
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
     websocket (1.2.1)
+    whenever (0.9.4)
+      chronic (>= 0.6.3)
     xpath (2.0.0)
       nokogiri (~> 1.3)
     yard (0.8.7.6)
@@ -270,4 +273,5 @@ DEPENDENCIES
   rspec-rails (~> 3.1)
   rubocop (~> 0.28.0)
   selenium-webdriver (~> 2.44.0)
+  whenever
   youtube_it
