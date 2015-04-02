@@ -9,11 +9,6 @@ namespace :karajoker do
 
   desc "Index top 100 youtube karaokes"
   task :index_karaokes, [:top] => [:show_logs] do |task, args|
-    Karajoker::Job::KaraokeIndexer.new(top args).start
+    Karajoker::Job::KaraokeIndexer.new(args.top.to_i).start
   end
-
-  def top(args)
-    args.top.to_i unless args.top.nil?
-  end
-
 end
