@@ -5,10 +5,6 @@ module Karajoker
     describe TagResource do
       include RestTestUtils
 
-      # -------------------------------------------------------------------------
-      # Test Methods
-      # -------------------------------------------------------------------------
-
       describe "'POST'" do
         describe "add a pop tag" do
           let(:tag) { { name: 'Pop'} }
@@ -43,9 +39,6 @@ module Karajoker
         end
       end
 
-      # -------------------------------------------------------------------------
-      # Protected Methods
-      # -------------------------------------------------------------------------
       protected
 
       def url
