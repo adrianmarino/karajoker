@@ -29,10 +29,6 @@ module RestTestUtils
     expect(response.status).to eq 200
   end
 
-  # -------------------------------------------------------------------------
-  # Constants
-  # -------------------------------------------------------------------------
-
   JSON_HEADERS = {
     "Accept"        => "application/json",
     "Content-Type"  => "application/json"
