@@ -1,5 +1,4 @@
 namespace :karajoker do
-
   desc "Setup Logger"
   task setup_logger: :environment do
     Rails.logger = Karajoker::Logger.setup(Logger.new(STDOUT))

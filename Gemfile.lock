@@ -84,6 +84,9 @@ GEM
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.7)
+    fuubar (2.0.0)
+      rspec (~> 3.0)
+      ruby-progressbar (~> 1.4)
     grape (0.10.1)
       activesupport
       builder
@@ -256,6 +259,7 @@ DEPENDENCIES
   capybara (~> 2.3.0)
   coffee-rails
   factory_girl_rails (~> 4.0)
+  fuubar
   grape (= 0.10.1)
   grape-entity
   mysql2

@@ -14,4 +14,5 @@ RSpec.configure do |config|
   config.expect_with :rspec
   config.include RSpec::Rails::RequestExampleGroup, type: :request, file_path: /spec/
   config.include FactoryGirl::Syntax::Methods
+  config.fuubar_progress_bar_options = { :format => " (%B) %p%% %a " }
 end
