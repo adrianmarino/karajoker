@@ -11,7 +11,12 @@ module Karajoker::Entity
     end
 
     def self.create_from(params)
-      create(title:params[:title], youtube_id: params[:youtube_id], tags: Tag.find_by_names(params[:tags]))
+      create(
+        author: params[:author],
+        title: params[:title],
+        youtube_id: params[:youtube_id],
+        tags: Tag.find_by_names(params[:tags])
+      )
     end
 
     # -------------------------------------------------------------------------
