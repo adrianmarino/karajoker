@@ -1,4 +1,4 @@
-module Karajoker
+module Karajoker::Entity
   class Tag < ActiveRecord::Base
 
     # -------------------------------------------------------------------------

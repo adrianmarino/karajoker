@@ -1,4 +1,4 @@
-module Karajoker
+module Karajoker::Entity
   class Song
     attr_reader :title, :author
 

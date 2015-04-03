@@ -1,12 +1,12 @@
 class API < Grape::API
-    prefix 'api'
-    format :json
-    mount Karajoker::Rest::KaraokeResource
-    mount Karajoker::Rest::TagResource
+  prefix 'api'
+  format :json
+  mount Karajoker::Rest::Resource::KaraokeResource
+  mount Karajoker::Rest::Resource::TagResource
 
-    helpers do
-        def logger
-            API.logger
-        end
+  helpers do
+    def logger
+      API.logger
     end
+  end
 end
