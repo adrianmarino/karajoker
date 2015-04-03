@@ -5,49 +5,42 @@ module Karajoker::Service
     Logger = Rails.logger
 
     def call(songs)
-      karaokes = filter_news(karaokes_from(songs))
-      karaokes.each {|karaoke| create karaoke }
-      karaokes.size
+      ActiveRecord::Base.transaction do
+        count = 0
+        karaokes = songs.map do |song|
+          karaoke = search(song)
+
+          if already_exist?(karaoke)
+            Logger.info "\t- Already Indexed!"
+          else
+            create song, karaoke
+            count += 1
+          end
+        end
+      end
+      count
     end
 
     private
-    def filter_news(karaokes)
-      karaokes.reject do |karaoke|
-        if already_exist?(karaoke)
-          Logger.info "Karaoke Already Exist: #{karaoke}"
-          true
-        else
-          false
-        end
-      end
-    end
 
     def already_exist?(karaoke)
       Karaoke.exists? youtube_id: karaoke.id
     end
 
-    def karaokes_from(songs)
-      songs.map do |song|
-        karaoke = search(song).first
-        unless karaoke.nil?
-          Logger.info "Search: #{song}"
-          Logger.info "Founded: #{karaoke}"
-        end
-        karaoke
-      end
-    end
-
     def search(song)
-      KaraokeSearcher.new.search(query_from(song))
+      Logger.info "Youtube Search: #{song}"
+      karaoke = KaraokeSearcher.new.search(query_from(song)).first
+      Logger.info "\t- Founded!" unless karaoke.nil?
+      karaoke
     end
 
     def query_from(song)
       { query: "#{song.title} #{song.author}" }
     end
 
-    def create(karaoke)
-      Logger.info "Index: #{karaoke}"
-      Karaoke.create_from title: karaoke.title, youtube_id: karaoke.id
+    def create(song, karaoke)
+      Logger.info "\t- Index!"
+      Karaoke.create_from author: song.author, title: song.title, youtube_id: karaoke.id
     end
   end
 end

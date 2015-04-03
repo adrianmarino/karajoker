@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150106001945) do
+ActiveRecord::Schema.define(version: 20150403203627) do
 
   create_table "karaokes", force: true do |t|
     t.string   "title"
     t.string   "youtube_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "author"
   end
 
   add_index "karaokes", ["youtube_id"], name: "index_karaokes_on_youtube_id", unique: true, using: :btree
