@@ -7,14 +7,17 @@ module Karajoker::Service
     def call(songs)
       count = 0
       ActiveRecord::Base.transaction do
-        karaokes = songs.map do |song|
-          karaoke = search(song)
+        songs.each do |song|
+          count += 1
+          Logger.info "Youtube Search (#{count}): #{song}"
+
+          karaoke = KaraokeSearcher.new.search(query_from(song)).first
+          Logger.info "\t- Founded!" unless karaoke.nil?
 
           if already_exist?(karaoke)
             Logger.info "\t- Already Indexed!"
           else
             create song, karaoke
-            count += 1
           end
         end
       end
@@ -25,13 +28,6 @@ module Karajoker::Service
 
     def already_exist?(karaoke)
       Karaoke.exists? youtube_id: karaoke.id
-    end
-
-    def search(song)
-      Logger.info "Youtube Search: #{song}"
-      karaoke = KaraokeSearcher.new.search(query_from(song)).first
-      Logger.info "\t- Founded!" unless karaoke.nil?
-      karaoke
     end
 
     def query_from(song)
