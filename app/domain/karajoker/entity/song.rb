@@ -8,7 +8,7 @@ module Karajoker::Entity
     end
 
     def to_s
-      "Title: #{title}, Author: #{author}"
+      "{'title': '#{title}', 'author': '#{author}'}"
     end
   end
 end

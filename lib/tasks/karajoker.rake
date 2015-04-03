@@ -4,6 +4,11 @@ namespace :karajoker do
   task show_logs: :environment do
     logger = Logger.new(STDOUT)
     logger.level = Logger::INFO
+
+    logger.formatter = proc do |severity, datetime, progname, message|
+      date_format = datetime.strftime("%Y-%m-%d %H:%M:%S:%L")
+      "#{date_format} #{severity}: #{message}\n"
+    end
     Rails.logger = logger
   end
 
