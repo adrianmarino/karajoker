@@ -1,6 +1,8 @@
 module Karajoker::Service
   class KaraokeCreate
     KaraokeSearcher = Karajoker::Youtube::KaraokeSearcher
+    Karaoke = Karajoker::Entity::Karaoke
+    Logger = Rails.logger
 
     def call(songs)
       karaokes = filter_news(karaokes_from(songs))
@@ -12,7 +14,7 @@ module Karajoker::Service
     def filter_news(karaokes)
       karaokes.reject do |karaoke|
         if already_exist?(karaoke)
-          Rails.logger.info "Karaoke Already Exist! (#{karaoke})"
+          Logger.info "Karaoke Already Exist! (#{karaoke})"
           true
         else
           false
@@ -27,7 +29,7 @@ module Karajoker::Service
     def karaokes_from(songs)
       songs.map do |song|
         karaoke = search(song).first
-        Rails.logger.info "Search: #{song}, Founded: '#{karaoke}'" unless karaoke.nil?
+        Logger.info "Search: #{song}, Founded: '#{karaoke}'" unless karaoke.nil?
         karaoke
       end
     end
@@ -41,7 +43,7 @@ module Karajoker::Service
     end
 
     def create(karaoke)
-      Rails.logger.info "Index: '#{karaoke}'"
+      Logger.info "Index: '#{karaoke}'"
       Karaoke.create_from title: karaoke.title, youtube_id: karaoke.id
     end
   end
