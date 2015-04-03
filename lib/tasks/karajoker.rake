@@ -1,7 +1,7 @@
 namespace :karajoker do
 
-  desc "Show Logs"
-  task show_logs: :environment do
+  desc "Setup Logger"
+  task setup_logger: :environment do
     logger = Logger.new(STDOUT)
     logger.level = Logger::INFO
 
@@ -12,8 +12,8 @@ namespace :karajoker do
     Rails.logger = logger
   end
 
-  desc "Index top 100 youtube karaokes"
-  task :index_karaokes, [:top] => [:show_logs] do |task, args|
+  desc "Index new karaokes using BillboardSongHotCharts"
+  task :index_karaokes, [:top] => [:setup_logger] do |task, args|
     Karajoker::Job::KaraokeIndexer.new(args.top.to_i).start
   end
 end
