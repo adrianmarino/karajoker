@@ -5,8 +5,8 @@ module Karajoker::Service
     Logger = Rails.logger
 
     def call(songs)
+      count = 0
       ActiveRecord::Base.transaction do
-        count = 0
         karaokes = songs.map do |song|
           karaoke = search(song)
 
