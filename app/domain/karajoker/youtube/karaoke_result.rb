@@ -6,6 +6,10 @@ module Karajoker::Youtube
       "{'id': #{id}, title': '#{title}', 'author': '#{author}'}"
     end
 
+    def karaoke?
+      title.downcase.include? 'karaoke'
+    end
+
     def title
       @video.title
     end

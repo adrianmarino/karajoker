@@ -8,16 +8,21 @@ module Karajoker::Service
       count = 0
       ActiveRecord::Base.transaction do
         songs.each do |song|
-          count += 1
-          Logger.info "Youtube Search (#{count}): #{song}"
+          Logger.info "Youtube Search: #{song}"
 
           karaoke = KaraokeSearcher.new.search(query_from(song)).first
-          Logger.info "\t- Founded!" unless karaoke.nil?
+          Logger.info "\t- Video Founded!" unless karaoke.nil?
 
-          if already_exist?(karaoke)
-            Logger.info "\t- Already Indexed!"
+          if karaoke.karaoke?
+            Logger.info "\t- Video is a karaoke!"
+            if already_exist?(karaoke)
+              Logger.info "\t- Already Indexed!"
+            else
+              create song, karaoke
+              count += 1
+            end
           else
-            create song, karaoke
+            Logger.info "\t- Video not is a karaoke!"
           end
         end
       end
