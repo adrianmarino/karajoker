@@ -15,10 +15,3 @@ if Rails.env.test? || Rails.env.development?
   task default: [:rubocop, :test]
   task default: [:test]
 end
-
-namespace :karajoker do
-  desc "Create a new schema on MySQL DB"
-  task :setup_mysql do
-  	`mysql -u root -p < db/setup_mysql.sql`
-  end
-end

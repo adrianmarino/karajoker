@@ -8,14 +8,15 @@ $ sudo apt-get install libmysqlclient-dev
 ```
 2. Run:
 ```
-$ bundle 
+$ bundle install
 ```
 
 ===  Setup MySQL DB
 
 Run: 
 ```
-$ rake karajoker:setup_mysql
+$ rake mysql:create_schema
+$ rake mysql:start
 ```
 This tash create dev, test and prd schemas on local MySQL DB.
 
