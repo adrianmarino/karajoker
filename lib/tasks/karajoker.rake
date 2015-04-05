@@ -1,7 +1,7 @@
 namespace :karajoker do
   desc "Setup Logger"
   task setup_logger: :environment do
-    Rails.logger = Karajoker::Logger.setup(Logger.new(STDOUT))
+    Rails.logger = Karajoker::LoggerConfig.setup(Logger.new(STDOUT))
   end
 
   desc "Index new karaokes using BillboardSongHotCharts"

@@ -1,6 +1,7 @@
 module Karajoker::Job
   class KaraokeIndexer
     include Base
+    include Karajoker::Logger
 
     def run
       log_new_karaokes(@service.call(songs))
@@ -13,7 +14,7 @@ module Karajoker::Job
     end
 
     def log_new_karaokes(count)
-      Logger.info "#{count} new karaokes!"
+      logger.info "#{count} new karaokes!"
     end
 
     def setup_top(top)
@@ -22,7 +23,7 @@ module Karajoker::Job
       else
         @top = top
       end
-      Logger.info "Top: #{@top}"
+      logger.info "Top: #{@top}"
     end
 
     def initialize(top)
