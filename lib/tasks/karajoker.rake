@@ -5,7 +5,9 @@ namespace :karajoker do
   end
 
   desc "Index new karaokes using BillboardSongHotCharts"
-  task :index_karaokes, [:top] => [:setup_logger] do |task, args|
-    Karajoker::Job::KaraokeIndexer.new(args.top.to_i).start
+  task :index_karaokes, [:top, :years] => [:setup_logger] do |task, args|
+    top = args.top.to_i unless args.top.nil?
+    years = Karajoker::RangeUtils.from(args.years) unless args.years.nil?
+    Karajoker::Job::KaraokeIndexer.new(top, years).start
   end
 end

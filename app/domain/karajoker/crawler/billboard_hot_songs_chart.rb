@@ -1,16 +1,18 @@
 require'nokogiri'
 
 module Karajoker::Crawler
-  class BillboardSongHotCharts
+  class BillboardHotSongsChart
     Song = Karajoker::Entity::Song
+    DateUtils = Karajoker::DateUtils
 
-    def songs(filters)
+    def songs(top: 100)
+      top = 100 if top.nil?
       songs = items.inject([]) { |a, e| a << new_song(e) }
-      songs.take(filters[:top])
+      songs.take(top)
     end
 
-    def initialize
-      @page = Nokogiri::HTML(open(URL))
+    def initialize(year = DateUtils.current_year)
+      @page = Nokogiri::HTML(open(url(year)))
     end
 
     private
@@ -31,7 +33,13 @@ module Karajoker::Crawler
       Song.new(title(item), author(item))
     end
 
-    URL = "http://www.billboard.com/charts/hot-100"
-
+    def url(year)
+      base = "http://www.billboard.com/charts"
+      if DateUtils.current_year == year.to_s
+        "#{base}/hot-100"
+      else
+        "#{base}/year-end/#{year}/hot-100-songs"
+      end
+    end
   end
 end

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module Karajoker::Crawler
-  describe BillboardSongHotCharts do
+  describe BillboardHotSongsChart do
     context "#songs" do
       context "when found 2015 top song" do
         it "has author" do
@@ -13,7 +13,7 @@ module Karajoker::Crawler
         end
 
         it "has results with correct title and author fields" do
-          subject.songs(top: 1).zip(search 1) do |result, expected|
+          subject.songs(top: 1).zip(songs 1) do |result, expected|
             expect(result.title).to eq expected.title
             expect(result.author).to eq expected.author
           end
@@ -21,7 +21,7 @@ module Karajoker::Crawler
       end
     end
 
-    def search(top)
+    def songs(top)
       counter = 0
       (page.css('div[class=row-title]').inject([]) do | songs, an_item |
          title = an_item.children.css('h2').children.to_s.strip
