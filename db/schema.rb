@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405233625) do
+ActiveRecord::Schema.define(version: 20150406021507) do
 
   create_table "karaokes", force: true do |t|
     t.string   "title"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150405233625) do
     t.integer  "year"
   end
 
+  add_index "karaokes", ["title", "author"], name: "karaoke_title_author", type: :fulltext
   add_index "karaokes", ["youtube_id"], name: "index_karaokes_on_youtube_id", unique: true, using: :btree
 
   create_table "karaokes_tags", id: false, force: true do |t|

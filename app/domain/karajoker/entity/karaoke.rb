@@ -6,7 +6,15 @@ module Karajoker::Entity
     # -------------------------------------------------------------------------
 
     def self.search(a_query)
-      self.includes(:tags).where("title LIKE ? ", "%#{a_query}%").order(year: :desc)
+      select(
+        'karaokes.*',
+        "MATCH(title, author) AGAINST ('#{a_query}'  IN NATURAL LANGUAGE MODE) AS score"
+      ).includes(
+        :tags
+      ).where(
+        "MATCH(title, author) AGAINST (? IN NATURAL LANGUAGE MODE)",
+        "#{a_query}"
+      ).order("score DESC")
     end
 
     def self.create_from(params)
