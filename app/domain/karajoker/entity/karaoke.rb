@@ -6,12 +6,12 @@ module Karajoker::Entity
     # -------------------------------------------------------------------------
 
     def self.search(a_query)
-      # raise 'Aan example error!'
-      self.includes(:tags).where("title LIKE ? ", "%#{a_query}%")
+      self.includes(:tags).where("title LIKE ? ", "%#{a_query}%").order(year: :desc)
     end
 
     def self.create_from(params)
       create(
+        year: params[:year],
         author: params[:author],
         title: params[:title],
         youtube_id: params[:youtube_id],

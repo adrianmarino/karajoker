@@ -14,6 +14,7 @@
   <div class="video" data-ng-repeat="result in results">
     <p class="video-title">{{ result.title }}</p>
     <p class="video-author">{{ result.author }}</p>
+    <p class="video-author">{{ result.year }}</p>
     <b class="video-description" data-ng-repeat="tag in result.tags">{{tag.name}}{{$last ? '' : ', '}}</b>
   </div>
 </div>
@@ -22,5 +23,5 @@
 <div id="playlist"></div>
 
 <footer>
-  <em>NONOSofT S.A.</em>
+  <em>NONOSofT s.a.</em>
 </footer>
