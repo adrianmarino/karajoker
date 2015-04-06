@@ -37,7 +37,7 @@ module Karajoker::Service
           logger.info "\t- Karaoke already indexed!"
         else
           logger.info "\t- Index Karaoke!"
-          Karaoke.create_from author: song.author, title: song.title, youtube_id: karaoke.id
+          Karaoke.create_from year: song.year, author: song.author, title: song.title, youtube_id: karaoke.id
           create_counter += 1
         end
       end

@@ -12,7 +12,8 @@ module Karajoker::Crawler
     end
 
     def initialize(year = DateUtils.current_year)
-      @page = Nokogiri::HTML(open(url(year)))
+      @year = year
+      @page = Nokogiri::HTML(open(url(@year)))
     end
 
     private
@@ -30,7 +31,7 @@ module Karajoker::Crawler
     end
 
     def new_song(item)
-      Song.new(title(item), author(item))
+      Song.new(@year, title(item), author(item))
     end
 
     def url(year)

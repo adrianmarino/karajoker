@@ -1,14 +1,15 @@
 module Karajoker::Entity
   class Song
-    attr_reader :title, :author
+    attr_reader :year, :title, :author
 
-    def initialize(title, author)
+    def initialize(year, title, author)
+      @year = year
       @title = title
       @author = author
     end
 
     def to_s
-      "{'title': '#{title}', 'author': '#{author}'}"
+      "{'year': #{year}, 'title': '#{title}', 'author': '#{author}'}"
     end
   end
 end
