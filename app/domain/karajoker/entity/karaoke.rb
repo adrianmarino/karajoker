@@ -8,12 +8,12 @@ module Karajoker::Entity
     def self.search(a_query)
       select(
         'karaokes.*',
-        "MATCH(title, author) AGAINST ('#{a_query}'  IN NATURAL LANGUAGE MODE) AS score"
+        "MATCH(title, author) AGAINST ('#{a_query}*' IN BOOLEAN MODE) AS score"
       ).includes(
         :tags
       ).where(
-        "MATCH(title, author) AGAINST (? IN NATURAL LANGUAGE MODE)",
-        "#{a_query}"
+        "MATCH(title, author) AGAINST (? IN BOOLEAN MODE) > 0.001",
+        "#{a_query}*"
       ).order("score DESC")
     end
 
