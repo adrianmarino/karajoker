@@ -34,8 +34,10 @@ module Karajoker::Rest::Resource
     end
 
     describe "'GET'" do
-      let!(:videos) { [create(:karaoke, :hello_1), create(:karaoke, :hello_2)] }
-      before        { videos }
+      before do
+        create :karaoke, :hello_1
+        create :karaoke, :hello_2
+      end
 
       describe "when list all karaokes" do
         it "respond http 200" do
@@ -45,21 +47,28 @@ module Karajoker::Rest::Resource
 
         it "get karaokes" do
           http_get
-          results = response_boby
-          expect(results.first.title).to eq videos.first.title
-          expect(results.second.title).to eq videos.second.title
+          compare response_boby, Karaoke.all
         end
       end
 
       describe "when find karaoke hello_1" do
+        self.use_transactional_fixtures = false
+
+        after { Karaoke.delete_all }
+
         it "respond http 200" do
-          http_get "/search/#{videos.first.title}"
+          http_get "/search/#{Karaoke.first.title}"
           expect_200_http
         end
 
-        it "karaoke found" do
-          http_get "/search/#{videos.first.title}"
-          expect(response_boby.first.title).to eq videos.first.title
+        it "fond karaoke" do
+          http_get "/search/#{Karaoke.first.title}"
+          expect(response_boby).to_not be_empty
+        end
+
+        it "found karaoke with data" do
+          http_get "/search/#{Karaoke.first.title}"
+          compare response_boby, [Karaoke.first]
         end
       end
     end
@@ -84,6 +93,19 @@ module Karajoker::Rest::Resource
 
     def url
       :karaokes
+    end
+
+    private
+
+    def compare(results, karaokes)
+      results.zip(karaokes).each do |item|
+        result = item.first
+        karaoke = item.second
+        expect(result.title).to eq(karaoke.title)
+        expect(result.author).to eq(karaoke.author)
+        expect(result.year).to eq(karaoke.year)
+        expect(result.id).to eq(karaoke.youtube_id)
+      end
     end
 
   end

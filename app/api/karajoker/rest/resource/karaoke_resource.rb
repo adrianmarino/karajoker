@@ -14,7 +14,7 @@ module Karajoker::Rest::Resource
       post { Karaoke.create_from params }
 
       desc 'Get all karaokes'
-      get { Karaoke.all }
+      get { present Karaoke.all, with: KaraokeDetail }
 
       desc 'Find karaokes'
       params { requires :query, type: String, desc: 'A query' }

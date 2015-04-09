@@ -4,7 +4,7 @@ module Karajoker::Service
     Karaoke = Karajoker::Entity::Karaoke
 
     describe "#call" do
-      let(:song) { Song.new("Through Her Eyes", "Dream theater") }
+      let(:song) { Song.new(2005, "Through Her Eyes", "Dream theater") }
 
       it "index new video" do
         expect { subject.call([song]) }.to change(Karaoke, :count).by(1)
