@@ -3,6 +3,8 @@
 //= require angular-rails-templates
 
 //= require front/app
+//= require front/config
+//= require_tree ./front/directive
 //= require_tree ./front/services
 //= require_tree ./front/controllers
 //= require front/routes
