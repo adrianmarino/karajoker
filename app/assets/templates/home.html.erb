@@ -1,23 +1,37 @@
-<header>
-  <h1>Kara<strong>Joker</strong></h1>
-  <form id="search" data-ng-submit="search()">
-    <input id="query" name="q" type="text" placeholder="Search for a karaoke video" data-ng-model="query">
-    <input id="submit" type="image" src="/images/search.png" alt="Search">
-  </form>
-</header>
+<div data-ng-controller="home" data-ng-init="init()"></div>
+<div>
+  <header>
+    <h1>Kara<strong>Joker</strong></h1>
+    <form id="search" data-ng-submit="search()">
+      <input  id="query" name="q" type="text" 
+              placeholder="Search for a karaoke video" data-ng-model="query"
+              autofocus="autofocus" >
+      <input id="submit" type="image" src="/images/search.png" alt="Search">
+    </form>
+    <nav>
+      <p>{{player.playerStatus}}</p>
+    </nav>
+  </header>
 
-<div id="results">
-  <div class="video" data-ng-repeat="result in results">
-    <p class="video-title">{{ result.title }}</p>
-    <p class="video-author">{{ result.author }}</p>
-    <p class="video-author">{{ result.year }}</p>
-    <b class="video-description" data-ng-repeat="tag in result.tags">{{tag.name}}{{$last ? '' : ', '}}</b>
+  <div id="results">
+    <div class="video" data-ng-repeat="result in results" data-ng-click="play(result.id)">
+      <p class="video-title">{{ result.title }}</p>
+      <p class="video-author">{{ result.author }}</p>
+      <p class="video-author">{{ result.year }}</p>
+      <b class="video-description" data-ng-repeat="tag in result.tags">{{tag.name}}{{$last ? '' : ', '}}</b>
+    </div>
   </div>
+
+  <div id="player">
+    <youtube width="{{player.width}}" height="{{player.height}}" videoid="{{player.videoid}}" />
+    <div id="placeholder"></div>
+  </div>
+
+  <div id="playlist">
+
+  </div>
+
+  <footer>
+    <em>NONOSofT s.a.</em>
+  </footer>
 </div>
-
-<div id="player"><div id="placeholder"></div></div>
-<div id="playlist"></div>
-
-<footer>
-  <em>NONOSofT s.a.</em>
-</footer>
