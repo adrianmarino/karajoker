@@ -7,10 +7,13 @@
       else
         $scope.results = [{"title": "Not found karaokes!"}]
 
-  $scope.play = (id)-> $scope.player.videoid = id
+  $scope.play = (id)-> 
+    $scope.show_player()
+    $scope.player.videoid = id
 
   $scope.$on PlayerEvent.STATUS_CHANGE, (event, data)-> $scope.player.playerStatus = data
 
   $scope.init = ->
     $scope.player = { width: 640, height: 480, videoid: "", playerStatus: "" }
     $scope.PlayerEvent = PlayerEvent
+  $scope.show_player = ->  document.getElementById('video_player').style.display = 'block'

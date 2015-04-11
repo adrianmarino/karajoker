@@ -258,3 +258,7 @@ footer a:hover {
 :-ms-input-placeholder {
 	color: #df1f1f;
 }
+
+#video_player {
+	display: none;
+}
