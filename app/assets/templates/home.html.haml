@@ -1,0 +1,32 @@
+%div{ "data-ng-controller" => "home", "data-ng-init" => "init()"}
+
+%nav.navbar.navbar-fixed-top{ "style" => "background: #df1f1f; color: white;" }
+  .container
+    .navbar-header
+      %a.navbar-brand{"href"=>"#"}
+        Kara 
+        %strong Joker
+    .navbar-collapse.collapse#navbar
+      %form.navbar-form.navbar-right{"id"=>"search", "data-ng-submit"=>"search()"}
+        .form-group
+          %input.form-control#query{"name"=>"q", "type"=>"text", "placeholder"=>"Search for a karaoke video", "data-ng-model"=>"query", "autofocus"=>"autofocus" }
+        %input.btn.btn-success#submit{"type"=>"image", "src"=>"/images/search.png", "alt"=>"Search"}
+
+.container.main-container
+  .row
+    .col-md-4
+      .list-group
+        %a.list-group-item{ "data-ng-repeat"=>"result in results", "data-ng-click"=>"play(result.id)"}
+          %h4.list-group-item-heading {{ result.title }}
+          %p.video-author {{ result.author }}
+          %p.video-author {{ result.year }}
+          %b.video-description{ "data-ng-repeat"=>"tag in result.tags"} {{tag.name}}{{$last ? '' : ', '}}
+    .col-md-4
+      %youtube#video_player{ "width"=>"{{player.width}}", "height"=>"{{player.height}}", "videoid"=>"{{player.videoid}}"}
+      %p {{player.playerStatus}}
+  
+  %hr
+
+  %footer
+    %em NONOSofT s.a.
+
