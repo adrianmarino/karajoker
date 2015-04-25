@@ -1,12 +1,12 @@
 @import "bootstrap-sprockets";
 
 // Import theme variables
-@import "bootswatch/darkly/variables";
+@import "bootswatch/cyborg/variables";
 
 @import "bootstrap";
 
 // And finally bootswatch style itself
-@import "bootswatch/darkly/bootswatch";
+@import "bootswatch/cyborg/bootswatch";
 
 
 #video_player {
