@@ -16,10 +16,12 @@
 .container.search-bar-container
   .row
     %form#search{ "data-ng-submit"=>"search()" }
-      .form-group
-        .icon-addon.addon-lg
-          %input#query.form-control{ "type"=>"text", "placeholder"=>"Search for a karaoke video", "name"=>"q", "data-ng-model"=>"query", "autofocus"=>"autofocus" }
-          %label.glyphicon.glyphicon-search{ "for"=>"query", "rel"=>"tooltip", "title"=>"search"}
+      .input-group
+        %input#query.form-control{ "type"=>"text", "placeholder"=>"Search for a karaoke video", "name"=>"q", "data-ng-model"=>"query", "autofocus"=>"autofocus" }
+        %span.input-group-btn
+          %button.btn.btn-default
+            %span.glyphicon.glyphicon-search
+
 
 .container.main-container
   .row
