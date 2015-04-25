@@ -32,8 +32,7 @@
           %b.video-description{ "data-ng-repeat"=>"tag in result.tags"} {{tag.name}}{{$last ? '' : ', '}}
     .col-md-4
       %youtube#video_player{ "width"=>"{{player.width}}", "height"=>"{{player.height}}", "videoid"=>"{{player.videoid}}" }
-      %p {{player.playerStatus}}
-  
+      %p.text-right {{player.playerStatus}}
   %hr
 
   %footer.text-right

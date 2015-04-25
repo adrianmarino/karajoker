@@ -1,13 +1,17 @@
 @import "bootstrap-sprockets";
 
-// Import cerulean variables
-@import "bootswatch/united/variables";
+// Import theme variables
+@import "bootswatch/darkly/variables";
 
 @import "bootstrap";
 
 // And finally bootswatch style itself
-@import "bootswatch/united/bootswatch";
+@import "bootswatch/darkly/bootswatch";
 
+
+#video_player {
+  display: none;
+}
 
 .search-bar-container {
   margin-top: 0px;
