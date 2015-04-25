@@ -1,20 +1,29 @@
 %div{ "data-ng-controller" => "home", "data-ng-init" => "init()"}
 
-%nav.navbar.navbar-fixed-top{ "style" => "background: #df1f1f; color: white;" }
+%nav.navbar.navbar-inverse.navbar-static-top
   .container
     .navbar-header
-      %a.navbar-brand{"href"=>"#"}
-        Kara 
+      %button.navbar-toggle.collapsed{ "data-toggle"=>"collapse", "data-target"=>"#navbar", "aria-expanded"=>"false", "aria-controls"=>"navbar"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand
+        Kara
         %strong Joker
-    .navbar-collapse.collapse#navbar
-      %form.navbar-form.navbar-right{"id"=>"search", "data-ng-submit"=>"search()"}
-        .form-group
-          %input.form-control#query{"name"=>"q", "type"=>"text", "placeholder"=>"Search for a karaoke video", "data-ng-model"=>"query", "autofocus"=>"autofocus" }
-        %input.btn.btn-success#submit{"type"=>"image", "src"=>"/images/search.png", "alt"=>"Search"}
+    #navbar.navbar-collapse.collapse
+
+.container.search-bar-container
+  .row
+    %form#search{ "data-ng-submit"=>"search()" }
+      .form-group
+        .icon-addon.addon-lg
+          %input#query.form-control{ "type"=>"text", "placeholder"=>"Search for a karaoke video", "name"=>"q", "data-ng-model"=>"query", "autofocus"=>"autofocus" }
+          %label.glyphicon.glyphicon-search{ "for"=>"query", "rel"=>"tooltip", "title"=>"search"}
 
 .container.main-container
   .row
-    .col-md-4
+    .col-md-5
       .list-group
         %a.list-group-item{ "data-ng-repeat"=>"result in results", "data-ng-click"=>"play(result.id)"}
           %h4.list-group-item-heading {{ result.title }}
@@ -22,11 +31,10 @@
           %p.video-author {{ result.year }}
           %b.video-description{ "data-ng-repeat"=>"tag in result.tags"} {{tag.name}}{{$last ? '' : ', '}}
     .col-md-4
-      %youtube#video_player{ "width"=>"{{player.width}}", "height"=>"{{player.height}}", "videoid"=>"{{player.videoid}}"}
+      %youtube#video_player{ "width"=>"{{player.width}}", "height"=>"{{player.height}}", "videoid"=>"{{player.videoid}}" }
       %p {{player.playerStatus}}
   
   %hr
 
-  %footer
+  %footer.text-right
     %em NONOSofT s.a.
-
