@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass', '~> 3.3.4'
+gem 'sass-rails', '>= 3.2'
+gem 'jquery-rails'
+
 gem 'rails', '4.1.8'
 gem 'grape', '0.10.1'
 gem 'grape-entity'

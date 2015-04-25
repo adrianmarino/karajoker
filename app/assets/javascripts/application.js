@@ -1,3 +1,6 @@
+//= require jquery
+//= require bootstrap-sprockets
+
 //= require angular
 //= require angular-route
 //= require angular-rails-templates
