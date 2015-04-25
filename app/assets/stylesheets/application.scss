@@ -1,9 +1,13 @@
 @import "bootstrap-sprockets";
+
+// Import cerulean variables
+@import "bootswatch/united/variables";
+
 @import "bootstrap";
 
-body {
-  background-color: #eee;
-}
+// And finally bootswatch style itself
+@import "bootswatch/united/bootswatch";
+
 
 .search-bar-container {
   margin-top: 0px;

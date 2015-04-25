@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'bootswatch-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '>= 3.2'
 gem 'jquery-rails', '>=3.1.2'
