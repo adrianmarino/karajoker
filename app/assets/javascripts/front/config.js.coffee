@@ -4,7 +4,7 @@ app.config ($locationProvider) ->
 app.constant 'PlayerConfig', {  
   autoplay: 1,
   html5: 1,
-  theme: "dark",
+  theme: "light",
   color: "white",
   iv_load_policy: 3,
   showinfo: 0, 

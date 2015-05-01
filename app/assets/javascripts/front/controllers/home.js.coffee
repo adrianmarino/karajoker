@@ -6,6 +6,7 @@
         $scope.results = response
       else
         $scope.results = [{"title": "Not found karaokes!"}]
+      document.getElementById('results').style.display = 'block'
 
   $scope.play = (id)-> 
     $scope.show_player()
@@ -14,6 +15,7 @@
   $scope.$on PlayerEvent.STATUS_CHANGE, (event, data)-> $scope.player.playerStatus = data
 
   $scope.init = ->
-    $scope.player = { width: 640, height: 480, videoid: "", playerStatus: "" }
+    $scope.player = { width: 620, height: 480, videoid: "", playerStatus: "" }
     $scope.PlayerEvent = PlayerEvent
-  $scope.show_player = ->  document.getElementById('video_player').style.display = 'block'
+  $scope.show_player = -> 
+    document.getElementById('video_panel').style.display = 'block'

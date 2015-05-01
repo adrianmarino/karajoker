@@ -1,40 +1,46 @@
-%div{ "data-ng-controller" => "home", "data-ng-init" => "init()"}
+%div(data-ng-controller="home" data-ng-init="init()")
 
-%nav.navbar.navbar-static-top
+%nav.navbar.navbar-default.navbar-static-top
   .container
     .navbar-header
-      %button.navbar-toggle.collapsed{ "data-toggle"=>"collapse", "data-target"=>"#navbar", "aria-expanded"=>"false", "aria-controls"=>"navbar"}
+      %button.navbar-toggle.collapsed(data-toggle="collapse" 
+        data-target="#navbar" aria-expanded="false" aria-controls="navbar")
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
       %a.navbar-brand
-        Kara
-        %strong Joker
+        %strong Kara
+        Joker
     #navbar.navbar-collapse.collapse
 
 .container.search-bar-container
   .row
-    %form#search{ "data-ng-submit"=>"search()" }
+    %form#search(data-ng-submit="search()")
       .input-group
-        %input#query.form-control{ "type"=>"text", "placeholder"=>"Search for a karaoke video", "name"=>"q", "data-ng-model"=>"query", "autofocus"=>"autofocus" }
+        %input#query.form-control(type="text" placeholder="Search for a karaoke video"
+          name="q" data-ng-model="query" autofocus="autofocus")
         %span.input-group-btn
           %button.btn.btn-default
             %span.glyphicon.glyphicon-search
 
-
 .container.main-container
   .row
+    .col-md-7
+      #video_panel.panel.panel-default
+        .panel-body
+          %youtube(width="{{player.width}}" height="{{player.height}}" videoid="{{player.videoid}}")
+        .panel-footer.text-right {{player.playerStatus}}
     .col-md-5
-      .list-group
-        %a.list-group-item{ "data-ng-repeat"=>"result in results", "data-ng-click"=>"play(result.id)"}
-          %h4.list-group-item-heading {{ result.title }}
-          %p.video-author {{ result.author }}
-          %p.video-author {{ result.year }}
-          %b.video-description{ "data-ng-repeat"=>"tag in result.tags"} {{tag.name}}{{$last ? '' : ', '}}
-    .col-md-4
-      %youtube#video_player{ "width"=>"{{player.width}}", "height"=>"{{player.height}}", "videoid"=>"{{player.videoid}}" }
-      %p.text-right {{player.playerStatus}}
+      #results.panel.panel-default
+        .panel-heading Results
+        .panel-body
+          .list-group
+            %a.list-group-item(data-ng-repeat="result in results" data-ng-click="play(result.id)")
+              %h6.list-group-item-heading {{ result.title }}
+              %p.video-author {{ result.author }}
+              %p.video-author {{ result.year }}
+              %b.video-description(data-ng-repeat="tag in result.tags") {{tag.name}}{{$last ? '' : ', '}}
 
   / %hr
 

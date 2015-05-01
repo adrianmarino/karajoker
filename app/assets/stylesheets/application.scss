@@ -1,15 +1,18 @@
 @import "bootstrap-sprockets";
 
 // Import theme variables
-@import "bootswatch/cyborg/variables";
+@import "bootswatch/united/variables";
 
 @import "bootstrap";
 
 // And finally bootswatch style itself
-@import "bootswatch/cyborg/bootswatch";
+@import "bootswatch/united/bootswatch";
 
+#results {
+  display: none;
+}
 
-#video_player {
+#video_panel {
   display: none;
 }
 
