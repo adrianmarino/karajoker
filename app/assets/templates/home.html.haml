@@ -29,7 +29,7 @@
     .col-md-7
       #video_panel.panel.panel-default
         .panel-body
-          %youtube(width="{{player.width}}" height="{{player.height}}" videoid="{{player.videoid}}")
+          %youtube.embed-responsive.embed-responsive-4by3(width="{{player.width}}" height="{{player.height}}" videoid="{{player.videoid}}")
         .panel-footer.text-right {{player.playerStatus}}
     .col-md-5
       #results.panel.panel-default
