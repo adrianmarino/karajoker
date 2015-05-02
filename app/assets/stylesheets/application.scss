@@ -8,6 +8,11 @@
 // And finally bootswatch style itself
 @import "bootswatch/united/bootswatch";
 
+.video-thumbnail {
+  margin-top: -5px;
+  margin-right: -9px;
+}
+
 #results {
   display: none;
 }

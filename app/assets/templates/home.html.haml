@@ -3,7 +3,7 @@
 %nav.navbar.navbar-default.navbar-static-top
   .container
     .navbar-header
-      %button.navbar-toggle.collapsed(data-toggle="collapse" 
+      %button.navbar-toggle.collapsed(data-toggle="collapse"
         data-target="#navbar" aria-expanded="false" aria-controls="navbar")
         %span.sr-only Toggle navigation
         %span.icon-bar
@@ -37,12 +37,13 @@
         .panel-body
           .list-group
             %a.list-group-item(data-ng-repeat="result in results" data-ng-click="play(result.id)")
-              %h6.list-group-item-heading {{ result.title }}
+              %img.pull-right.video-thumbnail.img-rounded(src="http://img.youtube.com/vi/{{ result.id }}/1.jpg")
+              %h5.list-group-item-heading
+                %strong {{ result.title }}
               %p.video-author {{ result.author }}
               %p.video-author {{ result.year }}
               %b.video-description(data-ng-repeat="tag in result.tags") {{tag.name}}{{$last ? '' : ', '}}
 
-  / %hr
-
-  / %footer.text-right
-  /   %em NONOSofT s.a.
+  %footer.navbar-fixed-bottom
+    .container
+      %p.text-muted.pull-right NONOSofT
