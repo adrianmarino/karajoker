@@ -8,7 +8,7 @@
         $scope.results = [{"title": "Not found karaokes!"}]
       document.getElementById('results').style.display = 'block'
 
-  $scope.play = (id)-> 
+  $scope.play = (id)->
     $scope.show_player()
     $scope.player.videoid = id
 
@@ -17,5 +17,5 @@
   $scope.init = ->
     $scope.player = { width: 620, height: 480, videoid: "", playerStatus: "" }
     $scope.PlayerEvent = PlayerEvent
-  $scope.show_player = -> 
+  $scope.show_player = ->
     document.getElementById('video_panel').style.display = 'block'
