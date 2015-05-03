@@ -14,8 +14,8 @@
         Joker
     #navbar.navbar-collapse.collapse
 
-.container.search-bar-container
-  .row
+.container-fluid.container-margin
+  .row.search-bar-container
     %form#search(data-ng-submit="search()")
       .input-group
         %input#query.form-control(type="text" placeholder="Search for a karaoke video"
@@ -23,8 +23,6 @@
         %span.input-group-btn
           %button.btn.btn-default
             %span.glyphicon.glyphicon-search
-
-.container.main-container
   .row
     .col-md-7
       #video_panel.panel.panel-default
@@ -37,13 +35,17 @@
         .panel-body
           .list-group
             %a.list-group-item(data-ng-repeat="result in results" data-ng-click="play(result.id)")
-              %img.pull-right.video-thumbnail.img-rounded(src="http://img.youtube.com/vi/{{ result.id }}/1.jpg")
-              %h5.list-group-item-heading
-                %strong {{ result.title }}
-              %p.video-author {{ result.author }}
-              %p.video-author {{ result.year }}
-              %b.video-description(data-ng-repeat="tag in result.tags") {{tag.name}}{{$last ? '' : ', '}}
+              .container-fluid
+                .row
+                  .col-xs-7.col-sm-9.col-md-7.result-item-desc-col.text-left
+                    %h5.list-group-item-heading
+                      %strong {{ result.title }}
+                    %p {{ result.author }}
+                    %p {{ result.year }}
+                    %b(data-ng-repeat="tag in result.tags") {{tag.name}}{{$last ? '' : ', '}}
+                  .col-xs-5.col-sm-3.col-md-5.result-item-thumbnail-col.text-right
+                    %img.result-item-thumbnail.img-rounded(src="http://img.youtube.com/vi/{{ result.id }}/1.jpg")
 
   %footer.navbar-fixed-bottom
-    .container
+    .container-fluid.container-margin
       %p.text-muted NONOSofT
