@@ -14,7 +14,7 @@
         Joker
     #navbar.navbar-collapse.collapse
 
-.container-fluid.container-margin
+.container-fluid
   .row.search-bar-container
     %form#search(data-ng-submit="search()")
       .input-group
@@ -47,5 +47,6 @@
                     %img.result-item-thumbnail.img-rounded(src="http://img.youtube.com/vi/{{ result.id }}/1.jpg")
 
   %footer.navbar-fixed-bottom
-    .container-fluid.container-margin
-      %p.text-muted NONOSofT
+    .container-fluid
+      %p.text-muted
+        %a(href="http://nonosoft.com.ar") NONOSofT
