@@ -8,15 +8,20 @@
 // And finally bootswatch style itself
 @import "bootswatch/united/bootswatch";
 
-body {
-  min-width:493px;
+@media(min-width:500px) {
+	.search-text {
+	  min-width: 500px;
+	}
 }
 
-.search-bar-container {
-  margin-top: 0px;
-  margin-bottom: 20px;
-  margin-left: 0px;
-  margin-right: 0px;
+.main-container {
+  min-width:500px;
+  width: auto !important;
+  width:500px;
+}
+
+.search-text {
+  font-size: 16px;
 }
 
 .video-body {
