@@ -6,8 +6,8 @@ module Karajoker::Job
     def run
       @years.to_a.inject(Set.new) do |songs, year|
         logger.info "Year: #{year}"
-        news = @service.call(songs(year, @top))
-        logger.info "#{news} new karaokes for #{year} year!"
+        response = @service.call(songs(year, @top))
+        logger.info "#{response.count} new karaokes for #{year} year!"
       end
     end
 

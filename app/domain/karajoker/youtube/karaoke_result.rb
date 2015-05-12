@@ -3,7 +3,7 @@ module Karajoker::Youtube
     attr_reader :video
 
     def to_s
-      "{'id': #{id}, title': '#{title}', 'author': '#{author}'}"
+      "{'id': #{id}, title': '#{title}'}"
     end
 
     def karaoke?
@@ -11,15 +11,11 @@ module Karajoker::Youtube
     end
 
     def title
-      @video.title
-    end
-
-    def author
-      @video.author.name
+      @video['snippet']['title']
     end
 
     def id
-      @video.unique_id
+      @video['id']
     end
 
     def initialize(video)

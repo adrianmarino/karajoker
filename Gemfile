@@ -14,7 +14,7 @@ gem 'coffee-rails'
 gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'nokogiri', '1.6.5'
-gem 'youtube_it'
+gem 'yourub'
 gem 'whenever', :require => false
 
 group :development,:test do
