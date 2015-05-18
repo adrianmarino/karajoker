@@ -52,21 +52,12 @@ module Karajoker::Rest::Resource
       end
 
       describe "when find karaoke hello_1" do
-        self.use_transactional_fixtures = false
-
-        after { Karaoke.delete_all }
-
         it "respond http 200" do
           http_get "/search/#{Karaoke.first.title}"
           expect_200_http
         end
 
-        it "fond karaoke" do
-          http_get "/search/#{Karaoke.first.title}"
-          expect(response_boby).to_not be_empty
-        end
-
-        it "found karaoke with data" do
+        it "found karaoke" do
           http_get "/search/#{Karaoke.first.title}"
           compare response_boby, [Karaoke.first]
         end
