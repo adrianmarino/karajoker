@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-module Karajoker::Crawler
-  describe BillboardHotSongsChart do
-    let(:page) { Nokogiri::HTML(open("http://www.billboard.com/charts/hot-100")) }
+module Karajoker::Crawler::OfficialChart
+  describe RockAndMetalSinglesChart do
+    let(:page) { Nokogiri::HTML(open("http://www.officialcharts.com/charts/rock-and-metal-singles-chart")) }
 
     context "#songs" do
       context "when found song" do
@@ -25,14 +25,20 @@ module Karajoker::Crawler
             expect(result.author).to eq expected.author
           end
         end
+
+        it "has expected year" do
+          subject.songs(top: 1).zip(songs 1) do |result, expected|
+            expect(result.year).to eq Date.current.year
+          end
+        end
       end
     end
 
     def songs(top)
       counter = 0
-      (page.css('div[class=row-title]').inject([]) do | songs, an_item |
-         title = an_item.children.css('h2').children.to_s.strip.humanize
-         author = an_item.children.css('h3').css('a').children.to_s.strip.humanize
+      (page.css('div[class=title-artist]').inject([]) do | songs, an_item |
+         title = an_item.children.css('a').first.text.strip.humanize
+         author = an_item.children.css('div[class=artist]').css('a').first.text.strip.humanize
          counter +=1
          songs << OpenStruct.new(order: counter, title: title, author: author)
       end).take top

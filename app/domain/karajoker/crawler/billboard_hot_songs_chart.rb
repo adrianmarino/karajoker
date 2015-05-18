@@ -3,7 +3,6 @@ require'nokogiri'
 module Karajoker::Crawler
   class BillboardHotSongsChart
     Song = Karajoker::Entity::Song
-    DateUtils = Karajoker::DateUtils
 
     def songs(top: 100)
       top = 100 if top.nil?
@@ -11,7 +10,7 @@ module Karajoker::Crawler
       songs.take(top)
     end
 
-    def initialize(year = DateUtils.current_year)
+    def initialize(year = Date.current.year)
       @year = year
       @page = Nokogiri::HTML(open(url(@year)))
     end
@@ -23,11 +22,11 @@ module Karajoker::Crawler
     end
 
     def title(item)
-      item.children.css('h2').children.to_s.strip
+      item.children.css('h2').children.to_s.strip.humanize
     end
 
     def author(item)
-      item.children.css('h3').css('a').children.to_s.strip
+      item.children.css('h3').css('a').children.to_s.strip.humanize
     end
 
     def new_song(item)
@@ -35,12 +34,13 @@ module Karajoker::Crawler
     end
 
     def url(year)
-      base = "http://www.billboard.com/charts"
-      if DateUtils.current_year == year.to_s
-        "#{base}/hot-100"
+      if Date.current.year == year
+        "#{URL}/hot-100"
       else
-        "#{base}/year-end/#{year}/hot-100-songs"
+        "#{URL}/year-end/#{year}/hot-100-songs"
       end
     end
+
+    URL = 'http://www.billboard.com/charts'
   end
 end
