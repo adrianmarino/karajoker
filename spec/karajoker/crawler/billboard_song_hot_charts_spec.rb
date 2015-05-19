@@ -7,35 +7,35 @@ module Karajoker::Crawler
     context "#songs" do
       context "when found song" do
         it "has author" do
-          expect(subject.songs(top: 1).first.author).not_to be_empty
+          expect(subject.songs(limit: 1).first.author).not_to be_empty
         end
 
         it "has title" do
-          expect(subject.songs(top: 1).first.title).not_to be_empty
+          expect(subject.songs(limit: 1).first.title).not_to be_empty
         end
 
         it "has expected title" do
-          subject.songs(top: 1).zip(songs 1) do |result, expected|
+          subject.songs(limit: 1).zip(songs 1) do |result, expected|
             expect(result.title).to eq expected.title
           end
         end
 
         it "has expected author" do
-          subject.songs(top: 1).zip(songs 1) do |result, expected|
+          subject.songs(limit: 1).zip(songs 1) do |result, expected|
             expect(result.author).to eq expected.author
           end
         end
       end
     end
 
-    def songs(top)
+    def songs(limit)
       counter = 0
       (page.css('div[class=row-title]').inject([]) do | songs, an_item |
          title = an_item.children.css('h2').children.to_s.strip.humanize
          author = an_item.children.css('h3').css('a').children.to_s.strip.humanize
          counter +=1
          songs << OpenStruct.new(order: counter, title: title, author: author)
-      end).take top
+      end).take limit
     end
   end
 end

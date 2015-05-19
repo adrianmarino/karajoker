@@ -4,10 +4,10 @@ module Karajoker::Crawler
   class BillboardHotSongsChart
     Song = Karajoker::Entity::Song
 
-    def songs(top: 100)
-      top = 100 if top.nil?
+    def songs(limit: 100)
+      limit = 100 if limit.nil?
       songs = items.inject([]) { |a, e| a << new_song(e) }
-      songs.take(top)
+      songs.take(limit)
     end
 
     def initialize(year = Date.current.year)

@@ -1,4 +1,4 @@
-module Karajoker::Crawler::OfficialChart::SongFactory
+module Karajoker::Crawler::Official::SongFactory
   def self.create(item, year = Date.current.year)
     Karajoker::Entity::Song.new(year, title(item), author(item))
   end

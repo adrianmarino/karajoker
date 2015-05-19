@@ -6,21 +6,21 @@ module Karajoker::Job
     def run
       @years.to_a.inject(Set.new) do |songs, year|
         logger.info "Year: #{year}"
-        response = @service.call(songs(year, @top))
+        response = @service.call(songs(year, @limit))
         logger.info "#{response.count} new karaokes for #{year} year!"
       end
     end
 
     private
 
-    def songs(year, top)
-      songs = Karajoker::Crawler::BillboardHotSongsChart.new(year).songs top: top
+    def songs(year, limit)
+      songs = Karajoker::Crawler::BillboardHotSongsChart.new(year).songs limit: limit
     end
 
-    def initialize(top, years)
+    def initialize(limit, years)
       years = (2006..2015) if years.nil?
       @service = Service::KaraokeCreate.new
-      @top = top
+      @limit = limit
       @years = years
     end
   end
