@@ -1,11 +1,22 @@
 require'nokogiri'
 
 module Karajoker::Crawler::Official
-  CHARTS = %w[singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles vinyl-singles rock_and_metal_singles]
-  CHARTS.each { |chart| const_set chart.upcase, "#{chart.gsub('_', '-')}-chart" }
+  CHARTS = %w[singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles
+    vinyl-singles rock-and-metal-singles]
+
+  CHARTS.each do |chart|
+    name = chart.upcase.gsub('-', '_')
+    value = "#{chart}-chart"
+    const_set name, value
+  end
 
   class Chart
     attr_reader :url
+
+    def initialize(url)
+      @url = url
+      @page = Nokogiri::HTML(open(@url))
+    end
 
     def songs(limit:)
       items.map{ |item| SongFactory.create(item) }.take(limit)
@@ -15,11 +26,6 @@ module Karajoker::Crawler::Official
 
     def items
       @page.css('div[class=title-artist]')
-    end
-
-    def initialize(url)
-      @url = url
-      @page = Nokogiri::HTML(open(@url))
     end
 
     def self.select(name:, at:)
