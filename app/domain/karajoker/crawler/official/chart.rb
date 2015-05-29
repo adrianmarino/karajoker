@@ -18,8 +18,9 @@ module Karajoker::Crawler::Official
       @page = Nokogiri::HTML(open(@url))
     end
 
-    def songs(limit:)
-      items.map{ |item| SongFactory.create(item) }.take(limit)
+    def songs(limit: 100)
+      limit = 100 unless limit.present?
+      items.take(limit).map{ |item| SongFactory.create(item) }
     end
 
     private

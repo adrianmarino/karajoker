@@ -5,9 +5,8 @@ module Karajoker::Crawler
     Song = Karajoker::Entity::Song
 
     def songs(limit: 100)
-      limit = 100 if limit.nil?
-      songs = items.inject([]) { |a, e| a << new_song(e) }
-      songs.take(limit)
+      limit = 100 unless limit.present?
+      items.take(limit).inject([]) { |a, e| a << new_song(e) }
     end
 
     def initialize(year = Date.current.year)
