@@ -1,8 +1,8 @@
 require'nokogiri'
 
 module Karajoker::Crawler::Official
-  CHARTS = %w[singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles
-    vinyl-singles rock-and-metal-singles]
+  CHARTS = %w(singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles
+              vinyl-singles rock-and-metal-singles)
 
   CHARTS.each do |chart|
     name = chart.upcase.gsub('-', '_')
