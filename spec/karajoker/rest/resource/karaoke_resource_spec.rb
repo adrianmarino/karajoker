@@ -69,9 +69,7 @@ module Karajoker::Rest::Resource
     private
 
     def compare(results, karaokes)
-      results.zip(karaokes).each do |item|
-        result = item.first
-        karaoke = item.second
+      results.zip(karaokes).each do |result, karaoke|
         expect(result.title).to eq(karaoke.title)
         expect(result.author).to eq(karaoke.author)
         expect(result.year).to eq(karaoke.year)
