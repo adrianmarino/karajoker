@@ -9,20 +9,20 @@ module Karajoker::Rest::Resource
       describe 'when add a hello karaoke tag as pop' do
         let(:karaoke_params)  { { title: 'hello', youtube_id: '1234', tags: [:pop] } }
         let(:send_karaoke)    { http_post karaoke_params }
-        before                { create(:tag, :pop) }
+        before do
+          create(:tag, :pop)
+          http_post karaoke_params
+        end
 
         it 'has same title' do
-          http_post karaoke_params
           expect(Karaoke.first.title).to eq karaoke_params[:title]
         end
 
         it 'has same tag' do
-          http_post karaoke_params
           expect(Karaoke.first.tags.first.name.downcase).to eq karaoke_params[:tags].first.to_s
         end
 
         it 'has same youtube_id' do
-          http_post karaoke_params
           expect(Karaoke.first.youtube_id).to eq karaoke_params[:youtube_id]
         end
       end
