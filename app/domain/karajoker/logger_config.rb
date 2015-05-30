@@ -2,8 +2,8 @@ module Karajoker::LoggerConfig
   def self.setup(logger)
     logger.level = Logger::INFO
     logger.formatter = proc do |severity, datetime, progname, message|
-      date_format = datetime.strftime("%Y-%m-%d %H:%M:%S:%L")
-      "#{date_format} #{severity}: #{message}\n"
+      date_format = datetime.strftime('%Y-%m-%d %H:%M:%S:%L')
+      "#{date_format} #{severity} #{progname}: #{message}\n"
     end
     disable_active_record_logs
     logger

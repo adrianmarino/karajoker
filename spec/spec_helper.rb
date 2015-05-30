@@ -17,7 +17,7 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.configure_rspec_metadata!
   c.allow_http_connections_when_no_cassette = true if real_requests
-  c.default_cassette_options = {:record => :new_episodes}
+  c.default_cassette_options = { record: :new_episodes }
 end
 
 RSpec.configure do |config|
@@ -26,7 +26,7 @@ RSpec.configure do |config|
   config.expect_with :rspec
   config.include RSpec::Rails::RequestExampleGroup, type: :request, file_path: /spec/
   config.include FactoryGirl::Syntax::Methods
-  config.fuubar_progress_bar_options = { :format => "  (%B) %p%% %a  " }
+  config.fuubar_progress_bar_options = { format: '(%B) %p%% %a' }
 
   config.before(:each) do
     VCR.eject_cassette

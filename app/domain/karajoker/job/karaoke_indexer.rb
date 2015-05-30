@@ -4,7 +4,7 @@ module Karajoker::Job
     include Karajoker::Logger
 
     def run
-      @years.to_a.inject(Set.new) do |songs, year|
+      @years.to_a.each do |year|
         logger.info "Year: #{year}"
         response = @service.call(songs(year, @limit))
         logger.info "#{response.count} new karaokes for #{year} year!"
@@ -14,7 +14,7 @@ module Karajoker::Job
     private
 
     def songs(year, limit)
-      songs = Karajoker::Crawler::BillboardHotSongsChart.new(year).songs limit: limit
+      Karajoker::Crawler::BillboardHotSongsChart.new(year).songs limit: limit
     end
 
     def initialize(limit, years)

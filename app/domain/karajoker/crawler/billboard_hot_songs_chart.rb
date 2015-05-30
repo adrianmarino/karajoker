@@ -1,5 +1,3 @@
-require'nokogiri'
-
 module Karajoker::Crawler
   class BillboardHotSongsChart
     Song = Karajoker::Entity::Song

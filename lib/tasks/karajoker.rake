@@ -10,4 +10,10 @@ namespace :karajoker do
     years = Karajoker::RangeUtils.from(args.years) unless args.years.nil?
     Karajoker::Job::KaraokeIndexer.new(limit, years).start
   end
+
+  desc "generate html rubocop report"
+  task :rubocop do
+    `rubocop -D --format html -o rubocop.html`
+    `chromium rubocop.html`
+  end
 end

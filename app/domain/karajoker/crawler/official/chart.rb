@@ -1,5 +1,3 @@
-require'nokogiri'
-
 module Karajoker::Crawler::Official
   CHARTS = %w(singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles
               vinyl-singles rock-and-metal-singles)
@@ -20,7 +18,7 @@ module Karajoker::Crawler::Official
 
     def songs(limit: 100)
       limit = 100 unless limit.present?
-      items.take(limit).map{ |item| SongFactory.create(item) }
+      items.take(limit).map { |item| SongFactory.create(item) }
     end
 
     private

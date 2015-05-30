@@ -5,19 +5,16 @@ module Karajoker::Service
     Karaoke = Karajoker::Entity::Karaoke
 
     def call(songs)
-      KaraokeCreateResponse.new(
-        songs.inject(0) do |counter, song|
-          ActiveRecord::Base.transaction do
-            karaoke = search_karaoke(song)
-            if karaoke.nil?
-              logger.info "\t- Karaoke Not Founded!"
-              counter
-            else
-              index(karaoke, song, counter)
-            end
-          end
+      count = songs.inject(0) do |counter, song|
+        karaoke = search_karaoke(song)
+        if karaoke.nil?
+          logger.info "\t- Karaoke Not Founded!"
+          counter
+        else
+          index(karaoke, song, counter)
         end
-      )
+      end
+      KaraokeCreateResponse.new(count)
     end
 
     private
