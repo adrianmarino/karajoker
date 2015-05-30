@@ -1,0 +1,16 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'spec/cassettes/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'public/**/*'
+    - 'lib/**/*'
+    - 'db/migrate/*.rb'
+    - 'db/schema.rb'
+
+Lint/Viod:
+  Exclude: ['**/*_spec.rb']
+
+Style/Encoding:
+  Enabled: true
