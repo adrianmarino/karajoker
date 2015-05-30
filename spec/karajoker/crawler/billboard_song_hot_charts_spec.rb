@@ -6,21 +6,21 @@ module Karajoker::Crawler
 
     context "#songs" do
       context "when found song" do
-        it "has author" do
+        it "has author", :vcr do
           expect(subject.songs(limit: 1).first.author).not_to be_empty
         end
 
-        it "has title" do
+        it "has title", :vcr do
           expect(subject.songs(limit: 1).first.title).not_to be_empty
         end
 
-        it "has expected title" do
+        it "has expected title", :vcr do
           subject.songs(limit: 1).zip(songs 1) do |result, expected|
             expect(result.title).to eq expected.title
           end
         end
 
-        it "has expected author" do
+        it "has expected author", :vcr do
           subject.songs(limit: 1).zip(songs 1) do |result, expected|
             expect(result.author).to eq expected.author
           end

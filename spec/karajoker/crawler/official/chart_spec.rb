@@ -8,27 +8,27 @@ module Karajoker::Crawler::Official
 
         let(:songs) { chart(limit:1, name: 'rock-and-metal-singles-chart', date: Date.parse('20140601')) }
 
-        it "has author" do
+        it "has author", :vcr do
           expect(subject.songs(limit: 1).first.author).not_to be_empty
         end
 
-        it "has title" do
+        it "has title", :vcr do
           expect(subject.songs(limit: 1).first.title).not_to be_empty
         end
 
-        it "has expected title" do
+        it "has expected title", :vcr do
           subject.songs(limit: 1).zip(songs) do |result, expected|
             expect(result.title).to eq expected.title
           end
         end
 
-        it "has expected author" do
+        it "has expected author", :vcr do
           subject.songs(limit: 1).zip(songs) do |result, expected|
             expect(result.author).to eq expected.author
           end
         end
 
-        it "has expected year" do
+        it "has expected year", :vcr do
           subject.songs(limit: 1).zip(songs) do |result, expected|
             expect(result.year).to eq Date.current.year
           end

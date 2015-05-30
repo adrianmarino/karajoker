@@ -35,5 +35,7 @@ group :development,:test do
   gem 'pry-stack_explorer'
   gem 'pry-clipboard'
   gem 'bond'
+  gem 'vcr'
+  gem 'webmock'
 
 end
