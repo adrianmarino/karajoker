@@ -5,75 +5,55 @@ module Karajoker::Rest::Resource
     include RestTestUtils
     Karaoke = Karajoker::Entity::Karaoke
 
-    describe "'POST'" do
-      describe "when add a hello karaoke tag as pop" do
+    describe 'POST' do
+      describe 'when add a hello karaoke tag as pop' do
         let(:karaoke_params)  { { title: 'hello', youtube_id: '1234', tags: [:pop] } }
         let(:send_karaoke)    { http_post karaoke_params }
         before                { create(:tag, :pop) }
 
-        it "respond http 201" do
-          send_karaoke
-          expect_201_http
-        end
-
-        it "has same title" do
+        it 'has same title' do
           http_post karaoke_params
           expect(Karaoke.first.title).to eq karaoke_params[:title]
         end
 
-        it "has same tag" do
+        it 'has same tag' do
           http_post karaoke_params
           expect(Karaoke.first.tags.first.name.downcase).to eq karaoke_params[:tags].first.to_s
         end
 
-        it "has same youtube_id" do
+        it 'has same youtube_id' do
           http_post karaoke_params
           expect(Karaoke.first.youtube_id).to eq karaoke_params[:youtube_id]
         end
       end
     end
 
-    describe "'GET'" do
+    describe 'GET' do
       before do
         create :karaoke, :hello_1
         create :karaoke, :hello_2
       end
 
-      describe "when list all karaokes" do
-        it "respond http 200" do
-          http_get
-          expect_200_http
-        end
-
-        it "get karaokes" do
+      describe 'when list all karaokes' do
+        it 'get karaokes' do
           http_get
           compare response_boby, Karaoke.all
         end
       end
 
-      describe "when find karaoke hello_1" do
-        it "respond http 200" do
-          http_get "/search/#{Karaoke.first.title}"
-          expect_200_http
-        end
-
-        it "found karaoke" do
+      describe 'when find karaoke hello_1' do
+        it 'found karaoke' do
           http_get "/search/#{Karaoke.first.title}"
           compare response_boby, [Karaoke.first]
         end
       end
     end
 
-    describe "'DELETE'" do
-      describe "remove karaoke hello_1" do
+    describe 'DELETE' do
+      describe 'remove karaoke hello_1' do
         let(:video) { create :karaoke, :hello_1 }
 
-        it "respond http 200" do
-          http_delete video.id
-          expect_200_http
-        end
-
-        it "karaoke was removed from db" do
+        it 'karaoke was removed from db' do
           http_delete video.id
           expect(Karaoke.all.empty?).to eq true
         end
@@ -98,6 +78,5 @@ module Karajoker::Rest::Resource
         expect(result.id).to eq(karaoke.youtube_id)
       end
     end
-
   end
 end

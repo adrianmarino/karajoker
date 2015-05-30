@@ -1,6 +1,5 @@
 module Karajoker::Entity
   class Karaoke < ActiveRecord::Base
-
     def self.search(a_query)
       select(
         'karaokes.*',

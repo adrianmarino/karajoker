@@ -1,6 +1,5 @@
 module Karajoker::Crawler::Official
   class ChartBuilder
-
     URL = 'http://www.officialcharts.com/charts'
 
     def initialize(chart:, at:)
