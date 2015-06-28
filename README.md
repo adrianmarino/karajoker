@@ -1,6 +1,6 @@
 # Setup Application
 
-1. Install mysql2 gem
+1. Install mysql2 gem:
   * In Arch
     ```
     $ pacman -S libmysqlclient
@@ -9,19 +9,19 @@
     ```
     $ sudo apt-get install libmysqlclient-dev
     ```
-2. Install dependencies
+2. Install dependencies:
     ```
     $ bundle install
     ```
-3. Start MySQL server
+3. Start MySQL server:
     ```
     $ rake mysql:start
     ```
-4. Create db schema
+4. Create db schema:
     ```
     $ rake mysql:create_schema
     ```
-5. Populate the database with karaokes
+5. Populate the database with karaokes:
     ```
     $ rake karajoker:index_karaokes
     ```
@@ -29,7 +29,7 @@
     ```
     $ rake test
     ```
-7. Run application
+7. Run application:
     ```
     $ bundle exec rails server
     ```
