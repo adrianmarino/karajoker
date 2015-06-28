@@ -18,19 +18,19 @@ An other karaoke aplication.
     ```
 3. Start MySQL server:
     ```
-    $ rake mysql:start
+    $ bundle exec rake mysql:start
     ```
 4. Create db schema:
     ```
-    $ rake mysql:create_schema
+    $ bundle exec rake mysql:create_schema
     ```
 5. Populate the database with karaokes:
     ```
-    $ rake karajoker:index_karaokes
+    $ bundle exec rake karajoker:index_karaokes
     ```
 6. Check whether the application works perfectly, runing all test (Optional):
     ```
-    $ rake test
+    $ bundle exec rake test
     ```
 7. Run application:
     ```
