@@ -1,11 +1,11 @@
 # Setup Application
 
 1. Install mysql2 gem
-  1. In Arch
+  * In Arch
   	```
     $ pacman -S libmysqlclient
     ```
-  2. In Debian
+  * In Debian
   	```
     $ sudo apt-get install libmysqlclient-dev
     ```
