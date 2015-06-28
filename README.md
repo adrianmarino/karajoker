@@ -1,5 +1,5 @@
 # Karajoker
-An other karaoke aplication.
+An other youtube karaoke aplication.
 
 ## Setup Application
 
