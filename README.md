@@ -1,4 +1,7 @@
-# Setup Application
+# Karajoker
+An other karaoke aplication.
+
+## Setup Application
 
 1. Install mysql2 gem:
   * In Arch
