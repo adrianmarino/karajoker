@@ -1,20 +1,19 @@
 module Karajoker::Crawler::Official
   class Chart
-    # ALL = %w(singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles
-    #          vinyl-singles rock-and-metal-singles)
+    ALL = %w(singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles
+             vinyl-singles rock-and-metal-singles)
 
-    ALL = %w(singles)
+    attr_reader :url, :date
 
-    attr_reader :url
-
-    def initialize(url)
+    def initialize(url, date)
       @url = url
+      @date = date
       @page = Nokogiri::HTML(open(@url))
     end
 
     def songs(limit: 100)
       limit = 100 unless limit.present?
-      items.take(limit).map { |item| SongFactory.create(item) }
+      items.take(limit).map { |item| SongFactory.create(item, @date.year) }
     end
 
     private

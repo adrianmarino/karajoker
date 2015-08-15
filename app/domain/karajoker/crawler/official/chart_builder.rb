@@ -13,7 +13,7 @@ module Karajoker::Crawler::Official
         url += "/#{@chart}"
         url += "/#{@date.strftime('%Y%m%d')}" if @date.present?
       end
-      Chart.new(url)
+      Chart.new(url, @date)
     end
   end
 end

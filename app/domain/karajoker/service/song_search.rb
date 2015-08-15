@@ -18,14 +18,14 @@ module Karajoker::Service
 
     def official_charts(year, limit)
       Chart::ALL.each_with_object(Set.new) do |chart, songs|
-        last_day_of_each_month_of(year: year).each do |day|
+        last_day_of_each_month_of(year).each do |day|
           songs.merge(Chart.select(name: chart, at: day).songs(limit: limit))
           logger.info "(origin: officialcharts, chart: #{chart}): Search songs(#{songs.size}) at: #{day}"
         end
       end
     end
 
-    def last_day_of_each_month_of(year:)
+    def last_day_of_each_month_of(year)
       start_date = Date.civil(year)
       (start_date..start_date.end_of_year).select { |date| date.day == 1 }.map(&:end_of_month)
     end
