@@ -37,4 +37,5 @@ An other youtube karaoke aplication.
     $ bundle exec rails server
     ```
 8. Go to [Karajoker](http://localhost:3000)
+
 9. Enjoy.

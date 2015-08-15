@@ -5,7 +5,6 @@ module Karajoker::Rest::Resource
 
     desc 'Karaoke CRUD'
     resource :karaokes do
-
       desc 'Add new karaoke'
       params do
         requires :title, type: String, desc: 'A karaoke title'

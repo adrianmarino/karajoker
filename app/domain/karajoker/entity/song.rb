@@ -4,8 +4,8 @@ module Karajoker::Entity
 
     def initialize(year, title, author)
       @year = year
-      @title = title.humanize
-      @author = author.humanize
+      @title = title
+      @author = author
     end
 
     def to_s

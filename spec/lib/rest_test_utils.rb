@@ -14,7 +14,7 @@ module RestTestUtils
   end
 
   def response_boby
-    JSON.parse(response.body).collect {|an_item| OpenStruct.new an_item}
+    JSON.parse(response.body).collect { |an_item| OpenStruct.new an_item }
   end
 
   def build_url(an_url = '')
@@ -30,8 +30,8 @@ module RestTestUtils
   end
 
   JSON_HEADERS = {
-    "Accept"        => "application/json",
-    "Content-Type"  => "application/json"
+    'Accept'        => 'application/json',
+    'Content-Type'  => 'application/json'
   }
 
   BASE_URL = 'api/'
