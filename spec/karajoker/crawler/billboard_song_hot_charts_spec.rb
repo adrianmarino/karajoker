@@ -14,8 +14,8 @@ module Karajoker::Crawler
 
         it "has results with correct title and author fields" do
           subject.songs(top: 1).zip(songs 1) do |result, expected|
-            expect(result.title).to eq expected.title
-            expect(result.author).to eq expected.author
+            expect(result.title.downcase).to eq expected.title.downcase
+            expect(result.author.downcase).to eq expected.author.downcase
           end
         end
       end

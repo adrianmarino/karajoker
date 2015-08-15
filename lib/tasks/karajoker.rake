@@ -10,4 +10,15 @@ namespace :karajoker do
     years = Karajoker::RangeUtils.from(args.years) unless args.years.nil?
     Karajoker::Job::KaraokeIndexer.new(top, years).start
   end
+
+  desc "Show DB config"
+  task :db do
+    puts "\n\s==========================="
+    puts "\s\sDB Config"
+    puts "\s==========================="
+    puts "\s\s-\sHostname: #{ENV['DB_HOSTNAME']}"
+    puts "\s\s-\sUsername: #{ENV['DB_USERNAME']}"
+    puts "\s\s-\sPassword: #{ENV['DB_PASSWORD']}"
+    puts "\s==========================="
+  end
 end

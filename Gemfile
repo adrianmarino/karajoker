@@ -15,7 +15,7 @@ gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'nokogiri', '1.6.5'
 gem 'yourub'
-gem 'whenever', :require => false
+gem 'whenever'
 
 group :development,:test do
   gem 'rspec', '~> 3.1'
@@ -35,5 +35,4 @@ group :development,:test do
   gem 'pry-stack_explorer'
   gem 'pry-clipboard'
   gem 'bond'
-
 end
