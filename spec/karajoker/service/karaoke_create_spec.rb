@@ -1,8 +1,8 @@
+Song = Karajoker::Entity::Song
+Karaoke = Karajoker::Entity::Karaoke
+
 module Karajoker::Service
   describe KaraokeCreate do
-    Song = Karajoker::Entity::Song
-    Karaoke = Karajoker::Entity::Karaoke
-
     describe '#call' do
       let(:song) { Song.new(2005, 'Through Her Eyes', 'Dream theater') }
 

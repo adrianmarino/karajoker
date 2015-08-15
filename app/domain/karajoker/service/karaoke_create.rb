@@ -1,6 +1,5 @@
 module Karajoker::Service
-  class KaraokeCreate
-    include Karajoker::Logger
+  class KaraokeCreate < Base
     KaraokeSearcher = Karajoker::Youtube::KaraokeSearcher
     Karaoke = Karajoker::Entity::Karaoke
 

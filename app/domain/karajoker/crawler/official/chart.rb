@@ -1,14 +1,10 @@
 module Karajoker::Crawler::Official
-  CHARTS = %w(singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles
-              vinyl-singles rock-and-metal-singles)
-
-  CHARTS.each do |chart|
-    name = chart.upcase.gsub('-', '_')
-    value = "#{chart}-chart"
-    const_set name, value
-  end
-
   class Chart
+    # ALL = %w(singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles
+    #          vinyl-singles rock-and-metal-singles)
+
+    ALL = %w(singles)
+
     attr_reader :url
 
     def initialize(url)
@@ -30,5 +26,18 @@ module Karajoker::Crawler::Official
     def self.select(name:, at:)
       ChartBuilder.new(chart: name, at: at).build
     end
+
+    def self.years
+      page = Nokogiri::HTML(open(ChartBuilder::URL))
+      options = page.css('select[class=year-search]').first.css('option')
+      options.shift
+      options.map { |option| option.content.to_i }
+    end
+  end
+
+  Chart::ALL.each do |chart|
+    name = chart.upcase.gsub('-', '_')
+    value = "#{chart}-chart"
+    const_set name, value
   end
 end

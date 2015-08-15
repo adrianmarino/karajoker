@@ -1,5 +1,5 @@
 module Karajoker::Crawler::Official::SongFactory
-  def self.create(item, year = Date.current.year)
+  def self.create(item, year = Time.zone.today.year)
     Karajoker::Entity::Song.new(year, title(item), author(item))
   end
 

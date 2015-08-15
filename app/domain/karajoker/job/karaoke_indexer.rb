@@ -1,27 +1,25 @@
+Chart = Karajoker::Crawler::Official::Chart
+Service = Karajoker::Service
+
 module Karajoker::Job
   class KaraokeIndexer
     include Base
     include Karajoker::Logger
 
     def run
+      logger.info "Years: #{@years}"
       @years.to_a.each do |year|
         logger.info "Year: #{year}"
-        response = @service.call(songs(year, @limit))
+        response = Service::SongSearch.new.call(year, @limit)
+
+        response = Service::KaraokeCreate.new.call(response.songs)
         logger.info "#{response.count} new karaokes for #{year} year!"
       end
     end
 
-    private
-
-    def songs(year, limit)
-      Karajoker::Crawler::BillboardHotSongsChart.new(year).songs limit: limit
-    end
-
-    def initialize(limit, years)
-      years = (2006..2015) if years.nil?
-      @service = Service::KaraokeCreate.new
+    def initialize(limit: nil, years: nil)
       @limit = limit
-      @years = years
+      @years = years || Chart.years
     end
   end
 end

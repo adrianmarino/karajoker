@@ -4,7 +4,7 @@ module Karajoker::Crawler::Official
   describe Chart do
     context '#songs' do
       context 'with rock-and-metal-singles chart on current date' do
-        subject { Chart.select name: ROCK_AND_METAL_SINGLES, at: Date.parse('20140601') }
+        subject { described_class.select(name: ROCK_AND_METAL_SINGLES, at: '2014-06-01'.to_date) }
 
         let(:song) { subject.songs(limit: 1).first }
 
