@@ -21,6 +21,5 @@ module Karajoker::Youtube
     def initialize(video)
       @video = video
     end
-
   end
 end

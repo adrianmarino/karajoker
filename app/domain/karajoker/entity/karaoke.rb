@@ -1,10 +1,5 @@
 module Karajoker::Entity
   class Karaoke < ActiveRecord::Base
-
-    # -------------------------------------------------------------------------
-    # Class Methods
-    # -------------------------------------------------------------------------
-
     def self.search(a_query)
       select(
         'karaokes.*',
@@ -12,9 +7,9 @@ module Karajoker::Entity
       ).includes(
         :tags
       ).where(
-        "MATCH(title, author) AGAINST (? IN BOOLEAN MODE) > 0.001",
+        'MATCH(title, author) AGAINST (? IN BOOLEAN MODE) > 0.001',
         "#{a_query}*"
-      ).order("score DESC")
+      ).order('score DESC')
     end
 
     def self.create_from(params)
@@ -27,11 +22,6 @@ module Karajoker::Entity
       )
     end
 
-    # -------------------------------------------------------------------------
-    # Associations...
-    # -------------------------------------------------------------------------
-
     has_and_belongs_to_many :tags
-
   end
 end

@@ -1,3 +1,19 @@
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - 'bin/*'
+    - 'vendor/**/*'
+    - 'spec/cassettes/**/*'
+    - 'log/**/*'
+    - 'tmp/**/*'
+    - 'public/**/*'
+    - 'lib/**/*'
+    - 'db/migrate/*.rb'
+    - 'db/schema.rb'
+
+Lint/Void:
+  Exclude: ['**/*_spec.rb']
+
 # Offense count: 1
 # Configuration parameters: AllowSafeAssignment.
 Lint/AssignmentInCondition:
@@ -5,7 +21,7 @@ Lint/AssignmentInCondition:
 
 # Offense count: 2
 Lint/HandleExceptions:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 1
 Lint/ShadowingOuterLocalVariable:
@@ -14,7 +30,7 @@ Lint/ShadowingOuterLocalVariable:
 # Offense count: 1
 # Cop supports --auto-correct.
 Lint/SpaceBeforeFirstArg:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 1
 # Cop supports --auto-correct.
@@ -24,11 +40,11 @@ Lint/StringConversionInInterpolation:
 # Offense count: 1
 # Cop supports --auto-correct.
 Lint/UnusedBlockArgument:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 3
 Lint/UselessAssignment:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 2
 Metrics/AbcSize:
@@ -67,7 +83,7 @@ Style/Documentation:
 
 # Offense count: 1
 Style/EachWithObject:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 2
 # Cop supports --auto-correct.
@@ -77,19 +93,19 @@ Style/EmptyLines:
 # Offense count: 3
 # Cop supports --auto-correct.
 Style/EmptyLinesAroundAccessModifier:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 10
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/EmptyLinesAroundBlockBody:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 7
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/EmptyLinesAroundClassBody:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 7
 # Cop supports --auto-correct.
@@ -100,18 +116,18 @@ Style/HashSyntax:
 # Offense count: 1
 # Configuration parameters: MaxLineLength.
 Style/IfUnlessModifier:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 1
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/IndentHash:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 1
 # Cop supports --auto-correct.
 Style/IndentationConsistency:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 61
 # Cop supports --auto-correct.
@@ -128,12 +144,12 @@ Style/NumericLiterals:
 # Cop supports --auto-correct.
 # Configuration parameters: AllowMultipleReturnValues.
 Style/RedundantReturn:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 6
 # Cop supports --auto-correct.
 Style/RedundantSelf:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 4
 # Cop supports --auto-correct.
@@ -143,46 +159,46 @@ Style/SingleSpaceBeforeFirstArg:
 # Offense count: 4
 # Cop supports --auto-correct.
 Style/SpaceAfterColon:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 4
 # Cop supports --auto-correct.
 Style/SpaceAfterComma:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 2
 # Cop supports --auto-correct.
 Style/SpaceAroundOperators:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/SpaceBeforeBlockBraces:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 7
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
 Style/SpaceInsideBlockBraces:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 6
 # Cop supports --auto-correct.
 Style/SpaceInsideBrackets:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 5
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, EnforcedStyleForEmptyBraces, SupportedStyles.
 Style/SpaceInsideHashLiteralBraces:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 48
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles.
 Style/StringLiterals:
-  Enabled: false
+  Enabled: true
 
 # Offense count: 8
 # Cop supports --auto-correct.
