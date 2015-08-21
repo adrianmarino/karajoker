@@ -58,4 +58,4 @@ RUN echo "SECRET_KEY_BASE='$(RAILS_ENV=production rake secret)'" >> /etc/environ
 RUN mkdir -p /home/app/tmp /home/app/log && chown -R app:app /home/app/tmp /home/app/log
 #==============================================================================
 
-EXPOSE 80
+EXPOSE 8080
