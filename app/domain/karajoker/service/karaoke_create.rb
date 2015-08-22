@@ -4,22 +4,25 @@ module Karajoker::Service
     Karaoke = Karajoker::Entity::Karaoke
 
     def call(songs)
-      count = songs.inject(0) do |counter, song|
+      count = 0
+      indexed = songs.inject(0) do |indexed, song|
+        count += 1
+        log_prefix = "[#{count}/#{songs.size}]"
+        log_postfix = "'#{song.title}' (#{song.author})"
         karaoke = search_karaoke(song)
         if karaoke.nil?
-          logger.info "\t- Karaoke Not Founded!"
-          counter
+          logger.info "#{log_prefix} Not found: #{log_postfix}"
+          indexed
         else
-          index(karaoke, song, counter)
+          index(karaoke, song, indexed, log_prefix, log_postfix)
         end
       end
-      KaraokeCreateResponse.new(count)
+      KaraokeCreateResponse.new(indexed)
     end
 
     private
 
     def search_karaoke(song)
-      logger.info "Youtube Search: #{song}"
       result = KaraokeSearcher.new.search(query_from(song))
       result.find(&:karaoke?)
     end
@@ -32,15 +35,15 @@ module Karajoker::Service
       { query: "#{song.title} #{song.author}" }
     end
 
-    def index(karaoke, song, create_counter)
+    def index(karaoke, song, indexed, log_prefix, log_postfix)
       if already_exist?(karaoke)
-        logger.info "\t- Karaoke already indexed!"
+        logger.info "#{log_prefix} Already exists: #{log_postfix}"
       else
-        logger.info "\t- Index Karaoke!"
         Karaoke.create_from(year: song.year, author: song.author, title: song.title, youtube_id: karaoke.id)
-        create_counter += 1
+        indexed += 1
+        logger.info "#{log_prefix} Indexed(#{indexed}): #{log_postfix}"
       end
-      create_counter
+      indexed
     end
   end
 end

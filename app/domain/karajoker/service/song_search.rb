@@ -12,15 +12,16 @@ module Karajoker::Service
     private
 
     def hot_chart(year, limit)
-      logger.info "(origin: hotchart): Search songs at: #{year}"
-      HotChart.new(year).songs(limit: limit)
+      songs = HotChart.new(year).songs(limit: limit)
+      logger.info "From: Hotchart, at: #{year}, Found: #{songs.size}"
+      songs
     end
 
     def official_charts(year, limit)
       Chart::ALL.each_with_object(Set.new) do |chart, songs|
         last_day_of_each_month_of(year).each do |day|
           songs.merge(Chart.select(name: chart, at: day).songs(limit: limit))
-          logger.info "(origin: officialcharts, chart: #{chart}): Search songs(#{songs.size}) at: #{day}"
+          logger.info "From: Officialcharts, Chart: #{chart}, in: #{Date::MONTHNAMES[day.month]}, Found: #{songs.size}"
         end
       end
     end

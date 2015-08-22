@@ -5,10 +5,9 @@ namespace :karajoker do
   end
 
   desc 'Index new karaokes using BillboardSongHotCharts'
-  task :index_karaokes, [:limit, :years] => [:setup_logger] do |task, args|
+  task :index, [:limit, :years] => [:setup_logger] do |task, args|
     limit = args.limit.to_i unless args.limit.nil?
     years = Karajoker::RangeUtils.from(args.years) unless args.years.nil?
-    Rails.logger.info "Years: #{years}, Limit: #{limit}"
     Karajoker::Job::KaraokeIndexer.new(limit: limit, years: years).start
   end
 

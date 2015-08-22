@@ -7,11 +7,11 @@ module Karajoker::Job
     include Karajoker::Logger
 
     def run
-      logger.info "Years: #{@years}"
+      logger.info "Arguments: Get #{@limit} song/s per chart between #{@years}"
       @years.to_a.each do |year|
-        logger.info "Year: #{year}"
+        logger.info "<< Get best songs at #{year} >>"
         response = Service::SongSearch.new.call(year, @limit)
-
+        logger.info "<< Find & index karaokes for #{response.songs.size} songs >>"
         response = Service::KaraokeCreate.new.call(response.songs)
         logger.info "#{response.count} new karaokes for #{year} year!"
       end

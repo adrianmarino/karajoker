@@ -8,8 +8,8 @@ module Karajoker::Entity
       @author = author
     end
 
-    def to_s
-      "{'year': #{year}, 'title': '#{title}', 'author': '#{author}'}"
+    def attributes
+      { year: year, title: title, author: author }
     end
   end
 end
