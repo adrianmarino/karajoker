@@ -3,6 +3,11 @@ mysqldb:
   volumes:
     - /var/lib/mysql
 
+redisdb:
+  image: busybox
+  volumes:
+    - /data/redis:/data
+
 mysql:
   image: mysql
   environment:
@@ -10,10 +15,12 @@ mysql:
   volumes_from:
     - mysqldb
   ports:
-    - "3306:3307"
+    - "3306"
 
 redis:
   image: redis
+  volumes_from:
+    - redisdb
   ports:
     - "6379"
 
@@ -27,6 +34,8 @@ karajoker:
     DB_HOSTNAME: mysql
     DB_USERNAME: root
     DB_PASSWORD: root
+    REDIS_HOST: redis
+    REDIS_PORT: 6379
     SECRET_KEY_BASE: a0e20b9d1c63e3666751294b5599d448e6fe7a1045b81d185c8f1a284cc9c6ec144efa96663b3cd101241695a664e7e4233840b2123a1fd41146c7b8210ad77b
   ports:
-    - "8080:8081"
+    - "8081:8080"
