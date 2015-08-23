@@ -10,7 +10,7 @@ mysql:
   volumes_from:
     - mysqldb
   ports:
-    - "3306:3306"
+    - "3306:3307"
 
 redis:
   image: redis
@@ -29,4 +29,4 @@ karajoker:
     DB_PASSWORD: root
     SECRET_KEY_BASE: a0e20b9d1c63e3666751294b5599d448e6fe7a1045b81d185c8f1a284cc9c6ec144efa96663b3cd101241695a664e7e4233840b2123a1fd41146c7b8210ad77b
   ports:
-    - "8080:8080"
+    - "8080:8081"
