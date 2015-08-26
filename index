@@ -1,0 +1,18 @@
+#!/bin/bash
+LIMIT="10"
+FROM=$1
+TO=$2
+
+function index() {
+  LIMIT=$1
+  YEARS=$2
+  BODY="{\"limit\":\"$LIMIT\",\"years\":\"$YEARS\"}"
+
+  echo "Index: $BODY"
+  curl -H "Content-Type: application/json" -X POST -d "$BODY" http://localhost:8081/api/index
+}
+
+for (( YEAR=$FROM; YEAR<=$TO; YEAR++ ))
+do
+  index $LIMIT $YEAR
+done
