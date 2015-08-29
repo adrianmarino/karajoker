@@ -12,48 +12,48 @@ Requisites:
 1. Install mysql lib:
   * In Arch
    ```
-   $ pacman -S libmysqlclient
+   pacman -S libmysqlclient
    ```
   * In Debian
    ```
-   $ sudo apt-get install libmysqlclient-dev
+   sudo apt-get install libmysqlclient-dev
    ```
 2. Install dependencies:
   ```
-  $ bundle install
+  bundle install
   ```
 3. Start MySQL server:
   ```
-  $ bundle exec rake mysql:start
+  bundle exec rake mysql:start
   ```
 4. Create db schema:
   ```
-  $ bundle exec rake mysql:create_schema; bundle exec rake db:migrate
+  bundle exec rake mysql:create_schema; bundle exec rake db:migrate
   ```
 5. Check whether the application works perfectly, runing all test (Optional):
   ```
-  $ bundle exec rake test
+  bundle exec rake test
   ```
 6. Start redis:
   ```
-  $ redis-server
+  redis-server
   ```
 7. Start sidekiq worker:
   ```
-  $ bundle exec sidekiq -C config/sidekiq.yml
+  bundle exec sidekiq -C config/sidekiq.yml
   ```
 8. Run application:
-   ```
-   $ bundle exec rails server
-   ```
+  ```
+  bundle exec rails server
+  ```
 9. Index top 10 hist between years:
   * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time): 
    ```
-   $ ./index 10 2015 2015 3000
+   ./index 10 2015 2015 3000
    ```
   * Index all songs of top 100 songs charts from 1970 to 2015 (This cloud take days):
    ```
-   $ ./index 100 1970 2015 3000
+   ./index 100 1970 2015 3000
    ```
     Note: The Last parameter is the application port.
 
@@ -76,11 +76,11 @@ Requisites: Dcoker
 3. Index top 10 hist between years.
   * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time): 
    ```
-   $ ./index 10 2015 2015 8081
+   ./index 10 2015 2015 8081
    ```
   * Index all songs of top 100 songs charts from 1970 to 2015 (This cloud take days): 
    ```
-   $ ./index 100 1970 2015 8081
+   ./index 100 1970 2015 8081
    ```
     Note: The Last parameter is the application port.
 
