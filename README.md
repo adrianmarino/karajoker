@@ -9,7 +9,15 @@ Requisites:
  * Redis
  * Mysql
 
-1. Install mysql lib:
+1. Clone repo:
+ ```
+ git clone https://github.com/adrianmarino/karajoker.git
+ ```
+2. Go to karajoker:
+ ```
+ cd karajoker
+ ```
+3. Install mysql lib:
   * In Arch
    ```
    pacman -S libmysqlclient
@@ -18,35 +26,35 @@ Requisites:
    ```
    sudo apt-get install libmysqlclient-dev
    ```
-2. Install dependencies:
+4. Install dependencies:
  ```
  bundle install
  ```
-3. Start MySQL server:
+5. Start MySQL server:
  ```
  bundle exec rake mysql:start
  ```
-4. Create db schema:
+6. Create db schema:
  ```
  bundle exec rake mysql:create_schema; bundle exec rake db:migrate
  ```
-5. Check whether the application works perfectly, runing all test (Optional):
+7. Check whether the application works perfectly, runing all test (Optional):
  ```
  bundle exec rake test
  ```
-6. Start redis:
+8. Start redis:
  ```
  redis-server
  ```
-7. Start sidekiq worker:
+9. Start sidekiq worker:
  ```
  bundle exec sidekiq -C config/sidekiq.yml
  ```
-8. Run application:
+10. Run application:
  ```
  bundle exec rails server
  ```
-9. Index top 10 hist between years:
+11. Index top 10 hist between years:
   * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time): 
    ```
    ./index 10 2015 2015 3000
@@ -65,15 +73,23 @@ Requisites:
 
 Requisites: Dcoker
 
-1. Build images
+1. Clone repo:
+ ```
+ git clone https://github.com/adrianmarino/karajoker.git
+ ```
+2. Go to karajoker:
+ ```
+ cd karajoker
+ ```
+3. Build images
  ```
  docker-compose build
  ```
-2. Start containers
+4. Start containers
  ```
  docker-compose up -d
  ```
-3. Index top 10 hist between years.
+5. Index top 10 hist between years.
   * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time): 
    ```
    ./index 10 2015 2015 8081
@@ -84,6 +100,6 @@ Requisites: Dcoker
    ```
     Note: The Last parameter is the application port.
 
-4. Monitor index process from [Sidekiq](http://localhost:8081/sidekiq)
+6. Monitor index process from [Sidekiq](http://localhost:8081/sidekiq)
 
-5. Go to [Karajoker](http://localhost:8081)
+7. Go to [Karajoker](http://localhost:8081)
