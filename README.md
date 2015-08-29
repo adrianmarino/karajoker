@@ -19,9 +19,9 @@ Requisites:
    sudo apt-get install libmysqlclient-dev
    ```
 2. Install dependencies:
-  ```
-  bundle install
-  ```
+```
+bundle install
+```
 3. Start MySQL server:
   ```
   bundle exec rake mysql:start
