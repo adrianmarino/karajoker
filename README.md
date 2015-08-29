@@ -75,6 +75,7 @@ An other youtube karaoke application.
 
 #### Requisites
 * Docker
+* Docker Compose
 
 #### Steps
 
