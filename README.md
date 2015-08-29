@@ -26,8 +26,7 @@ An other youtube karaoke aplication.
     ```
 4. Create db schema:
     ```
-    $ bundle exec rake mysql:create_schema
-    $ bundle exec rake db:migrate
+    $ bundle exec rake mysql:create_schema; bundle exec rake db:migrate
     ```
 5. Check whether the application works perfectly, runing all test (Optional):
     ```
