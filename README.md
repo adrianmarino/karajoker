@@ -5,9 +5,11 @@ An other youtube karaoke application.
 
 ### Normal setup
 
-Requisites:
+#### Requisites
  * Redis
  * Mysql
+
+#### Steps
 
 1. Clone repo:
  ```
@@ -71,7 +73,10 @@ Requisites:
 
 ### Docker setup
 
-Requisites: Dcoker
+#### Requisites
+* Dcoker
+
+#### Steps
 
 1. Clone repo:
  ```
