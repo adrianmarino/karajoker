@@ -19,34 +19,34 @@ Requisites:
    $ sudo apt-get install libmysqlclient-dev
    ```
 2. Install dependencies:
-   ```
-   $ bundle install
-   ```
+  ```
+  $ bundle install
+  ```
 3. Start MySQL server:
-   ```
-   $ bundle exec rake mysql:start
-   ```
+  ```
+  $ bundle exec rake mysql:start
+  ```
 4. Create db schema:
-   ```
-   $ bundle exec rake mysql:create_schema; bundle exec rake db:migrate
-   ```
+  ```
+  $ bundle exec rake mysql:create_schema; bundle exec rake db:migrate
+  ```
 5. Check whether the application works perfectly, runing all test (Optional):
-   ```
-   $ bundle exec rake test
-   ```
+  ```
+  $ bundle exec rake test
+  ```
 6. Start redis:
-   ```
-   $ redis-server
-   ```
-6. Start sidekiq worker:
-   ```
-   $ bundle exec sidekiq -C config/sidekiq.yml
-   ```
-7. Run application:
+  ```
+  $ redis-server
+  ```
+7. Start sidekiq worker:
+  ```
+  $ bundle exec sidekiq -C config/sidekiq.yml
+  ```
+8. Run application:
    ```
    $ bundle exec rails server
    ```
-8. Index top 10 hist between years:
+9. Index top 10 hist between years:
   * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time): 
    ```
    $ ./index 10 2015 2015 3000
@@ -57,16 +57,22 @@ Requisites:
    ```
     Note: The Last parameter is the application port.
 
-9. Go to [Karajoker](http://localhost:3000)
+10. Go to [Karajoker](http://localhost:3000)
 
-10. Enjoy.
+11. Enjoy.
 
 ### Docker setup
 
 Requisites: Dcoker
 
-1. docker-compose build
-2. docker-compose up -d
+1. Build images
+ ```
+ docker-compose build
+ ```
+2. Start containers
+ ```
+ docker-compose up -d
+ ```
 3. Index top 10 hist between years.
   * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time): 
    ```
