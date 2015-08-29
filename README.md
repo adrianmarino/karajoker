@@ -74,7 +74,7 @@ An other youtube karaoke application.
 ### Docker setup
 
 #### Requisites
-* Dcoker
+* Docker
 
 #### Steps
 
