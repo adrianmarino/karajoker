@@ -23,29 +23,29 @@ Requisites:
 bundle install
 ```
 3. Start MySQL server:
-  ```
-  bundle exec rake mysql:start
-  ```
+```
+bundle exec rake mysql:start
+```
 4. Create db schema:
-  ```
-  bundle exec rake mysql:create_schema; bundle exec rake db:migrate
-  ```
+```
+bundle exec rake mysql:create_schema; bundle exec rake db:migrate
+```
 5. Check whether the application works perfectly, runing all test (Optional):
-  ```
-  bundle exec rake test
-  ```
+```
+bundle exec rake test
+```
 6. Start redis:
-  ```
-  redis-server
-  ```
+```
+redis-server
+```
 7. Start sidekiq worker:
-  ```
-  bundle exec sidekiq -C config/sidekiq.yml
-  ```
+```
+bundle exec sidekiq -C config/sidekiq.yml
+```
 8. Run application:
-  ```
-  bundle exec rails server
-  ```
+```
+bundle exec rails server
+```
 9. Index top 10 hist between years:
   * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time): 
    ```
@@ -66,13 +66,13 @@ bundle install
 Requisites: Dcoker
 
 1. Build images
- ```
- docker-compose build
- ```
+```
+docker-compose build
+```
 2. Start containers
- ```
- docker-compose up -d
- ```
+```
+docker-compose up -d
+```
 3. Index top 10 hist between years.
   * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time): 
    ```
