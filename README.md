@@ -38,7 +38,7 @@ An other youtube karaoke aplication.
     ```
 6. Start sidekiq worker:
     ```
-    $ bin/bundle exec sidekiq -C config/sidekiq.yml
+    $ bundle exec sidekiq -C config/sidekiq.yml
     ```
 7. Index top 10 hist between years:
   * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time). 
