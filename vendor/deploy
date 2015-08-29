@@ -1,0 +1,5 @@
+
+GRANT ALL PRIVILEGES
+ON database.*
+TO 'root'@'%'
+IDENTIFIED BY 'root';
