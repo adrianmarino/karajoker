@@ -47,5 +47,9 @@ namespace :karajoker do
     task :logs do
       system('docker-compose logs')
     end
+
+    task :build do
+      system('docker-compose build')
+    end
   end
 end
