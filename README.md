@@ -89,11 +89,11 @@ Another youtube karaoke application.
  ```
 3. Build images
  ```
- docker-compose build
+ bundle exec rake karajoker:server:build
  ```
 4. Start containers
  ```
- docker-compose up -d
+ bundle exec rake karajoker:server:start
  ```
 5. Index top 10 hist between years.
   * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time): 
