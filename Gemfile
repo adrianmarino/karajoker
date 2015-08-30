@@ -20,6 +20,7 @@ gem 'whenever'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
+gem 'rest-client'
 
 group :development do
   gem 'rubocop', '~> 0.28.0'

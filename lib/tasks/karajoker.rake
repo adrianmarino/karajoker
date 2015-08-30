@@ -4,11 +4,18 @@ namespace :karajoker do
     Rails.logger = Karajoker::LoggerConfig.setup(Logger.new(STDOUT))
   end
 
-  desc 'Index new karaokes using BillboardSongHotCharts'
-  task :index, [:limit, :years] => [:setup_logger] do |task, args|
-    limit = args.limit.to_i unless args.limit.nil?
-    years = Karajoker::RangeUtils.from(args.years) unless args.years.nil?
-    Karajoker::Job::KaraokeIndexer.new(limit: limit, years: years).start
+  desc 'Index top songs from year'
+  task :index, [:limit, :years, :port] => [:setup_logger] do |task, args|
+    limit = args.limit || '10'
+    years = args.years ? Karajoker::RangeUtils.from(args.years) : Time.zone.today.year..Time.zone.today.year
+    port  = args.port || '8081'
+
+    require 'rest-client'
+    years.to_a.each do |year|
+      puts "Index first #{limit} top songs at #{year}"
+      url = "http://localhost:#{port}/api/index"
+      RestClient.post(url, { limit: limit, years: years }.to_json, content_type: :json, accept: :json)
+    end
   end
 
   desc 'generate html rubocop report'
