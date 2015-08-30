@@ -34,4 +34,18 @@ namespace :karajoker do
     puts "\s\s-\sPassword: #{ENV['DB_PASSWORD']}"
     puts "\s==========================="
   end
+
+  namespace :server do
+    task :start do
+      system('docker-compose up -d')
+    end
+
+    task :stop do
+      system('docker-compose stop')
+    end
+
+    task :logs do
+      system('docker-compose logs')
+    end
+  end
 end
