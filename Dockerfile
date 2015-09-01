@@ -28,8 +28,8 @@ RUN rm -f /etc/service/nginx/down
 RUN rm /etc/nginx/sites-enabled/default
 
 # Add config
-ADD docker/nginx-app.conf /etc/nginx/sites-enabled/app.conf
-ADD docker/nginx-env.conf /etc/nginx/main.d/env.conf
+ADD docker/app/nginx-app.conf /etc/nginx/sites-enabled/app.conf
+ADD docker/app/nginx-env.conf /etc/nginx/main.d/env.conf
 #==============================================================================
 #
 #

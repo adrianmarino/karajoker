@@ -14,7 +14,8 @@ namespace :karajoker do
     years.to_a.each do |year|
       puts "Index first #{limit} top songs at #{year}"
       url = "http://localhost:#{port}/api/index"
-      RestClient.post(url, { limit: limit, years: years }.to_json, content_type: :json, accept: :json)
+      RestClient.post(url, { limit: limit, years: year }.to_json, content_type: :json, accept: :json)
+      sleep(0.5)
     end
   end
 
