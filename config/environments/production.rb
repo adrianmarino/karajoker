@@ -71,8 +71,17 @@ Rails.application.configure do
   # config.autoflush_log = false
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
-  config.log_formatter = ::Logger::Formatter.new
+  # config.log_formatter = ::Logger::Formatter.new
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.lograge.enabled = true
+  config.lograge.formatter = Lograge::Formatters::Graylog2.new
+  config.logger = GELF::Logger.new(
+    ENV['GRAYLOG_HOST'],
+    ENV['GRAYLOG_UDP_PORT'],
+    'WAN',
+    { env: Rails.env, app: 'karajoker' }
+  )
 end
