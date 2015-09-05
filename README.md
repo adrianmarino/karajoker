@@ -9,22 +9,22 @@ Another youtube karaoke application.
 
 #### Steps
 
-1. Clone repo
+1. Install mysql lib
+  * In Arch: `sudo pacman -S libmysqlclient`
+  * In Debian `sudo apt-get install libmysqlclient-dev`
+
+2. Clone repo
    
    ```
    git clone https://github.com/adrianmarino/karajoker.git
    ```
 
-2. Go to karajoker
+3. Go to karajoker
 
    ```
    cd karajoker
    ```
 
-3. Install mysql lib
-  * In Arch: `sudo pacman -S libmysqlclient`
-  * In Debian `sudo apt-get install libmysqlclient-dev`
- 
 4. Install dependencies:
 
  ```
@@ -71,11 +71,9 @@ Another youtube karaoke application.
 	   ```
 	   bundle exec rake karajoker:index[100,1970..2015,3000]
 	   ```
-   		Note: The Last parameter is the application port.
+   	   **Note**: Last parameter is the application port.
 
 10. Go to [Karajoker](http://localhost:3000)
-
-11. Enjoy.
 
 ## Applicaiton setup in Docker container
 
@@ -116,7 +114,7 @@ Another youtube karaoke application.
 	   ```
 	   bundle exec rake karajoker:index[100,1970..2015]
 	   ```
-	   Note: The Last parameter is the application port.
+	   **Note**: Last parameter is the application port.
 
 6. Monitor index process from [Sidekiq](http://localhost:8081/sidekiq)
 
