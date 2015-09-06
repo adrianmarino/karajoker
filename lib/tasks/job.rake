@@ -1,4 +1,4 @@
-namespace :karajoker do
+namespace :job do
   desc 'Index top songs from year'
   task :index, [:limit, :years, :port] do |task, args|
     require File.expand_path('../../../config/environment', __FILE__)
@@ -11,16 +11,5 @@ namespace :karajoker do
       url = "http://localhost:#{port}/api/index"
       RestClient.post(url, { limit: limit, years: year }.to_json, content_type: :json, accept: :json)
     end
-  end
-
-  desc 'Show db info'
-  task :dbinfo do
-    puts "\n\s==========================="
-    puts "\s\sDB Config"
-    puts "\s==========================="
-    puts "\s\s-\sHostname: #{ENV['DB_HOSTNAME']}"
-    puts "\s\s-\sUsername: #{ENV['DB_USERNAME']}"
-    puts "\s\s-\sPassword: #{ENV['DB_PASSWORD']}"
-    puts "\s==========================="
   end
 end

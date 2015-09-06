@@ -62,7 +62,6 @@ GEM
       rb-readline (= 0.5.2)
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    chronic (0.10.2)
     clipboard (1.0.6)
     coderay (1.1.0)
     coercible (1.0.0)
@@ -325,8 +324,6 @@ GEM
     webmock (1.21.0)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
-    whenever (0.9.4)
-      chronic (>= 0.6.3)
     yard (0.8.7.6)
     yourub (2.0.2)
       google-api-client (~> 0.7)
@@ -368,5 +365,4 @@ DEPENDENCIES
   slim
   vcr
   webmock
-  whenever
   yourub
