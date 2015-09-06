@@ -1,4 +1,4 @@
-namespace :dc do
+namespace :docker do
   desc 'Start docker containers'
   task :start do
     `docker-compose up -d`

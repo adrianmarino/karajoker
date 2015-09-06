@@ -5,7 +5,7 @@ namespace :redis do
   end
 
   desc 'Start redis server'
-  task :start => :flush do
+  task start: :flush do
     system('nohup redis-server &')
   end
 end
