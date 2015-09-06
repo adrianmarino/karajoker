@@ -15,7 +15,6 @@ gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'nokogiri', '1.6.5'
 gem 'yourub'
-gem 'whenever'
 
 gem 'sidekiq'
 gem 'sinatra', require: false
