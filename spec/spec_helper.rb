@@ -3,7 +3,6 @@ ENV['RAILS_ENV'] = 'test'
 require 'rubygems'
 require File.expand_path('../../config/environment', __FILE__)
 require 'rspec/rails'
-require 'capybara/rspec'
 require 'lib/rest_test_utils'
 require 'vcr'
 require 'webmock/rspec'

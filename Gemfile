@@ -22,7 +22,7 @@ gem 'sinatra', require: false
 gem 'slim'
 gem 'rest-client'
 
-group :development do
+group :development, :test do
   gem 'rubocop', '~> 0.28.0'
 
   gem 'pry'
