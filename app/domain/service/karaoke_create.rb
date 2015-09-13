@@ -1,46 +1,45 @@
 module Service
   class KaraokeCreate < Base
+    
+    attr_reader :logger
+
+    def initialize
+      @logger = KaraokeCreateLogger.new
+      @indexed = 0
+    end
+
     def call(songs)
-      count = 0
-      indexed = songs.inject(0) do |indexed, song|
-        count += 1
-        log_prefix = "[#{count}/#{songs.size}]"
-        log_postfix = "'#{song.title}' (#{song.author})"
+      songs.each do |song|
+        logger.setup_for(songs, song)
         karaoke = search_karaoke(song)
-        if karaoke.nil?
-          logger.info "#{log_prefix} Not found: #{log_postfix}"
-          indexed
-        else
-          index(karaoke, song, indexed, log_prefix, log_postfix)
-        end
+        index(karaoke, song) if karaoke
       end
-      KaraokeCreateResponse.new(indexed)
+      KaraokeCreateResponse.new(@indexed)
     end
 
     private
 
     def search_karaoke(song)
-      result = Youtube::KaraokeSearcher.new.search(query_from(song))
-      result.find(&:karaoke?)
+      karaoke = Youtube::KaraokeSearcher.new.search(query: "#{song.title} #{song.author}").find(&:karaoke?)
+      if karaoke.nil?
+        logger.not_found
+        return nil
+      elsif already_exist?(karaoke)
+        logger.already_exists
+        return nil
+      end
+      karaoke
     end
 
     def already_exist?(karaoke)
-      Karaoke.exists? youtube_id: karaoke.id
+      Karaoke.exists?(youtube_id: karaoke.id)
     end
 
-    def query_from(song)
-      { query: "#{song.title} #{song.author}" }
-    end
-
-    def index(karaoke, song, indexed, log_prefix, log_postfix)
-      if already_exist?(karaoke)
-        logger.info "#{log_prefix} Already exists: #{log_postfix}"
-      else
-        Karaoke.create_from(year: song.year, author: song.author, title: song.title, youtube_id: karaoke.id)
-        indexed += 1
-        logger.info "#{log_prefix} Indexed(#{indexed}): #{log_postfix}"
-      end
-      indexed
+    def index(karaoke, song)
+      Karaoke.create_from(year: song.year, author: song.author, title: song.title, youtube_id: karaoke.id)
+      @indexed += 1
+      logger.indexed
     end
   end
 end
+

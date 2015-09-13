@@ -3,6 +3,7 @@ module Crawler::Official
     ALL = %w(singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles
              vinyl-singles rock-and-metal-singles)
 
+
     attr_reader :url, :date
 
     def initialize(url, date)
