@@ -1,6 +1,6 @@
 module Karajoker
   FactoryGirl.define do
-    factory :karaoke, class: Karajoker::Entity::Karaoke do
+    factory :karaoke, class: Karaoke do
       trait :hello_1 do
         title 'hello_1'
         youtube_id '12345'

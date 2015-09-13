@@ -46,7 +46,8 @@ Another youtube karaoke application.
 6. Create db schema
 
  ```
- bundle exec rake mysql:create_schema; bundle exec rake db:migrate
+ bundle exec rake db:create_schema
+ bundle exec rake db:migrate
  ```
 7. Check whether the application works perfectly, runing all test (Optional)
 
@@ -56,12 +57,12 @@ Another youtube karaoke application.
 8. Start redis
 
  ```
- redis-server
+ bundle exec rake redis:start
  ```
 9. Start sidekiq worker
 
  ```
- bundle exec sidekiq -C config/sidekiq.yml
+ rake sidekiq:start
  ```
 10. Run application
 
@@ -115,4 +116,4 @@ Another youtube karaoke application.
 		* Username: admin
 		* Password: password
 
-7. Go to [Karajoker](http://localhost:8081)
+6. Go to [Karajoker](http://localhost:8081)

@@ -15,7 +15,6 @@ gem 'bower-rails'
 gem 'angular-rails-templates'
 gem 'nokogiri', '1.6.5'
 gem 'yourub'
-gem 'whenever'
 
 gem 'sidekiq'
 gem 'sinatra', require: false
@@ -24,7 +23,7 @@ gem 'rest-client'
 gem 'gelf'
 gem 'lograge'
 
-group :development do
+group :development, :test do
   gem 'rubocop', '~> 0.28.0'
 
   gem 'pry'
