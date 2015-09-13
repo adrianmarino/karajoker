@@ -1,7 +1,7 @@
 # Karajoker
 Another youtube karaoke application.
 
-## Setup
+## Applicaiton setup
 
 #### Requisites
  * Redis
@@ -20,61 +20,73 @@ Another youtube karaoke application.
 	   ```
 	   sudo apt-get install libmysqlclient-dev
 	   ```
+
 2. Clone repository
 
  ```
  git clone https://github.com/adrianmarino/karajoker.git
+ ```
+
+2. Go to karajoker
+
+ ```
  cd karajoker
  ```
 
-3. Install dependencies
+4. Install dependencies
 
  ```
  bundle install
  ```
-4. Create schema & migrate
+5. Start MySQL server
+
+ ```
+ bundle exec rake mysql:start
+ ```
+6. Create db schema
 
  ```
  bundle exec rake db:create_schema
  bundle exec rake db:migrate
  ```
-5. Check whether the application works perfectly, runing all test (Optional):
+7. Check whether the application works perfectly, runing all test (Optional)
 
  ```
  bundle exec rake test
  ```
-6. Start redis
+8. Start redis
 
  ```
  bundle exec rake redis:start
  ```
-8. Start sidekiq worker
+9. Start sidekiq worker
 
  ```
  rake sidekiq:start
  ```
-7. Run application
+10. Run application
 
  ```
  bundle exec rails server
  ```
-8. Index karaokes
-  * First 10 songs from a top 100 songs chart at 2015 (This cloud take many time):
+11. Index top 10 hits between years:
+  * Index first 10 songs from a top 100 songs chart at 2015 (This cloud take many time):
 
 	   ```
-	   bundle exec rake job:index_karaokes[10,2015..2015,3000]
+	   bundle exec rake karajoker:index[10,2015..2015,3000]
 	   ```
-  * All songs of top 100 songs charts from 1970 to 2015 (This cloud take very long time):
+  * Index all songs of top 100 songs charts from 1970 to 2015 (This cloud take days):
 
 	   ```
-	   bundle exec rake job:index_karaokes[100,1970..2015,3000]
+	   bundle exec rake karajoker:index[100,1970..2015,3000]
 	   ```
-
     **Note**: Last parameter is the application port.
 
-9. Go to [Karajoker](http://localhost:3000)
+12. Monitor index process with [Sidekiq](http://localhost:8081/sidekiq).
 
-## Setup with Docker
+13. Go to [Karajoker](http://localhost:8081)
+
+## Setup in Docker
 
 #### Requisites
 * Docker
@@ -82,36 +94,25 @@ Another youtube karaoke application.
 
 #### Steps
 
-1. Clone repository
+1. Build images
 
- ```
- git clone https://github.com/adrianmarino/karajoker.git
- cd karajoker
- ```
-2. Build images
+	```
+	bundle exec rake karajoker:server:build
+	```
+2. Start containers
 
- ```
- bundle exec rake docker:build
- ```
-3. Start containers
+	```
+	bundle exec rake karajoker:server:start
+	```
+3. Index songs
 
- ```
- bundle exec rake docker:start
- ```
-4. Index karaokes
-  * First 10 songs from a top 100 songs chart at 2015 (This cloud take many time):
+   ```
+   bundle exec rake karajoker:index[10, 2015]
+   ```
 
-	   ```
-	   bundle exec rake job:index_karaokes[10,2015..2015]
-	   ```
-  * All songs of top 100 songs charts from 1970 to 2015 (This cloud take very long time):
-
-	   ```
-	   bundle exec rake job:index_karaokes[100,1970..2015]
-	   ```
-5. Monitor jobs with:
+4. Monitor index process with:
 	* [Sidekiq](http://localhost:8081/sidekiq)
-	* [Graylog](http://localhost:9090)
+	* [Graylog](http://localhost:9000)
 		* Username: admin
 		* Password: password
 

@@ -20,6 +20,8 @@ gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
 gem 'rest-client'
+gem 'gelf'
+gem 'lograge'
 
 group :development, :test do
   gem 'rubocop', '~> 0.28.0'
