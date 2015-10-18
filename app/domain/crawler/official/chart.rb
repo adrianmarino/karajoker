@@ -3,6 +3,8 @@ module Crawler::Official
     ALL = %w(singles end-of-year-singles audio-streaming singles-sales singles-downloads physical-singles
              vinyl-singles rock-and-metal-singles)
 
+    ALL.each { |chart| const_set chart.upcase.gsub('-', '_'), "#{chart}-chart" }
+
     attr_reader :url, :date
 
     def initialize(url, date)
@@ -31,11 +33,5 @@ module Crawler::Official
       options.shift
       options.map { |option| option.content.to_i }
     end
-  end
-
-  Chart::ALL.each do |chart|
-    name = chart.upcase.gsub('-', '_')
-    value = "#{chart}-chart"
-    const_set name, value
   end
 end

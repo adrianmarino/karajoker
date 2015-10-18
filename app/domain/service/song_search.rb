@@ -1,8 +1,7 @@
 module Service
-  class SongSearch < Base
-    Logger = Rails.logger
+  class SongSearch
+    include AppLogger
     Chart = Crawler::Official::Chart
-    HotChart = Crawler::Billboard::HotChart
 
     def call(year, limit = nil)
       songs = official_charts(year, limit).merge(hot_chart(year, limit))
@@ -12,7 +11,7 @@ module Service
     private
 
     def hot_chart(year, limit)
-      songs = HotChart.new(year).songs(limit: limit)
+      songs = Crawler::Billboard::HotChart.new(year).songs(limit: limit)
       logger.info "From: Hotchart, at: #{year}, Found: #{songs.size}"
       songs
     end
@@ -21,7 +20,8 @@ module Service
       Chart::ALL.each_with_object(Set.new) do |chart, songs|
         last_day_of_each_month_of(year).each do |day|
           songs.merge(Chart.select(name: chart, at: day).songs(limit: limit))
-          logger.info "From: Officialcharts, Chart: #{chart}, in: #{Date::MONTHNAMES[day.month]}, Found: #{songs.size}"
+          month_name = Date::MONTHNAMES[day.month]
+          logger.info "From: Officialcharts, Chart: #{chart}, in: #{month_name}, Found: #{songs.size}"
         end
       end
     end

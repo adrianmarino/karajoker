@@ -1,17 +1,19 @@
 module Youtube
   class KaraokeSearcher
-    def search(options)
+    def search(song)
       results = []
-      @client.search(query_karaoke(options)) do |video|
-        results << KaraokeResult.new(video)
-      end
+      @client.search(query(song)) { |video| results << KaraokeResult.new(video) if karaoke?(video) }
       results
     end
 
     private
 
-    def query_karaoke(options)
-      { query: "#{options[:query]} karaoke" }
+    def karaoke?(video)
+      video['snippet']['title'].downcase.include?('karaoke')
+    end
+
+    def query(song)
+      { query: "#{song} karaoke" }
     end
 
     def initialize

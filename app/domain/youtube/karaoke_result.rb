@@ -6,10 +6,6 @@ module Youtube
       "{'id': #{id}, title': '#{title}'}"
     end
 
-    def karaoke?
-      title.downcase.include? 'karaoke'
-    end
-
     def title
       @video['snippet']['title']
     end
