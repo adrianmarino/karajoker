@@ -1,7 +1,7 @@
 # Karajoker
 Another youtube karaoke application.
 
-## Applicaiton setup
+## Application setup
 
 #### Requisites
  * Redis
