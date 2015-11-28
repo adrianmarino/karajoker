@@ -27,16 +27,7 @@ module Job
     end
 
     def filter_repeated(songs)
-      titles = []
-      result = songs.select do |song|
-        if titles.include?(song.title)
-          false
-        else
-          titles << song.title
-          true
-        end
-      end
-
+      result = songs.uniq(&title)
       logger.info "<< Filter #{songs.size - result.size} repeated songs of #{songs.size} >>"
       result
     end
