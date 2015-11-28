@@ -107,7 +107,7 @@ Another youtube karaoke application.
 3. Index songs
 
    ```
-   bundle exec rake karajoker:index[10, 2015]
+   bundle exec rake karajoker:index[10,2015]
    ```
 
 4. Monitor index process with:
