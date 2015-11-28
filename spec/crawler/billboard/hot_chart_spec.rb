@@ -7,11 +7,11 @@ module Crawler::Billboard
 
     context 'when found song' do
       it 'has expected title', :vcr do
-        expect(song.title).to eq('The hills')
+        expect(song.title).to eq('Hello')
       end
 
       it 'has expected author', :vcr do
-        expect(song.author).to eq('The weeknd')
+        expect(song.author).to eq('Adele')
       end
     end
   end

@@ -67,6 +67,7 @@ module Rest::Resource
 
     private
 
+    # rubocop:disable all
     def compare(results, karaokes)
       results.zip(karaokes).each do |result, karaoke|
         expect(result.title).to eq(karaoke.title)
@@ -75,5 +76,6 @@ module Rest::Resource
         expect(result.id).to eq(karaoke.youtube_id)
       end
     end
+    # rubocop:enable all
   end
 end
