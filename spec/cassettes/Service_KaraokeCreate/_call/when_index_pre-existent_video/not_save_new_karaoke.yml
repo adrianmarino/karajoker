@@ -23,9 +23,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:58:47 GMT
+      - Sat, 28 Nov 2015 19:15:24 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:47 GMT
+      - Sat, 28 Nov 2015 19:10:24 GMT
       Etag:
       - '"ye6orv2F-1npMW3u9suM3a7C5Bo/jzIteugG3dUE34Q9UIJ3OOS1IIU"'
       Vary:
@@ -48,7 +48,7 @@ http_interactions:
       Content-Length:
       - '45825'
       Age:
-      - '5'
+      - '4'
       Alternate-Protocol:
       - 443:quic,p=1
       Alt-Svc:
@@ -1076,10 +1076,10 @@ http_interactions:
         tiplHaUAerFFDrBf6C4JaKhAjWHgyAQPld3jkgReH3h94PU7x+sfBMduV/S+
         Ef/9zzf/H0gkkMjpfwUA
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:52 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:29 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&order=relevance&part=snippet&q=Through%20Her%20Eyes%20Dream%20theater%20karaoke&safeSearch=none&type=video
+    uri: https://www.googleapis.com/youtube/v3/search?key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&order=relevance&part=snippet&q=With%20Or%20Without%20You%20U2%20karaoke&safeSearch=none&type=video
     body:
       encoding: UTF-8
       string: ''
@@ -1100,13 +1100,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:52 GMT
+      - Sat, 28 Nov 2015 19:10:29 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:52 GMT
+      - Sat, 28 Nov 2015 19:10:29 GMT
       Cache-Control:
       - private, max-age=120, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/sapXaS4n5RPzA_CZxtQfonJZ9Bo"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/rvkmCDzRCcELiF838HfMod4ZKTk"'
       Vary:
       - Origin
       - X-Origin
@@ -1131,38 +1131,39 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        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
+        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
+        EQAA
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:52 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:29 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=59u7UwUkEWU&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
+    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=Hd-7ALoXKNQ&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
     body:
       encoding: UTF-8
       string: ''
@@ -1183,13 +1184,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:53 GMT
+      - Sat, 28 Nov 2015 19:10:30 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:53 GMT
+      - Sat, 28 Nov 2015 19:10:30 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/xFDiO_vtw7Hso7can5n1ZJoP1Co"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/2YTuqITx3PtF7RRbc73vavqd37Y"'
       Vary:
       - Origin
       - X-Origin
@@ -1214,18 +1215,19 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ2SPW/CMBCG9/wKy1MrtfmAlAJri1Spa9MOVQcXX+MrcZLa
-        ZyKE+O91IAoIIYYMZ/ne+3heWd4GjCOBtnzOPgPGtj68In3KH2buMWuy1eIj
-        43d73ZZY10C+uO9jnJAKaHufDQjN3hQIAsPu/c1ULlfsxWeLDVh28yqMqFbA
-        3sFYrMrbw0q/Qjn9XQosbL+WcQk/whVHkJecKVqQIqrtPIow3BDqPFxWOlpj
-        dOI16obD3zrvIH68QUnKL0hGca8pwFy1kFl8kHZdiWuQ6PQwvP67amB8yUAy
-        PXegfGUYX13np9ML/PHknG9JlFIYOcyDlVc9TNILHtL+DYL+3HX/jgShJVwe
-        /whfIzRPlSvbUT5K4zjhQTfm4yvYBf9Y3NE63AIAAA==
+        H4sIAAAAAAAAAJ2SwU/CMBTG7/srXnpWBmMB5Gb0gMFoPBg1xEOlhT5d17m+
+        goTwv9uNOQwumOzQNv1ev/f90nYbAEOS2rIxzAKArR9eEX7LJuJ8eHlrnqd3
+        D+ys1G2KWSbJF8tzwAgpkcXZJyQF9zkUq3EEL8b5+pTn3HxImFzDTQqkJFja
+        JBLMAh6jfU/fQzn9lnJMbN0XmJAL7pJDkpdcnhRJiiiz4zDEzoZQLztzo8MV
+        hr9gw8rcec+WVYi3r1GQ8g16UbfWlMSlKkIuuntpV5WYlgKdbhevP08C9JsA
+        eqNjAuUr7fLV6fx41JDfHxznW+Kp4Llox2DFSYZB3MAQ/7kDzb9yaVu+Qun9
+        5ys0XcUw+sEI6nlX/X/ihJZwfmBiK5TrK+PSwsqiQRz1hyyofH68BrvgG8v2
+        h0FlAwAA
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:53 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:30 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=6ye7wLHRZ-c&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
+    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=_rCF2tzeKrA&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
     body:
       encoding: UTF-8
       string: ''
@@ -1246,13 +1248,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:53 GMT
+      - Sat, 28 Nov 2015 19:10:30 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:53 GMT
+      - Sat, 28 Nov 2015 19:10:30 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/LchRsH8a_VjvS-5UZWHrK0efPRA"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/medZ2pm0y-DIEWATDCcXi8kW83g"'
       Vary:
       - Origin
       - X-Origin
@@ -1277,18 +1279,17 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ1RPU/DMBDd/SssTyDRpG2gKV0BqQMTYgIxhOSID8VJiM+N
-        oir/nUtr0gpVHTqc5Xt370O6rZAKCYxVK/kupNxyMZJxqxYdxO3z+uVtkqqb
-        HW5LrGsgHu72pCKkAobdxwYSI181JASNnPCvqVyu5Zq7pw6svCq6BlN7vVdi
-        pnbms0ywsKOaVBl8Ja446DPkmmLQ10S1XYUhBh2hyYO0MuEGw6OIoScH33Xu
-        TZjeYkaaBWbz6YhpwFwPJvfTPdT7kTKQoTOX2ZufswGiUwFmy/8JNE8u89fn
-        /W+XJ/yjxZ+/GN/en5oSQkt8ssO1NwjtQ+XKgaru4nkUR0p4HteH6MUveZcN
-        R1ACAAA=
+        H4sIAAAAAAAAAJ1RTUvDQBC9769Y5ixJm5RSewtFLzkUBBERkdis2ZFsErOz
+        LVry352ka1qk9NDD7DJv5n3A7IUEJGUsLOWLkHLPxUjOLby1q/uIflTaJnAz
+        4LbCplHEw2FPAiGVqt9Nk4dknd7Jx4jhJyQt1+3w147kc+0OAkzQzrxXGZZ2
+        FJGQq4/MlUdZhlxb9rKaqLHLMMTgm9AUwaY24RbDk2ShJwefTeFNmL7DnDQL
+        TKPJiGmFhe5NbicHqPMjMCpHZ66zN18XA8TnAkwX/xNonlznry/7zxZn/OP5
+        n78Y385fmDJCS7g53ge2qHar2lU9FaJ4PotBeBrXq+jEL4V31DxGAgAA
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:54 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:30 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=0fm5zYNEmCU&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
+    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=FX_fgeP39dY&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
     body:
       encoding: UTF-8
       string: ''
@@ -1309,13 +1310,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:54 GMT
+      - Sat, 28 Nov 2015 19:10:31 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:54 GMT
+      - Sat, 28 Nov 2015 19:10:31 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/qbEZOoSDBwnv4K9c3cGbMEOuDNk"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/1w9w-y2HT_ks-vRYoC2xLj0w3Yg"'
       Vary:
       - Origin
       - X-Origin
@@ -1340,18 +1341,17 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ2SMU/DMBCFd/8KyxNIkDi0VKVrqcTEBANCDKZ240OxE+xz
-        q1Llv+O0UVpVUYYMtnzv/O57snwglAEq49mCfhJKD3FFRcaS8Y15/Pt4XZnl
-        O7s76t5CVSmMzeM9yhCwUM3dZ6eEoW9aCVSO3seTK0Ou6UusVnvl6Q1Yjy4Y
-        ZVEUt6d50a+D+bYCCt/NpEyqjQjFmRKl4IqGohErv0hTSPYIJk/WpUm3kF4E
-        TVtz8lPlLSTadyBRxwHZA+80rSDXDeSJn6S6bTGjJAQzDm9+BwNM+gJk8+sE
-        OnbG8fUwfzrv4U9m13yPwkrh5LgMXg5mmE17Mky7NyDdXrefDgWCR1if/wjb
-        gtoty2AbK8s4zzgjrS2uL1KTf3cbt9rZAgAA
+        H4sIAAAAAAAAAJ1RO0/DMBDe/StOniHOg6C2KxILCwsChBAytRsfxHFIzq2q
+        Kvx2nDSkCFUdOpyt++6+h3Q7BhxJ25Yv4IUB7EIFRIWW3z69rQp9n83VM78Y
+        8LbCutYUhsMecEIqdb/7kMI3PCIZcM3wO0+wdR4u4U420n3qvUSgGG/fK4ll
+        O8kAV3olfXkQDpBvyl7YENXtQgiMtoS2iJbOijWKP9nESI4+6mI0CfQNKjJB
+        IEnjCTMaC9ObzOM91I0jbrVCb8+zt18nA2THAiSz/wlMmJznb077X82O+GfX
+        v/5servxxiQJW8Ll4T58jXpz43zVU3mS53mccjbyQr2yjv0AUG5YMkkCAAA=
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:54 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:31 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=98bVQqSfTUo&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
+    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=OH21Av1Zb-g&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
     body:
       encoding: UTF-8
       string: ''
@@ -1372,13 +1372,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:54 GMT
+      - Sat, 28 Nov 2015 19:10:31 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:54 GMT
+      - Sat, 28 Nov 2015 19:10:31 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/ib9dGSFSPI6gd-M2HEzUY-MKqfY"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/l0x8vg_te7lukR9kd4Cf6iEeqIw"'
       Vary:
       - Origin
       - X-Origin
@@ -1403,18 +1403,19 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ2RwW7CMAyG73mKKOethXbaCtdtElc0tsu0Q6Cm8ZS0pXFA
-        CPXd50JXpglx4OAo/u3fnyUfhFRI4Lyayk8h5YGDlZxTNcmWH/PN23rxXqm7
-        o+5LrGsgLh77pCIkC13vSwPayYUBTdDIe/41VSiMnHH2ugcvsfTUBAclaXua
-        xm4T3LLUaP0wUaoc1jrYM4Ol0NiOYYhqP41jjPaErohWlYu3GP9ZM+7N0Xdd
-        9BC27zAnwwPGyWjQDGBhOshkdJLavqQc5BjcbXi3ubpAemmBcfZ/A8OV2/jm
-        Ov8hu8BPH3/5Ynjb/tykCT3h6nwftUXYPVeh7KwqecrSRInexvElWvEDh8G4
-        klMCAAA=
+        H4sIAAAAAAAAAJ2TwU/CMBTG7/srXnowkAhjgyBwM170IgcjRo2HshX6zLrO
+        9RU0hP/dbsxhcMFkh3bp9/r1+7Vddx4wJKEMm8GrB7BzzSmxG7L5bRhcb4KX
+        ZW/NLkvdpJhlglyxnAeMkBJRzH0MoQdPSBLmefnVluBZW+jMVyuMkCdwlxrK
+        rRIpucFC5AZ12oVO54FELjRcwL2GhY54YrrdQ55bX1q1TDkmps4EFosVt8mR
+        wkk2TwoKSZSZme9j/4tQrfuRVv4G/V8b8Stz/z2rNlXYtxiTdAsE4aDWpMC1
+        LEKmg4O0r0pMiRitahevPs4CDJsAgskpgXSVdvnyfP5o0pA/HJ/mG+JpzPO4
+        HYOJzzKMRw0Moz9noPhnLkzLWyi9//wKTUdxFf5geHW/r94GcUJDGB2Z2AbF
+        9kbbtLCyIAin0wnzKp9rb97e+wb4CtP6gQMAAA==
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:55 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:31 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=GtjGv8tSXmo&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
+    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=exdNzIaugxI&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
     body:
       encoding: UTF-8
       string: ''
@@ -1435,13 +1436,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:55 GMT
+      - Sat, 28 Nov 2015 19:10:31 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:55 GMT
+      - Sat, 28 Nov 2015 19:10:31 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/zvzTue3B3fcfpihZ-qsmbPx_lIg"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/Wtck_aHE09FZyCUuLkcRv_U7oOI"'
       Vary:
       - Origin
       - X-Origin
@@ -1466,15 +1467,16 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ2S0UrDMBSG7/sUIVcK2q7bWOtuFfYADhTEi7gcmzOatian
-        nWP03U232o1ZKvQigfwn//k/TnLwGEcCbfmSvXmMHdxyinRHvqLtqorp+VXn
-        /O6o2wyLAsgVj/cYJ6QUmrsvmKYoNLtna2XyMlFMgWGwB8tungy4ylqBIKdt
-        8grM7amha6BK/ZEJTG3XlHEJn6JMzzFOKk3axCiiwi6DAP09oU78Ta6DCoML
-        0qA1+9siaUOcfYeSlGsQTiedpgAT1YQ8TE5S3Za4BomlHhevvwYBZn0AYXxN
-        oFxlXL4azp/HPfmzxXW+JZFJYeQ4BisHGRbzHob5nxlo8W3AjnyFo/efr9A3
-        imj6i+F1e91+fhKElnBzZuIVwu4xL7PGysNoEXGvdbn17tXeDyeJwOZgAwAA
+        H4sIAAAAAAAAAJ2TT3OCMBDF73yKnZw7IojWerQnpzPtRafTqT1Ek5KtBCjZ
+        +KfW796gqB3L2BkOCeRt3r4fAbYeMCSpDRvAqwewdcMpwi2ZXIvHrxG38XrE
+        bva6STHPJbnifh8wQkpkuXcSwpQ9Iyl4KqC8ZpbgJbNTBkM+X2Aaw7hwN/AN
+        D7zg2ULCcAPRZAgj4gnyFFyHcYEzS/IQ5porq2cpx8ScAoEJ+c5tckZwki2S
+        EkER5Wbg+9jaEOq4Nc+0v0T/11P4lbn1kcdViLOvUJByDYKwfdKUxFiVIXft
+        g7SrSkxLgVY3i9efVwE6dQBB/5JAuUqzfHU9P+rX5Hd6l/mGeCp4IZoxGHGV
+        oRfVMER/zkDzdSFNw7ew9/7zKdQdxW14xPBO8676MYgTGsL5mYktUa7uM5uW
+        VhYE3bDLvMrmxpu3834ASfKQ8H0DAAA=
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:55 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:32 GMT
 - request:
     method: get
     uri: https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest?key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4
@@ -1498,9 +1500,9 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:58:47 GMT
+      - Sat, 28 Nov 2015 19:15:24 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:47 GMT
+      - Sat, 28 Nov 2015 19:10:24 GMT
       Etag:
       - '"ye6orv2F-1npMW3u9suM3a7C5Bo/jzIteugG3dUE34Q9UIJ3OOS1IIU"'
       Vary:
@@ -2551,10 +2553,10 @@ http_interactions:
         tiplHaUAerFFDrBf6C4JaKhAjWHgyAQPld3jkgReH3h94PU7x+sfBMduV/S+
         Ef/9zzf/H0gkkMjpfwUA
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:56 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:32 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/search?key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&order=relevance&part=snippet&q=Through%20Her%20Eyes%20Dream%20theater%20karaoke&safeSearch=none&type=video
+    uri: https://www.googleapis.com/youtube/v3/search?key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&order=relevance&part=snippet&q=With%20Or%20Without%20You%20U2%20karaoke&safeSearch=none&type=video
     body:
       encoding: UTF-8
       string: ''
@@ -2575,13 +2577,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:56 GMT
+      - Sat, 28 Nov 2015 19:10:32 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:56 GMT
+      - Sat, 28 Nov 2015 19:10:32 GMT
       Cache-Control:
       - private, max-age=120, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/sapXaS4n5RPzA_CZxtQfonJZ9Bo"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/rvkmCDzRCcELiF838HfMod4ZKTk"'
       Vary:
       - Origin
       - X-Origin
@@ -2606,38 +2608,39 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        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
+        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
+        EQAA
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:56 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:32 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=59u7UwUkEWU&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
+    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=Hd-7ALoXKNQ&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
     body:
       encoding: UTF-8
       string: ''
@@ -2658,13 +2661,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:57 GMT
+      - Sat, 28 Nov 2015 19:10:33 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:57 GMT
+      - Sat, 28 Nov 2015 19:10:33 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/xFDiO_vtw7Hso7can5n1ZJoP1Co"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/2YTuqITx3PtF7RRbc73vavqd37Y"'
       Vary:
       - Origin
       - X-Origin
@@ -2689,18 +2692,19 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ2SPW/CMBCG9/wKy1MrtfmAlAJri1Spa9MOVQcXX+MrcZLa
-        ZyKE+O91IAoIIYYMZ/ne+3heWd4GjCOBtnzOPgPGtj68In3KH2buMWuy1eIj
-        43d73ZZY10C+uO9jnJAKaHufDQjN3hQIAsPu/c1ULlfsxWeLDVh28yqMqFbA
-        3sFYrMrbw0q/Qjn9XQosbL+WcQk/whVHkJecKVqQIqrtPIow3BDqPFxWOlpj
-        dOI16obD3zrvIH68QUnKL0hGca8pwFy1kFl8kHZdiWuQ6PQwvP67amB8yUAy
-        PXegfGUYX13np9ML/PHknG9JlFIYOcyDlVc9TNILHtL+DYL+3HX/jgShJVwe
-        /whfIzRPlSvbUT5K4zjhQTfm4yvYBf9Y3NE63AIAAA==
+        H4sIAAAAAAAAAJ2SwU/CMBTG7/srXnpWBmMB5Gb0gMFoPBg1xEOlhT5d17m+
+        goTwv9uNOQwumOzQNv1ev/f90nYbAEOS2rIxzAKArR9eEX7LJuJ8eHlrnqd3
+        D+ys1G2KWSbJF8tzwAgpkcXZJyQF9zkUq3EEL8b5+pTn3HxImFzDTQqkJFja
+        JBLMAh6jfU/fQzn9lnJMbN0XmJAL7pJDkpdcnhRJiiiz4zDEzoZQLztzo8MV
+        hr9gw8rcec+WVYi3r1GQ8g16UbfWlMSlKkIuuntpV5WYlgKdbhevP08C9JsA
+        eqNjAuUr7fLV6fx41JDfHxznW+Kp4Llox2DFSYZB3MAQ/7kDzb9yaVu+Qun9
+        5ys0XcUw+sEI6nlX/X/ihJZwfmBiK5TrK+PSwsqiQRz1hyyofH68BrvgG8v2
+        h0FlAwAA
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:57 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:33 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=6ye7wLHRZ-c&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
+    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=_rCF2tzeKrA&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
     body:
       encoding: UTF-8
       string: ''
@@ -2721,13 +2725,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:57 GMT
+      - Sat, 28 Nov 2015 19:10:33 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:57 GMT
+      - Sat, 28 Nov 2015 19:10:33 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/LchRsH8a_VjvS-5UZWHrK0efPRA"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/medZ2pm0y-DIEWATDCcXi8kW83g"'
       Vary:
       - Origin
       - X-Origin
@@ -2752,18 +2756,17 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ1RPU/DMBDd/SssTyDRpG2gKV0BqQMTYgIxhOSID8VJiM+N
-        oir/nUtr0gpVHTqc5Xt370O6rZAKCYxVK/kupNxyMZJxqxYdxO3z+uVtkqqb
-        HW5LrGsgHu72pCKkAobdxwYSI181JASNnPCvqVyu5Zq7pw6svCq6BlN7vVdi
-        pnbms0ywsKOaVBl8Ja446DPkmmLQ10S1XYUhBh2hyYO0MuEGw6OIoScH33Xu
-        TZjeYkaaBWbz6YhpwFwPJvfTPdT7kTKQoTOX2ZufswGiUwFmy/8JNE8u89fn
-        /W+XJ/yjxZ+/GN/en5oSQkt8ssO1NwjtQ+XKgaru4nkUR0p4HteH6MUveZcN
-        R1ACAAA=
+        H4sIAAAAAAAAAJ1RTUvDQBC9769Y5ixJm5RSewtFLzkUBBERkdis2ZFsErOz
+        LVry352ka1qk9NDD7DJv5n3A7IUEJGUsLOWLkHLPxUjOLby1q/uIflTaJnAz
+        4LbCplHEw2FPAiGVqt9Nk4dknd7Jx4jhJyQt1+3w147kc+0OAkzQzrxXGZZ2
+        FJGQq4/MlUdZhlxb9rKaqLHLMMTgm9AUwaY24RbDk2ShJwefTeFNmL7DnDQL
+        TKPJiGmFhe5NbicHqPMjMCpHZ66zN18XA8TnAkwX/xNonlznry/7zxZn/OP5
+        n78Y385fmDJCS7g53ge2qHar2lU9FaJ4PotBeBrXq+jEL4V31DxGAgAA
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:57 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:33 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=0fm5zYNEmCU&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
+    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=FX_fgeP39dY&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
     body:
       encoding: UTF-8
       string: ''
@@ -2784,13 +2787,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:58 GMT
+      - Sat, 28 Nov 2015 19:10:34 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:58 GMT
+      - Sat, 28 Nov 2015 19:10:34 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/qbEZOoSDBwnv4K9c3cGbMEOuDNk"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/1w9w-y2HT_ks-vRYoC2xLj0w3Yg"'
       Vary:
       - Origin
       - X-Origin
@@ -2815,18 +2818,17 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ2SMU/DMBCFd/8KyxNIkDi0VKVrqcTEBANCDKZ240OxE+xz
-        q1Llv+O0UVpVUYYMtnzv/O57snwglAEq49mCfhJKD3FFRcaS8Y15/Pt4XZnl
-        O7s76t5CVSmMzeM9yhCwUM3dZ6eEoW9aCVSO3seTK0Ou6UusVnvl6Q1Yjy4Y
-        ZVEUt6d50a+D+bYCCt/NpEyqjQjFmRKl4IqGohErv0hTSPYIJk/WpUm3kF4E
-        TVtz8lPlLSTadyBRxwHZA+80rSDXDeSJn6S6bTGjJAQzDm9+BwNM+gJk8+sE
-        OnbG8fUwfzrv4U9m13yPwkrh5LgMXg5mmE17Mky7NyDdXrefDgWCR1if/wjb
-        gtoty2AbK8s4zzgjrS2uL1KTf3cbt9rZAgAA
+        H4sIAAAAAAAAAJ1RO0/DMBDe/StOniHOg6C2KxILCwsChBAytRsfxHFIzq2q
+        Kvx2nDSkCFUdOpyt++6+h3Q7BhxJ25Yv4IUB7EIFRIWW3z69rQp9n83VM78Y
+        8LbCutYUhsMecEIqdb/7kMI3PCIZcM3wO0+wdR4u4U420n3qvUSgGG/fK4ll
+        O8kAV3olfXkQDpBvyl7YENXtQgiMtoS2iJbOijWKP9nESI4+6mI0CfQNKjJB
+        IEnjCTMaC9ObzOM91I0jbrVCb8+zt18nA2THAiSz/wlMmJznb077X82O+GfX
+        v/5servxxiQJW8Ll4T58jXpz43zVU3mS53mccjbyQr2yjv0AUG5YMkkCAAA=
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:58 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:34 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=98bVQqSfTUo&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
+    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=OH21Av1Zb-g&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
     body:
       encoding: UTF-8
       string: ''
@@ -2847,13 +2849,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:58 GMT
+      - Sat, 28 Nov 2015 19:10:34 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:58 GMT
+      - Sat, 28 Nov 2015 19:10:34 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/ib9dGSFSPI6gd-M2HEzUY-MKqfY"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/l0x8vg_te7lukR9kd4Cf6iEeqIw"'
       Vary:
       - Origin
       - X-Origin
@@ -2878,18 +2880,19 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ2RwW7CMAyG73mKKOethXbaCtdtElc0tsu0Q6Cm8ZS0pXFA
-        CPXd50JXpglx4OAo/u3fnyUfhFRI4Lyayk8h5YGDlZxTNcmWH/PN23rxXqm7
-        o+5LrGsgLh77pCIkC13vSwPayYUBTdDIe/41VSiMnHH2ugcvsfTUBAclaXua
-        xm4T3LLUaP0wUaoc1jrYM4Ol0NiOYYhqP41jjPaErohWlYu3GP9ZM+7N0Xdd
-        9BC27zAnwwPGyWjQDGBhOshkdJLavqQc5BjcbXi3ubpAemmBcfZ/A8OV2/jm
-        Ov8hu8BPH3/5Ynjb/tykCT3h6nwftUXYPVeh7KwqecrSRInexvElWvEDh8G4
-        klMCAAA=
+        H4sIAAAAAAAAAJ2TwU/CMBTG7/srXnowkAhjgyBwM170IgcjRo2HshX6zLrO
+        9RU0hP/dbsxhcMFkh3bp9/r1+7Vddx4wJKEMm8GrB7BzzSmxG7L5bRhcb4KX
+        ZW/NLkvdpJhlglyxnAeMkBJRzH0MoQdPSBLmefnVluBZW+jMVyuMkCdwlxrK
+        rRIpucFC5AZ12oVO54FELjRcwL2GhY54YrrdQ55bX1q1TDkmps4EFosVt8mR
+        wkk2TwoKSZSZme9j/4tQrfuRVv4G/V8b8Stz/z2rNlXYtxiTdAsE4aDWpMC1
+        LEKmg4O0r0pMiRitahevPs4CDJsAgskpgXSVdvnyfP5o0pA/HJ/mG+JpzPO4
+        HYOJzzKMRw0Moz9noPhnLkzLWyi9//wKTUdxFf5geHW/r94GcUJDGB2Z2AbF
+        9kbbtLCyIAin0wnzKp9rb97e+wb4CtP6gQMAAA==
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:58 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:34 GMT
 - request:
     method: get
-    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=GtjGv8tSXmo&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
+    uri: https://www.googleapis.com/youtube/v3/videos?fields=items(id,snippet(title,thumbnails),statistics(viewCount))&id=exdNzIaugxI&key=AIzaSyCVU37P_YMZQ4nOc_oTDS9n3g-_wJqAsB4&part=snippet,statistics,id
     body:
       encoding: UTF-8
       string: ''
@@ -2910,13 +2913,13 @@ http_interactions:
       message: OK
     headers:
       Expires:
-      - Sat, 28 Nov 2015 15:53:59 GMT
+      - Sat, 28 Nov 2015 19:10:34 GMT
       Date:
-      - Sat, 28 Nov 2015 15:53:59 GMT
+      - Sat, 28 Nov 2015 19:10:34 GMT
       Cache-Control:
       - private, max-age=0, must-revalidate, no-transform
       Etag:
-      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/zvzTue3B3fcfpihZ-qsmbPx_lIg"'
+      - '"mPrpS7Nrk6Ggi_P7VJ8-KsEOiIw/Wtck_aHE09FZyCUuLkcRv_U7oOI"'
       Vary:
       - Origin
       - X-Origin
@@ -2941,13 +2944,14 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAAJ2S0UrDMBSG7/sUIVcK2q7bWOtuFfYADhTEi7gcmzOatian
-        nWP03U232o1ZKvQigfwn//k/TnLwGEcCbfmSvXmMHdxyinRHvqLtqorp+VXn
-        /O6o2wyLAsgVj/cYJ6QUmrsvmKYoNLtna2XyMlFMgWGwB8tungy4ylqBIKdt
-        8grM7amha6BK/ZEJTG3XlHEJn6JMzzFOKk3axCiiwi6DAP09oU78Ta6DCoML
-        0qA1+9siaUOcfYeSlGsQTiedpgAT1YQ8TE5S3Za4BomlHhevvwYBZn0AYXxN
-        oFxlXL4azp/HPfmzxXW+JZFJYeQ4BisHGRbzHob5nxlo8W3AjnyFo/efr9A3
-        imj6i+F1e91+fhKElnBzZuIVwu4xL7PGysNoEXGvdbn17tXeDyeJwOZgAwAA
+        H4sIAAAAAAAAAJ2TT3OCMBDF73yKnZw7IojWerQnpzPtRafTqT1Ek5KtBCjZ
+        +KfW796gqB3L2BkOCeRt3r4fAbYeMCSpDRvAqwewdcMpwi2ZXIvHrxG38XrE
+        bva6STHPJbnifh8wQkpkuXcSwpQ9Iyl4KqC8ZpbgJbNTBkM+X2Aaw7hwN/AN
+        D7zg2ULCcAPRZAgj4gnyFFyHcYEzS/IQ5porq2cpx8ScAoEJ+c5tckZwki2S
+        EkER5Wbg+9jaEOq4Nc+0v0T/11P4lbn1kcdViLOvUJByDYKwfdKUxFiVIXft
+        g7SrSkxLgVY3i9efVwE6dQBB/5JAuUqzfHU9P+rX5Hd6l/mGeCp4IZoxGHGV
+        oRfVMER/zkDzdSFNw7ew9/7zKdQdxW14xPBO8676MYgTGsL5mYktUa7uM5uW
+        VhYE3bDLvMrmxpu3834ASfKQ8H0DAAA=
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:59 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:35 GMT
 recorded_with: VCR 2.9.3

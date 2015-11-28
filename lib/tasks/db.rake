@@ -1,6 +1,6 @@
 namespace :db do
-  desc 'Create a new schema on MySQL DB'
-  task :create_schema do
+  desc 'Create a schemas on DB (test, dev and prd)'
+  task 'create-schema' do
     `mysql -u root -p < db/setup_mysql.sql`
   end
 

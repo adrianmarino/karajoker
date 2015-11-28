@@ -10,6 +10,11 @@ redisdb:
   image: busybox
   volumes:
     - /data/redis:/data
+
+graylogdb:
+  image: busybox
+  volumes:
+    - /data
 # ------------------------------------------------------------------------------------------------------------
 #
 #
@@ -19,6 +24,16 @@ redisdb:
 # ------------------------------------------------------------------------------------------------------------
 # Servers
 # ------------------------------------------------------------------------------------------------------------
+graylog:
+  build: ./docker/graylog
+  environment:
+    GRAYLOG2_PASSWORD: password
+  volumes_from:
+    - graylogdb
+  ports:
+    - "9000:9000/tcp"
+    - "12201:12201/udp"
+
 mysql:
   image: mysql
   environment:
@@ -35,11 +50,12 @@ redis:
   ports:
     - "6379"
 
-webapp:
+karajoker:
   build: .
   links:
     - mysql
     - redis
+    - graylog
   environment:
     RAILS_ENV: production
     DB_HOSTNAME: mysql
@@ -47,6 +63,8 @@ webapp:
     DB_PASSWORD: root
     REDIS_HOST: redis
     REDIS_PORT: 6379
+    GRAYLOG_HOST: graylog
+    GRAYLOG_UDP_PORT: 12201
     SECRET_KEY_BASE: a0e20b9d1c63e3666751294b5599d448e6fe7a1045b81d185c8f1a284cc9c6ec144efa96663b3cd101241695a664e7e4233840b2123a1fd41146c7b8210ad77b
   ports:
     - "8081:8080"
@@ -57,6 +75,7 @@ sidekiq-worker:
   links:
     - mysql
     - redis
+    - graylog
   environment:
     RAILS_ENV: production
     DB_HOSTNAME: mysql
@@ -64,5 +83,7 @@ sidekiq-worker:
     DB_PASSWORD: root
     REDIS_HOST: redis
     REDIS_PORT: 6379
+    GRAYLOG_HOST: graylog
+    GRAYLOG_UDP_PORT: 12201
     SECRET_KEY_BASE: a0e20b9d1c63e3666751294b5599d448e6fe7a1045b81d185c8f1a284cc9c6ec144efa96663b3cd101241695a664e7e4233840b2123a1fd41146c7b8210ad77b
 # ------------------------------------------------------------------------------------------------------------

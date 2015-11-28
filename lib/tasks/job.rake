@@ -1,6 +1,6 @@
 namespace :job do
   desc 'Index top songs from year'
-  task :index, [:limit, :years, :port] do |task, args|
+  task 'index-karaokes', [:limit, :years, :port] do |task, args|
     require File.expand_path('../../../config/environment', __FILE__)
     limit = args.limit || '10'
     years = RangeUtils.from(args.years) || (Time.zone.today.year..Time.zone.today.year)

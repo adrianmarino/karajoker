@@ -1,30 +1,30 @@
 module Service
   class KaraokeCreateLogger
-    include AppLogger
-
-    attr_reader :indexed
-
     def initialize
-      @count = @indexed = 0
+      @count = 0
+      @logger = Rails.logger
     end
 
-    def next_song(song, songs)
+    def setup_for(songs, song)
       @count += 1
-      @prefix = "[#{@count}/#{songs.size}]"
-      @postfix = "'#{song.title}' (#{song.author})"
+      @log_prefix = "[#{@count}/#{songs.size}]"
+      @log_postfix = "'#{song.title}' (#{song.author})"
     end
 
-    def not_found
-      logger.info "#{@log_prefix} Not found: #{@log_postfix}"
+    def info(message)
+      @logger.info "#{@log_prefix} #{message}: #{@log_postfix}"
     end
 
     def already_exists
-      logger.info "#{@log_prefix} Already exists: #{@log_postfix}"
+      @logger.info 'Already exists'
+    end
+
+    def not_found
+      @logger.info 'Not found'
     end
 
     def indexed
-      @indexed += 1
-      logger.info "#{@log_prefix} Indexed(#{@indexed}): #{@log_postfix}"
+      @logger.info '#Indexed(#{@indexed})'
     end
   end
 end

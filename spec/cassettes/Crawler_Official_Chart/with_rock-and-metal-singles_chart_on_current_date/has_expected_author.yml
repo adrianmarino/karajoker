@@ -19,7 +19,7 @@ http_interactions:
       message: Moved Permanently
     headers:
       X-Varnish:
-      - 2798947059 2798946636
+      - 2800167948 2798946636
       X-Varnish-Max-Age:
       - '1449787.159'
       X-Cache:
@@ -27,9 +27,9 @@ http_interactions:
       Content-Type:
       - text/html
       X-Varnish-Ttl:
-      - '1449783.868'
+      - '1437987.166'
       Date:
-      - Sat, 28 Nov 2015 15:53:41 GMT
+      - Sat, 28 Nov 2015 19:10:18 GMT
       Location:
       - http://www.officialcharts.com/charts/rock-and-metal-singles-chart/20140601/
       Accept-Ranges:
@@ -39,7 +39,7 @@ http_interactions:
       Connection:
       - keep-alive
       Age:
-      - '3'
+      - '11800'
       Content-Length:
       - '285'
     body:
@@ -48,7 +48,7 @@ http_interactions:
         Moved Permanently</title>\r\n</head><body>\r\n<h1>Moved Permanently</h1><p>The
         document has moved <a href=\"http://www.officialcharts.com/charts/rock-and-metal-singles-chart/20140601/\">here</a>.</p>\n</body></html>"
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:42 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:18 GMT
 - request:
     method: get
     uri: http://www.officialcharts.com/charts/rock-and-metal-singles-chart/20140601/
@@ -80,11 +80,11 @@ http_interactions:
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 28 Nov 2015 15:53:42 GMT
+      - Sat, 28 Nov 2015 19:10:19 GMT
       X-Varnish:
-      - 2798947110 2798946684
+      - 2800168000 2798946684
       Age:
-      - '3'
+      - '11800'
       Via:
       - 1.1 varnish
       Connection:
@@ -92,13 +92,13 @@ http_interactions:
       X-Cache:
       - HIT
       X-Varnish-Ttl:
-      - '687108.429'
+      - '675311.798'
     body:
       encoding: UTF-8
       string: "<html><head><title>Object moved</title></head><body>\r\n<h2>Object
         moved to <a href=\"/charts/singles-chart/20140601/\">here</a>.</h2>\r\n</body></html>\r\n"
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:42 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:19 GMT
 - request:
     method: get
     uri: http://www.officialcharts.com/charts/singles-chart/20140601/
@@ -124,17 +124,17 @@ http_interactions:
       Refresh-Me-At7:
       - 'True'
       X-Varnish-Max-Age:
-      - '1518.301'
+      - '1963.047'
       Content-Length:
-      - '80012'
+      - '80006'
       Accept-Ranges:
       - bytes
       Date:
-      - Sat, 28 Nov 2015 15:53:43 GMT
+      - Sat, 28 Nov 2015 19:10:19 GMT
       X-Varnish:
-      - 2798947158 2798946751
+      - 2800168033 2800024181
       Age:
-      - '3'
+      - '1344'
       Via:
       - 1.1 varnish
       Connection:
@@ -142,7 +142,7 @@ http_interactions:
       X-Cache:
       - HIT
       X-Varnish-Ttl:
-      - '1515.558'
+      - '619.089'
     body:
       encoding: ASCII-8BIT
       string: !binary |-
@@ -13339,32 +13339,32 @@ http_interactions:
         ICAgICAgICAgICAgIDwvYXJ0aWNsZT4NCiAgICAgICAgICAgIDwvbGk+ICAg
         ICAgICAgICAgICAgICANCiAgICAgICAgICAgIDxsaT4NCiAgICAgICAgICAg
         ICAgICA8YXJ0aWNsZSBjbGFzcz0iYXJ0aWNsZS1saW5rLW1pbmkiPg0KICAg
-        ICAgICAgICAgICAgICAgICA8YSBocmVmPSIvY2hhcnQtbmV3cy9hZGVsZXMt
-        MjUtYnJlYWtzLW9hc2lzLWZpcnN0LXdlZWstc2FsZXMtcmVjb3JkX18xMjM5
-        Ni8iPg0KICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iaW1h
-        Z2UiPg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxpbWcgc3JjPSIv
-        aW1hZ2VnZW4uYXNoeD9pbWFnZT0vbWVkaWEvNjQ4NTY1L2FkZWxlLTI1LTEx
-        MDAuanBnJmFtcDt3aWR0aD0xMjAiIGFsdD0iQWRlbGUmIzM5O3MgMjUgYnJl
-        YWtzIE9hc2lzJiMzOTsgZmlyc3Qgd2VlayBzYWxlcyByZWNvcmQiPg0KICAg
-        ICAgICAgICAgICAgICAgICAgICAgPC9kaXY+DQogICAgICAgICAgICAgICAg
-        ICAgICAgICA8ZGl2IGNsYXNzPSJ0ZXh0Ij5BZGVsZSYjMzk7cyAyNSBicmVh
-        a3MgT2FzaXMmIzM5OyBmaXJzdCB3ZWVrIHNhbGVzIHJlY29yZDwvZGl2Pg0K
-        ICAgICAgICAgICAgICAgICAgICA8L2E+DQogICAgICAgICAgICAgICAgPC9h
-        cnRpY2xlPg0KICAgICAgICAgICAgPC9saT4gICAgICAgICAgICAgICAgIA0K
-        ICAgICAgICAgICAgPGxpPg0KICAgICAgICAgICAgICAgIDxhcnRpY2xlIGNs
-        YXNzPSJhcnRpY2xlLWxpbmstbWluaSI+DQogICAgICAgICAgICAgICAgICAg
-        IDxhIGhyZWY9Ii9jaGFydC1uZXdzL2p1c3Rpbi1iaWViZXItY29udGludWVz
-        LWhpcy1yZWNvcmQtYnJlYWtpbmctc3RyZWFrLW9uLXRoZS1vZmZpY2lhbC1z
-        aW5nbGVzLWNoYXJ0X18xMjQxNy8iPg0KICAgICAgICAgICAgICAgICAgICAg
-        ICAgPGRpdiBjbGFzcz0iaW1hZ2UiPg0KICAgICAgICAgICAgICAgICAgICAg
-        ICAgICAgIDxpbWcgc3JjPSIvaW1hZ2VnZW4uYXNoeD9pbWFnZT0vbWVkaWEv
-        NjQ5MTk5L2p1c3Rpbi1iaWViZXItMTEwMC1yZXguanBnJmFtcDt3aWR0aD0x
-        MjAiIGFsdD0iSnVzdGluIEJpZWJlciBjb250aW51ZXMgaGlzIHJlY29yZCBi
-        cmVha2luZyBzdHJlYWsgb24gdGhlIE9mZmljaWFsIFNpbmdsZXMgQ2hhcnQi
-        Pg0KICAgICAgICAgICAgICAgICAgICAgICAgPC9kaXY+DQogICAgICAgICAg
-        ICAgICAgICAgICAgICA8ZGl2IGNsYXNzPSJ0ZXh0Ij5KdXN0aW4gQmllYmVy
-        IGNvbnRpbnVlcyBoaXMgcmVjb3JkIGJyZWFraW5nIHN0cmVhayBvbiB0aGUg
-        T2ZmaWNpYWwgU2luZ2xlcyBDaGFydDwvZGl2Pg0KICAgICAgICAgICAgICAg
+        ICAgICAgICAgICAgICAgICA8YSBocmVmPSIvY2hhcnQtbmV3cy9qdXN0aW4t
+        YmllYmVyLWNvbnRpbnVlcy1oaXMtcmVjb3JkLWJyZWFraW5nLXN0cmVhay1v
+        bi10aGUtb2ZmaWNpYWwtc2luZ2xlcy1jaGFydF9fMTI0MTcvIj4NCiAgICAg
+        ICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3M9ImltYWdlIj4NCiAgICAg
+        ICAgICAgICAgICAgICAgICAgICAgICA8aW1nIHNyYz0iL2ltYWdlZ2VuLmFz
+        aHg/aW1hZ2U9L21lZGlhLzY0OTE5OS9qdXN0aW4tYmllYmVyLTExMDAtcmV4
+        LmpwZyZhbXA7d2lkdGg9MTIwIiBhbHQ9Ikp1c3RpbiBCaWViZXIgY29udGlu
+        dWVzIGhpcyByZWNvcmQgYnJlYWtpbmcgc3RyZWFrIG9uIHRoZSBPZmZpY2lh
+        bCBTaW5nbGVzIENoYXJ0Ij4NCiAgICAgICAgICAgICAgICAgICAgICAgIDwv
+        ZGl2Pg0KICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0idGV4
+        dCI+SnVzdGluIEJpZWJlciBjb250aW51ZXMgaGlzIHJlY29yZCBicmVha2lu
+        ZyBzdHJlYWsgb24gdGhlIE9mZmljaWFsIFNpbmdsZXMgQ2hhcnQ8L2Rpdj4N
+        CiAgICAgICAgICAgICAgICAgICAgPC9hPg0KICAgICAgICAgICAgICAgIDwv
+        YXJ0aWNsZT4NCiAgICAgICAgICAgIDwvbGk+ICAgICAgICAgICAgICAgICAN
+        CiAgICAgICAgICAgIDxsaT4NCiAgICAgICAgICAgICAgICA8YXJ0aWNsZSBj
+        bGFzcz0iYXJ0aWNsZS1saW5rLW1pbmkiPg0KICAgICAgICAgICAgICAgICAg
+        ICA8YSBocmVmPSIvY2hhcnQtbmV3cy9hZGVsZXMtMjUtYnJlYWtzLW9hc2lz
+        LWZpcnN0LXdlZWstc2FsZXMtcmVjb3JkX18xMjM5Ni8iPg0KICAgICAgICAg
+        ICAgICAgICAgICAgICAgPGRpdiBjbGFzcz0iaW1hZ2UiPg0KICAgICAgICAg
+        ICAgICAgICAgICAgICAgICAgIDxpbWcgc3JjPSIvaW1hZ2VnZW4uYXNoeD9p
+        bWFnZT0vbWVkaWEvNjQ4NTY1L2FkZWxlLTI1LTExMDAuanBnJmFtcDt3aWR0
+        aD0xMjAiIGFsdD0iQWRlbGUmIzM5O3MgMjUgYnJlYWtzIE9hc2lzJiMzOTsg
+        Zmlyc3Qgd2VlayBzYWxlcyByZWNvcmQiPg0KICAgICAgICAgICAgICAgICAg
+        ICAgICAgPC9kaXY+DQogICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNs
+        YXNzPSJ0ZXh0Ij5BZGVsZSYjMzk7cyAyNSBicmVha3MgT2FzaXMmIzM5OyBm
+        aXJzdCB3ZWVrIHNhbGVzIHJlY29yZDwvZGl2Pg0KICAgICAgICAgICAgICAg
         ICAgICA8L2E+DQogICAgICAgICAgICAgICAgPC9hcnRpY2xlPg0KICAgICAg
         ICAgICAgPC9saT4gICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgPGxp
         Pg0KICAgICAgICAgICAgICAgIDxhcnRpY2xlIGNsYXNzPSJhcnRpY2xlLWxp
@@ -14124,5 +14124,5 @@ http_interactions:
         KCdkaXYtZ3B0LWFkLTE0MzIwMjQzODIxMzEtMC1vb3AnKTsgfSk7DQogICAg
         ICAgIDwvc2NyaXB0Pg0KICAgIDwvZGl2Pg0KDQo8L2JvZHk+DQo8L2h0bWw+
     http_version: 
-  recorded_at: Sat, 28 Nov 2015 15:53:44 GMT
+  recorded_at: Sat, 28 Nov 2015 19:10:21 GMT
 recorded_with: VCR 2.9.3
