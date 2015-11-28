@@ -1,10 +1,7 @@
 module Service
   class ServiceResponse
-    attr_reader :errors
-    
-    def success?
-      @success
-    end
+    attr_reader :success, :errors
+    alias_method :success?, :success
 
     def initialize(success = true, errors = [])
       @success = success

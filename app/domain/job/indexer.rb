@@ -27,24 +27,14 @@ module Job
     end
 
     def filter_repeated(songs)
-      titles = []
-      result = songs.select do |song|
-        if titles.include?(song.title)
-          false
-        else
-          titles << song.title
-          true
-        end
-      end
-      filtered = songs.size - result.size
-      logger.info "<< Filter #{filtered} repeated songs of #{songs.size} >>"
+      result = songs.uniq(&title)
+      logger.info "<< Filter #{songs.size - result.size} repeated songs of #{songs.size} >>"
       result
     end
 
     def filter_already_indexed(songs)
       result = songs.reject { |song| Karaoke.exists?(title: song.title) }
-      filtered = songs.size - result.size
-      logger.info "<< #{filtered} of #{songs.size} already indexed >>"
+      logger.info "<< #{songs.size - result.size} of #{songs.size} already indexed >>"
       result
     end
 

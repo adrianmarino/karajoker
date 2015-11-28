@@ -1,16 +1,14 @@
 module Service
-  class KaraokeCreate < Base
-    
-    attr_reader :logger
-
+  class KaraokeCreate
     def initialize
       @logger = KaraokeCreateLogger.new
       @indexed = 0
     end
 
     def call(songs)
+      songs = Array(songs)
       songs.each do |song|
-        logger.setup_for(songs, song)
+        @logger.setup_for(songs, song)
         karaoke = search_karaoke(song)
         index(karaoke, song) if karaoke
       end
@@ -20,12 +18,12 @@ module Service
     private
 
     def search_karaoke(song)
-      karaoke = Youtube::KaraokeSearcher.new.search(query: "#{song.title} #{song.author}").find(&:karaoke?)
+      karaoke = Youtube::KaraokeSearcher.new.search("#{song.title} #{song.author}").first
       if karaoke.nil?
-        logger.not_found
+        @logger.not_found
         return nil
       elsif already_exist?(karaoke)
-        logger.already_exists
+        @logger.already_exists
         return nil
       end
       karaoke
@@ -38,8 +36,7 @@ module Service
     def index(karaoke, song)
       Karaoke.create_from(year: song.year, author: song.author, title: song.title, youtube_id: karaoke.id)
       @indexed += 1
-      logger.indexed
+      @logger.indexed
     end
   end
 end
-

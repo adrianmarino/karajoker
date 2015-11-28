@@ -1,6 +1,5 @@
 module Service
   class KaraokeCreateLogger
-
     def initialize
       @count = 0
       @logger = Rails.logger

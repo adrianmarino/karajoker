@@ -78,10 +78,6 @@ Rails.application.configure do
 
   config.lograge.enabled = true
   config.lograge.formatter = Lograge::Formatters::Graylog2.new
-  config.logger = GELF::Logger.new(
-    ENV['GRAYLOG_HOST'],
-    ENV['GRAYLOG_UDP_PORT'],
-    'WAN',
-    { env: Rails.env, app: 'karajoker' }
-  )
+  config.logger = GELF::Logger.new(ENV['GRAYLOG_HOST'], ENV['GRAYLOG_UDP_PORT'], 'WAN',
+                                   env: Rails.env, app: 'karajoker')
 end

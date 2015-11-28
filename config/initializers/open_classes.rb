@@ -3,7 +3,9 @@ class ::Hash
     each do |k, v|
       v.to_obj if v.kind_of?(Hash)
 
+      # rubocop:disable all
       k = k.gsub(%r{.|s|-|/|'}, '_').downcase.to_sym
+      # rubocop:enable all
 
       ## create and initialize an instance variable for this key/value pair
       nstance_variable_set("@#{k}", v)

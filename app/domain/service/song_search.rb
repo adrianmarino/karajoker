@@ -1,5 +1,5 @@
 module Service
-  class SongSearch < Base
+  class SongSearch
     include AppLogger
 
     def call(year, limit = nil)
@@ -19,7 +19,9 @@ module Service
       Crawler::Official::Chart::ALL.each_with_object(Set.new) do |chart, songs|
         last_day_of_each_month_of(year).each do |day|
           songs.merge(Crawler::Official::Chart.select(name: chart, at: day).songs(limit: limit))
-          logger.info "From: Officialcharts, Chart: #{chart}, in: #{Date::MONTHNAMES[day.month]}, Found: #{songs.size}"
+          logger.info("From: Officialcharts, Chart: #{chart}, "\
+                      "in: #{Date::MONTHNAMES[day.month]}, "\
+                      "Found: #{songs.size}")
         end
       end
     end
@@ -30,4 +32,3 @@ module Service
     end
   end
 end
-
