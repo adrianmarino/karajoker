@@ -27,7 +27,8 @@ graylogdb:
 graylog:
   build: ./docker/graylog
   environment:
-    GRAYLOG2_PASSWORD: password
+    GRAYLOG_USERNAME: admin
+    GRAYLOG_PASSWORD: password
   volumes_from:
     - graylogdb
   ports:

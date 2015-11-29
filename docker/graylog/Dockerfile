@@ -1,4 +1,4 @@
-FROM sjoerdmulder/graylog2
+FROM graylog2/allinone
 MAINTAINER Adrian Norberto Marino "adrianmarino@gmail.com"
 #==============================================================================
 #
