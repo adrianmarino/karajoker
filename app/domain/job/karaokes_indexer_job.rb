@@ -6,7 +6,7 @@ module Job
     def perform(limit, years)
       years = resolve(years)
       log_args(limit, years)
-      years.each { |year| KaraokeIndexJob.perform_async(limit, year) }
+      years.each { |year| KaraokeIndexerWithYearJob.perform_async(limit, year) }
     end
 
     private
