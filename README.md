@@ -124,12 +124,12 @@ Another youtube karaoke application.
 ## Setup in Docker
 
 #### Requisites
-* Docker
-* Docker Compose
+* Docker 1.9.1
+* Docker Compose 1.5.1
 
 #### Steps
 
-1. Build images
+1. Build images: This action is required after some changes on kararajoker application to update these on the docker container.
 
 	```
 	bundle exec rake docker:build
@@ -175,14 +175,23 @@ Another youtube karaoke application.
 
 4. Find and index top karaokes
 
-   ```
-   bundle exec rake job:index[10,2015]
-   ```
+	 ```
+  	bundle exec rake job:index[10,2015]
+	```
 
-5. Monitor index process with:
-	* [Sidekiq](http://localhost:8081/sidekiq)
-	* [Graylog](http://localhost:9000)
+5. Config greylog input (only one time):
+
+	1. Sign in:
 		* Username: admin
 		* Password: password
+	1. Menu System -> Input
+	2. Select "GELF UDP" input type
+	3. Launch new input
+	4. Title: Karajoker
+	5. Launch
 
-6. Go to [Karajoker](http://localhost:8081)
+6. Monitor index process with:
+	* [Sidekiq](http://localhost:8081/sidekiq)
+	* [Graylog](http://localhost:9000)
+
+7. Go to [Karajoker](http://localhost:8081)

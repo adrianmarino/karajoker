@@ -13,4 +13,10 @@ namespace :docker do
   task :build do
     `docker-compose build`
   end
+
+  desc 'Restart docker containers'
+  task :restart do
+    Rake::Task['docker:stop'].execute
+    Rake::Task['docker:start'].execute
+  end
 end
