@@ -4,10 +4,17 @@ module Service
 
     def call(year, limit = nil)
       songs = official_charts(year, limit).merge(hot_chart(year, limit))
+      songs = filter_repeated(songs)
       SongSearchResponse.new(songs)
     end
 
     private
+
+    def filter_repeated(songs)
+      result = songs.to_a.uniq(&:title)
+      logger.info "<< Filter #{songs.size - result.size} repeated songs of #{songs.size} >>"
+      result
+    end
 
     def hot_chart(year, limit)
       songs = Crawler::Billboard::HotChart.new(year).songs(limit: limit)
