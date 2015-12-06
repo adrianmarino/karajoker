@@ -22,10 +22,12 @@ gem 'slim'
 gem 'rest-client'
 gem 'gelf'
 gem 'lograge'
+gem 'lock_and_cache'
+gem 'method_wrapper', git: 'https://github.com/adrianmarino/method_wrapper.git', branch: 'master'
 
 group :development, :test do
   gem 'rubocop', '~> 0.28.0'
-
+  gem 'silencer'
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-byebug'

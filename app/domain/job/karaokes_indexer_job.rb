@@ -1,5 +1,5 @@
 module Job
-  class KaraokeIndexerJob
+  class KaraokesIndexerJob
     include Sidekiq::Worker
     sidekiq_options retry: false
 
