@@ -15,7 +15,7 @@ module Service
       KaraokeCreateResponse.new(@indexed)
     end
 
-    private
+    protected
 
     def search_karaoke(song)
       karaoke = Youtube::KaraokeSearcher.new.search("#{song.title} #{song.author}").first
@@ -28,6 +28,8 @@ module Service
       end
       karaoke
     end
+
+    private
 
     def already_exist?(karaoke)
       Karaoke.exists?(youtube_id: karaoke.id)

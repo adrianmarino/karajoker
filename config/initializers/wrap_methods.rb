@@ -28,4 +28,5 @@ end
 unless Rails.env == "test"
   Service::SongSearch.cache_instance_method(name: :select_official_chart_songs, expires: 1.week)
   Service::SongSearch.cache_instance_method(name: :hot_chart_songs, expires: 1.week)
+  Service::KaraokeCreate.cache_instance_method(name: :search_karaoke, expires: 1.week)
 end
