@@ -24,6 +24,7 @@ gem 'gelf'
 gem 'lograge'
 gem 'lock_and_cache'
 gem 'method_wrapper', git: 'https://github.com/adrianmarino/method_wrapper.git', branch: 'master'
+gem 'puma'
 
 group :development, :test do
   gem 'rubocop', '~> 0.28.0'
