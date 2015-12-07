@@ -42,8 +42,9 @@ Rails.application.configure do
     Rails::Rack::Logger,
     Silencer::Logger,
     silence: [
-      %r{^/sidekiq},
-      %r{^/api/}
+      %r{^/assets*/},
+      %r{^/sidekiq*/},
+      %r{^/api*/}
     ]
   )
 end
