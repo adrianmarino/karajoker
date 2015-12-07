@@ -1,5 +1,5 @@
 module Job
-  class KaraokeIndexerWithYearJob
+  class KaraokeIndexerByYearWithLimitJob
     include Sidekiq::Worker
     include AppLogger
     sidekiq_options retry: true
