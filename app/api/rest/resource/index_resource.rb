@@ -9,7 +9,7 @@ module Rest::Resource
       end
       post do
         limit = params[:limit].to_i unless params[:limit].nil?
-        Job::Indexer.perform_async(limit, params[:years])
+        Job::KaraokesIndexerJob.perform_async(limit, params[:years])
       end
     end
   end

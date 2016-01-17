@@ -2,7 +2,7 @@ module Crawler::Billboard
   class HotChart
     def songs(limit: 100)
       return [] unless any_songs_at?(@year)
-      items.take(limit).inject([]) { |a, e| a << new_song(e) }
+      items.take(limit).inject([]) { |a, e| a << new_song(e) }.compact
     end
 
     def initialize(year = Time.zone.today.year)
@@ -13,7 +13,7 @@ module Crawler::Billboard
     private
 
     def any_songs_at?(year)
-      (2006..2015).include? year
+      (2006..Date.current.year).include? year
     end
 
     def items

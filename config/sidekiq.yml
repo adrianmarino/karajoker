@@ -7,3 +7,4 @@
   - [often, 7]
   - [default, 5]
   - [seldom, 3]
+:logfile: ./log/sidekiq.log

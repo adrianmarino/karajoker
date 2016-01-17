@@ -14,7 +14,8 @@ redisdb:
 graylogdb:
   image: busybox
   volumes:
-    - /data
+    - /graylog/data:/var/opt/graylog/data
+    - /graylog/logs:/var/log/graylog
 # ------------------------------------------------------------------------------------------------------------
 #
 #
@@ -27,11 +28,14 @@ graylogdb:
 graylog:
   build: ./docker/graylog
   environment:
-    GRAYLOG2_PASSWORD: password
+    GRAYLOG_USERNAME: admin
+    GRAYLOG_PASSWORD: password
+    GRAYLOG_TIMEZONE: "America/Argentina/Buenos_Aires"
   volumes_from:
     - graylogdb
   ports:
-    - "9000:9000/tcp"
+    - "9000:9000"
+    - "12201:12201"
     - "12201:12201/udp"
 
 mysql:

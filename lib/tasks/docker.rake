@@ -9,13 +9,14 @@ namespace :docker do
     `docker-compose stop`
   end
 
-  desc 'Show logs of docker container'
-  task :logs do
-    `docker-compose logs`
-  end
-
   desc 'Build docker images'
   task :build do
     `docker-compose build`
+  end
+
+  desc 'Restart docker containers'
+  task :restart do
+    Rake::Task['docker:stop'].execute
+    Rake::Task['docker:start'].execute
   end
 end
