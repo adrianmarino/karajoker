@@ -7,7 +7,7 @@ module Crawler::Official
 
     class << self
       def select(name:, at:)
-        ChartBuilder.new(chart: name, at: at).build
+        Crawler::Official::ChartBuilder.new(chart: name, at: at).build
       end
 
       def years
