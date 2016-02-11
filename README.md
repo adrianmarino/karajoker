@@ -195,3 +195,8 @@ Only another karaoke application.
 	* [Graylog](http://localhost:9000)
 
 7. Go to [Karajoker](http://localhost:8081)
+
+
+## License
+
+Karajoker is released under the [MIT License](http://www.opensource.org/licenses/MIT).
