@@ -1,7 +1,7 @@
 namespace :db do
   desc 'Create a schemas on DB (test, dev and prd)'
   task 'create-schema' do
-    system("mysql -h #{ENV['DB_HOSTNAME']} -u root -p < db/setup_mysql.sql")
+    system("mysql -h #{ENV['DB_HOSTNAME']} -u root --password=\"#{ENV['DB_PASSWORD']}\" < db/setup_mysql.sql")
   end
 
   desc 'Show db info'

@@ -1,0 +1,19 @@
+sudo: false
+cache: bundler
+language: ruby
+
+env:
+  - DB_HOSTNAME="127.0.0.1" DB_USERNAME="root" DB_PASSWORD=""
+
+services:
+  - mysql
+
+install:
+  - bundle install --retry=3
+
+script:
+  - bundle exec rspec
+  - bundle exec rubocop
+
+before_script:
+  - bundle exec rake db:create-schema
