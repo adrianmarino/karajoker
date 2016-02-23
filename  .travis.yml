@@ -1,0 +1,12 @@
+language: ruby
+
+env:
+  - DB_HOSTNAME=localhost
+  - DB_USERNAME=root
+  - DB_PASSWORD=
+
+services:
+  - mysql
+
+before_script:
+  - mysql -e 'create database Karaoker_test;'
