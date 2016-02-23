@@ -9,4 +9,4 @@ services:
   - mysql
 
 before_script:
-  - mysql -e 'create database Karaoker_test;'
+  - mysql -e 'create database karajoker_test;'
