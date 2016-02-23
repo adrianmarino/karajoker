@@ -9,4 +9,4 @@ services:
   - mysql
 
 before_script:
-  - mysql -e 'create database karajoker_test;'
+  - bundle exec rake db:create-schema
