@@ -16,7 +16,7 @@ class Class
   end
 
   def new_wrapper(method_name, expires)
-    ->(method, *args, &block) do
+    lambda do |method, *args, &block|
       LockAndCache.lock_and_cache(method_name, args, expires: expires) do
         Rails.logger.debug("Save response of #{method_name}(#{args}) message!")
         method.call(*args, &block)
@@ -25,7 +25,7 @@ class Class
   end
 end
 
-unless Rails.env == "test"
+unless Rails.env == 'test'
   Service::SongSearch.cache_instance_method(name: :select_official_chart_songs, expires: 1.week)
   Service::SongSearch.cache_instance_method(name: :hot_chart_songs, expires: 1.week)
   Service::KaraokeCreate.cache_instance_method(name: :search_karaoke, expires: 1.week)

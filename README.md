@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/adrianmarino/ruml.svg?branch=master)](https://travis-ci.org/adrianmarino/karajoker)
+[![License](http://img.shields.io/:license-mit-blue.svg)](http://badges.mit-license.org)
+
 # Karajoker
 Only another karaoke application.
 

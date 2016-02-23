@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module Crawler::Billboard
-describe HotChart do
+  describe HotChart do
     let(:song) { subject.songs(limit: 1).first }
 
     context 'when found song' do
